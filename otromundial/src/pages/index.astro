@@ -4,6 +4,7 @@ import ScrollFloat from '../components/ScrollFloat.jsx';
 import Crosshair from '../components/Crosshair.jsx';
 import CircularText from '../components/CircularText.jsx';
 import ScrollVelocity from '../components/ScrollVelocity.jsx';
+import Countdown from '../components/Countdown.jsx';
 import Seo from '@jdevalk/astro-seo-graph/Seo.astro';
 
 const siteName = "El Otro Mundial";
@@ -101,8 +102,9 @@ const routeCities = [
                             <a class="btn-ghost-epic" href="#caravan">DISCOVER THE ROUTE</a>
                         </div>
                         
-                        <div class="mt-8">
-                            <a href="#kickstarter" class="group relative inline-flex items-center justify-center font-bebas text-4xl md:text-5xl tracking-widest px-8 py-4 transition-all duration-300 hover:scale-105">
+                        <div class="mt-8 flex flex-col items-center w-full">
+                            <Countdown targetDate="2026-06-30T00:00:00Z" client:load />
+                            <a href="#kickstarter" class="group relative inline-flex items-center justify-center font-bebas text-4xl md:text-5xl tracking-widest px-8 py-4 transition-all duration-300 hover:scale-105 mt-2">
                                 <span class="absolute inset-0 bg-transparent border-2 border-[#FF00FF] rounded-none mix-blend-screen opacity-80 group-hover:opacity-100 group-hover:shadow-[0_0_20px_rgba(255,0,255,0.6)]"></span>
                                 <span class="relative z-10 flex gap-2">
                                     <span class="text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]">RESERVE</span>
