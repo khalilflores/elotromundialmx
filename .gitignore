@@ -1,0 +1,10 @@
+# Local AI agent/tooling state
+.abacusai/
+
+# Internal assistant skills metadata (not part of app source)
+otromundial/.agents/
+
+# Accidental root-level assets (real assets are in otromundial/public)
+/logo_circ.png
+/logo_el_otro_mundialmx.png
+/logo_fav.png
