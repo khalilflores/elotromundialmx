@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Counter from './Counter';
 
-export default function Countdown({ targetDate }) {
+export default function Countdown({ targetDate, timeLeftLabel = "Days left to back the project", daysLabel = "DAYS" }) {
   const [timeLeft, setTimeLeft] = useState(0);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Countdown({ targetDate }) {
   return (
     <div className="flex flex-col items-center justify-center mt-2 mb-4 p-4 border border-[#FF00FF]/30 bg-black/40 backdrop-blur-md rounded-lg">
       <div className="font-barlow text-sm tracking-[0.2em] text-[#FF00FF] uppercase mb-2 text-center">
-        Days left to back the project
+        {timeLeftLabel}
       </div>
       <div className="flex items-center gap-3">
         <Counter
@@ -43,7 +43,7 @@ export default function Countdown({ targetDate }) {
           gradientTo="rgba(0,0,0,0)"
           gradientHeight={8}
         />
-        <span className="font-bebas text-3xl md:text-4xl text-white/50 tracking-widest mt-1">DAYS</span>
+        <span className="font-bebas text-3xl md:text-4xl text-white/50 tracking-widest mt-1">{daysLabel}</span>
       </div>
     </div>
   );
