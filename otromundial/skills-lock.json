@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "astro": {
+      "source": "mindrally/skills",
+      "sourceType": "github",
+      "skillPath": "astro/SKILL.md",
+      "computedHash": "39a6cfe33a7f2082977d015f343f84528190d76665604a02dde0ac3baceed1a1"
+    },
+    "astro-seo": {
+      "source": "jdevalk/skills",
+      "sourceType": "github",
+      "skillPath": "astro-seo/SKILL.md",
+      "computedHash": "61a4c2bc1b313e590905875699f8e4684f84a3931816315b584d822de9242973"
+    },
+    "ui-ux-pro-max": {
+      "source": "kimny1143/claude-code-template",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "computedHash": "b6f3a46da860714b6b7c733abc81d6ccb71018666ba46f478ebb5f43cefcf361"
+    }
+  }
+}
