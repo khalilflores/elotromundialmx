@@ -58,7 +58,19 @@ export const translations = {
     optionSponsor: "Patrocinio de Marca",
     btnFundNow: "FINANCIAR AHORA",
     footerText: "El Otro Mundial · Web-Doc Independiente",
-    footerCountry: "México 2026"
+    footerCountry: "México 2026",
+    cityCDMX: "Ciudad de México",
+    cityOaxaca: "Oaxaca de Juárez",
+    hourLabel: "h",
+    minuteLabel: "min",
+    itineraryTitle: "LA CARAVANA COMPLETA",
+    itinerarySubtitle: "7,375 KM DE CARRETERA, HISTORIA Y COMUNIDAD",
+    itineraryDesc: "27 etapas a través de las entrañas de México, conectando fútbol, cultura y comunidades locales en un recorrido sin precedentes.",
+    statDistance: "Distancia Total",
+    statStops: "Etapas",
+    statHours: "Tiempo Total",
+    btnShowFullRoute: "DESCUBRE LA RUTA COMPLETA",
+    btnShowLess: "VER MENOS"
   },
   en: {
     seoTitle: "El Otro Mundial | The Real Mexico Begins Beyond the Stadiums",
@@ -119,7 +131,19 @@ export const translations = {
     optionSponsor: "Brand Sponsorship",
     btnFundNow: "FUND IT NOW",
     footerText: "El Otro Mundial · Independent Web-Doc",
-    footerCountry: "Mexico 2026"
+    footerCountry: "Mexico 2026",
+    cityCDMX: "Mexico City",
+    cityOaxaca: "Oaxaca",
+    hourLabel: "hr",
+    minuteLabel: "min",
+    itineraryTitle: "THE COMPLETE CARAVAN",
+    itinerarySubtitle: "7,375 KM OF ROADS, STORIES AND COMMUNITY",
+    itineraryDesc: "27 legs through the heart of Mexico, connecting football, culture, and local communities in an unprecedented journey.",
+    statDistance: "Total Distance",
+    statStops: "Legs",
+    statHours: "Total Hours",
+    btnShowFullRoute: "DISCOVER THE FULL ROUTE",
+    btnShowLess: "SHOW LESS"
   },
   fr: {
     seoTitle: "El Otro Mundial | Le vrai Mexique commence au-delà des stades",
@@ -180,7 +204,19 @@ export const translations = {
     optionSponsor: "Sponsoring de marque",
     btnFundNow: "FINANCER MAINTENANT",
     footerText: "El Otro Mundial · Web-Doc Indépendant",
-    footerCountry: "Mexique 2026"
+    footerCountry: "Mexique 2026",
+    cityCDMX: "Cité de Mexico",
+    cityOaxaca: "Oaxaca",
+    hourLabel: "h",
+    minuteLabel: "min",
+    itineraryTitle: "LA CARAVANE COMPLÈTE",
+    itinerarySubtitle: "7 375 KM DE ROUTE, D'HISTOIRE ET DE COMMUNAUTÉ",
+    itineraryDesc: "27 étapes à travers le cœur du Mexique, reliant le football, la culture et les communautés locales dans un voyage sans précédent.",
+    statDistance: "Distance Totale",
+    statStops: "Étapes",
+    statHours: "Temps Total",
+    btnShowFullRoute: "DÉCOUVRIR L'ITINÉRAIRE COMPLET",
+    btnShowLess: "VOIR MOINS"
   },
   it: {
     seoTitle: "El Otro Mundial | Il vero Messico inizia oltre gli stadi",
@@ -241,7 +277,19 @@ export const translations = {
     optionSponsor: "Sponsorizzazione del marchio" ,
     btnFundNow: "FINANZIA ORA",
     footerText: "El Otro Mundial · Web-Doc Indipendente",
-    footerCountry: "Messico 2026"
+    footerCountry: "Messico 2026",
+    cityCDMX: "Città del Messico",
+    cityOaxaca: "Oaxaca",
+    hourLabel: "h",
+    minuteLabel: "min",
+    itineraryTitle: "LA CAROVANA COMPLETA",
+    itinerarySubtitle: "7.375 KM DI STRADA, STORIA E COMUNITÀ",
+    itineraryDesc: "27 tappe nel cuore del Messico, unendo calcio, cultura e comunità locali in un viaggio senza precedenti.",
+    statDistance: "Distanza Totale",
+    statStops: "Tappe",
+    statHours: "Tempo Totale",
+    btnShowFullRoute: "SCOPRI IL PERCORSO COMPLETO",
+    btnShowLess: "MOSTRA MENO"
   },
   de: {
     seoTitle: "El Otro Mundial | Das wahre Mexiko beginnt jenseits der Stadien",
@@ -302,7 +350,19 @@ export const translations = {
     optionSponsor: "Markensponsoring",
     btnFundNow: "JETZT FINANZIEREN",
     footerText: "El Otro Mundial · Unabhängige Web-Dokumentation",
-    footerCountry: "Mexiko 2026"
+    footerCountry: "Mexiko 2026",
+    cityCDMX: "Mexiko-Stadt",
+    cityOaxaca: "Oaxaca",
+    hourLabel: "Std.",
+    minuteLabel: "Min.",
+    itineraryTitle: "DIE KOMPLETTE KARAWANE",
+    itinerarySubtitle: "7.375 KM STRASSE, GESCHICHTE UND GEMEINSCHAFT",
+    itineraryDesc: "27 Etappen durch das Herz Mexikos, die Fußball, Kultur und lokale Gemeinschaften auf einer beispiellosen Reise verbinden.",
+    statDistance: "Gesamtstrecke",
+    statStops: "Etappen",
+    statHours: "Gesamtdauer",
+    btnShowFullRoute: "DIE KOMPLETTE ROUTE ENTDECKEN",
+    btnShowLess: "WENIGER ANZEIGEN"
   },
   ko: {
     seoTitle: "엘 오트로 문디알 | 경기장 너머에서 진짜 멕시코가 시작됩니다",
@@ -363,7 +423,19 @@ export const translations = {
     optionSponsor: "브랜드 스폰서십",
     btnFundNow: "지금 후원하기",
     footerText: "El Otro Mundial · 독립 웹 다큐멘터리",
-    footerCountry: "멕시코 2026"
+    footerCountry: "멕시코 2026",
+    cityCDMX: "멕시코시티",
+    cityOaxaca: "오아하카",
+    hourLabel: "시간",
+    minuteLabel: "분",
+    itineraryTitle: "전체 카라반 경로",
+    itinerarySubtitle: "7,375 KM의 도로, 역사 그리고 공동체",
+    itineraryDesc: "멕시코의 심장을 관통하는 27개 구간. 축구와 문화, 그리고 지역 공동체를 잇는 전례 없는 특별한 여정.",
+    statDistance: "총 이동 거리",
+    statStops: "총 구간",
+    statHours: "총 이동 시간",
+    btnShowFullRoute: "전체 경로 확인하기",
+    btnShowLess: "접기"
   },
   ru: {
     seoTitle: "El Otro Mundial | Настоящая Мексика начинается за пределами стадионов",
@@ -424,6 +496,18 @@ export const translations = {
     optionSponsor: "Спонсорство бренда",
     btnFundNow: "ПОДДЕРЖАТЬ СЕЙЧАС",
     footerText: "El Otro Mundial · Независимый веб-док",
-    footerCountry: "Мексика 2026"
+    footerCountry: "Мексика 2026",
+    cityCDMX: "Мехико",
+    cityOaxaca: "Оахака",
+    hourLabel: "ч.",
+    minuteLabel: "мин.",
+    itineraryTitle: "ПОЛНЫЙ МАРШРУТ КАРАВАНА",
+    itinerarySubtitle: "7 375 КМ ДОРОГ, ИСТОРИЙ И ОБЩИНЫ",
+    itineraryDesc: "27 этапов через самое сердце Мексики, объединяющих футбол, культуру и местные общины в беспрецедентном путешествии.",
+    statDistance: "Общая дистанция",
+    statStops: "Этапов",
+    statHours: "Общее время",
+    btnShowFullRoute: "ОТКРЫТЬ ПОЛНЫЙ МАРШРУТ",
+    btnShowLess: "СВЕРНУТЬ"
   }
 };

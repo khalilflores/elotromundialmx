@@ -38,6 +38,316 @@ const routeCities = [
 
 const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
 
+const cityTranslations = {
+  es: {
+    CDMX: "Ciudad de México",
+    Teotihuacan: "Teotihuacán",
+    Cholula: "Cholula",
+    Huautla: "Huautla de Jiménez",
+    Oaxaca: "Oaxaca de Juárez",
+    Mazunte: "Mazunte / Chacahua",
+    Juchitan: "Juchitán de Zaragoza",
+    SanCristobal: "San Cristóbal de las Casas",
+    Palenque: "Palenque",
+    Merida: "Mérida / Valladolid",
+    Campeche: "Campeche",
+    Xalapa: "Xalapa",
+    ElTajin: "El Tajín / Papantla",
+    Xilitla: "Xilitla",
+    SLP: "San Luis Potosí",
+    RealCatorce: "Real de Catorce",
+    Zacatecas: "Zacatecas",
+    GomezPalacio: "Gómez Palacio",
+    Chapala: "Chapala Durango",
+    Sayulita: "Sayulita",
+    Guanajuato: "Guanajuato",
+    Morelia: "Morelia",
+    Patzcuaro: "Pátzcuaro",
+    Uruapan: "Uruapan",
+    Capultitlan: "Capultitlán, Toluca",
+    Cuautla: "Cuautla",
+    Michoacan: "Michoacán (Maratío/Zitácuaro)",
+    SanBlas: "San Blas",
+    Mazatlan: "Mazatlán",
+    Monterrey: "Monterrey",
+    Saltillo: "Saltillo",
+    Toluca: "Toluca / Metepec",
+    Retorno: " (Retorno)"
+  },
+  en: {
+    CDMX: "Mexico City",
+    Teotihuacan: "Teotihuacan",
+    Cholula: "Cholula",
+    Huautla: "Huautla de Jimenez",
+    Oaxaca: "Oaxaca",
+    Mazunte: "Mazunte / Chacahua",
+    Juchitan: "Juchitan de Zaragoza",
+    SanCristobal: "San Cristobal de las Casas",
+    Palenque: "Palenque",
+    Merida: "Merida / Valladolid",
+    Campeche: "Campeche",
+    Xalapa: "Xalapa",
+    ElTajin: "El Tajin / Papantla",
+    Xilitla: "Xilitla",
+    SLP: "San Luis Potosi",
+    RealCatorce: "Real de Catorce",
+    Zacatecas: "Zacatecas",
+    GomezPalacio: "Gomez Palacio",
+    Chapala: "Chapala Durango",
+    Sayulita: "Sayulita",
+    Guanajuato: "Guanajuato",
+    Morelia: "Morelia",
+    Patzcuaro: "Patzcuaro",
+    Uruapan: "Uruapan",
+    Capultitlan: "Capultitlan, Toluca",
+    Cuautla: "Cuautla",
+    Michoacan: "Michoacan (Maratio/Zitacuaro)",
+    SanBlas: "San Blas",
+    Mazatlan: "Mazatlan",
+    Monterrey: "Monterrey",
+    Saltillo: "Saltillo",
+    Toluca: "Toluca / Metepec",
+    Retorno: " (Return)"
+  },
+  fr: {
+    CDMX: "Cité de Mexico",
+    Teotihuacan: "Teotihuacan",
+    Cholula: "Cholula",
+    Huautla: "Huautla de Jimenez",
+    Oaxaca: "Oaxaca",
+    Mazunte: "Mazunte / Chacahua",
+    Juchitan: "Juchitan de Zaragoza",
+    SanCristobal: "San Cristobal de las Casas",
+    Palenque: "Palenque",
+    Merida: "Merida / Valladolid",
+    Campeche: "Campeche",
+    Xalapa: "Xalapa",
+    ElTajin: "El Tajin / Papantla",
+    Xilitla: "Xilitla",
+    SLP: "San Luis Potosi",
+    RealCatorce: "Real de Catorce",
+    Zacatecas: "Zacatecas",
+    GomezPalacio: "Gomez Palacio",
+    Chapala: "Chapala Durango",
+    Sayulita: "Sayulita",
+    Guanajuato: "Guanajuato",
+    Morelia: "Morelia",
+    Patzcuaro: "Patzcuaro",
+    Uruapan: "Uruapan",
+    Capultitlan: "Capultitlan, Toluca",
+    Cuautla: "Cuautla",
+    Michoacan: "Michoacan (Maratio/Zitacuaro)",
+    SanBlas: "San Blas",
+    Mazatlan: "Mazatlan",
+    Monterrey: "Monterrey",
+    Saltillo: "Saltillo",
+    Toluca: "Toluca / Metepec",
+    Retorno: " (Retour)"
+  },
+  it: {
+    CDMX: "Città del Messico",
+    Teotihuacan: "Teotihuacan",
+    Cholula: "Cholula",
+    Huautla: "Huautla de Jimenez",
+    Oaxaca: "Oaxaca",
+    Mazunte: "Mazunte / Chacahua",
+    Juchitan: "Juchitan de Zaragoza",
+    SanCristobal: "San Cristobal de las Casas",
+    Palenque: "Palenque",
+    Merida: "Merida / Valladolid",
+    Campeche: "Campeche",
+    Xalapa: "Xalapa",
+    ElTajin: "El Tajin / Papantla",
+    Xilitla: "Xilitla",
+    SLP: "San Luis Potosi",
+    RealCatorce: "Real de Catorce",
+    Zacatecas: "Zacatecas",
+    GomezPalacio: "Gomez Palacio",
+    Chapala: "Chapala Durango",
+    Sayulita: "Sayulita",
+    Guanajuato: "Guanajuato",
+    Morelia: "Morelia",
+    Patzcuaro: "Patzcuaro",
+    Uruapan: "Uruapan",
+    Capultitlan: "Capultitlan, Toluca",
+    Cuautla: "Cuautla",
+    Michoacan: "Michoacan (Maratio/Zitacuaro)",
+    SanBlas: "San Blas",
+    Mazatlan: "Mazatlan",
+    Monterrey: "Monterrey",
+    Saltillo: "Saltillo",
+    Toluca: "Toluca / Metepec",
+    Retorno: " (Ritorno)"
+  },
+  de: {
+    CDMX: "Mexiko-Stadt",
+    Teotihuacan: "Teotihuacán",
+    Cholula: "Cholula",
+    Huautla: "Huautla de Jiménez",
+    Oaxaca: "Oaxaca",
+    Mazunte: "Mazunte / Chacahua",
+    Juchitan: "Juchitán de Zaragoza",
+    SanCristobal: "San Cristóbal de las Casas",
+    Palenque: "Palenque",
+    Merida: "Mérida / Valladolid",
+    Campeche: "Campeche",
+    Xalapa: "Xalapa",
+    ElTajin: "El Tajín / Papantla",
+    Xilitla: "Xilitla",
+    SLP: "San Luis Potosí",
+    RealCatorce: "Real de Catorce",
+    Zacatecas: "Zacatecas",
+    GomezPalacio: "Gómez Palacio",
+    Chapala: "Chapala Durango",
+    Sayulita: "Sayulita",
+    Guanajuato: "Guanajuato",
+    Morelia: "Morelia",
+    Patzcuaro: "Patzcuaro",
+    Uruapan: "Uruapan",
+    Capultitlan: "Capultitlan, Toluca",
+    Cuautla: "Cuautla",
+    Michoacan: "Michoacan (Maratio/Zitacuaro)",
+    SanBlas: "San Blas",
+    Mazatlan: "Mazatlán",
+    Monterrey: "Monterrey",
+    Saltillo: "Saltillo",
+    Toluca: "Toluca / Metepec",
+    Retorno: " (Rückkehr)"
+  },
+  ko: {
+    CDMX: "멕시코시티",
+    Teotihuacan: "테오티우아칸",
+    Cholula: "초룰라",
+    Huautla: "우아우틀라 데 히메네스",
+    Oaxaca: "오아하카",
+    Mazunte: "마준테 / 차카화",
+    Juchitan: "후치탄 데 사라고사",
+    SanCristobal: "산 크리스토발 데 라스 카사스",
+    Palenque: "팔렌케",
+    Merida: "메리다 / 바야돌리드",
+    Campeche: "캄페체",
+    Xalapa: "할라파",
+    ElTajin: "엘 타힌 / 파판틀라",
+    Xilitla: "히리틀라",
+    SLP: "산루이스포토시",
+    RealCatorce: "레알 데 카토르세",
+    Zacatecas: "사카테카스",
+    GomezPalacio: "고메스 팔라시오",
+    Chapala: "차팔라 두랑고",
+    Sayulita: "사유리타",
+    Guanajuato: "과나후아토",
+    Morelia: "모렐리아",
+    Patzcuaro: "파트스쿠아로",
+    Uruapan: "우루아판",
+    Capultitlan: "카풀티틀란, 톨루카",
+    Cuautla: "쿠아우틀라",
+    Michoacan: "미초아칸 (마라티오/지타쿠아로)",
+    SanBlas: "산 블라스",
+    Mazatlan: "마사틀란",
+    Monterrey: "몬테레이",
+    Saltillo: "살티요",
+    Toluca: "톨루카 / 메테펙",
+    Retorno: " (회귀)"
+  },
+  ru: {
+    CDMX: "Мехико",
+    Teotihuacan: "Теотиуакан",
+    Cholula: "Чолула",
+    Huautla: "Уаутла-де-Хименес",
+    Oaxaca: "Оахака",
+    Mazunte: "Масунте / Чакауа",
+    Juchitan: "Хучитан-де-Сарагоса",
+    SanCristobal: "Сан-Кристобаль-де-лас-Касас",
+    Palenque: "Паленке",
+    Merida: "Мерида / Вальядолид",
+    Campeche: "Кампече",
+    Xalapa: "Халапа",
+    ElTajin: "Эль-Тахин / Папантла",
+    Xilitla: "Хилитла",
+    SLP: "Сан-Луис-Потоси",
+    RealCatorce: "Реаль-де-Каторсе",
+    Zacatecas: "Сакатекас",
+    GomezPalacio: "Гомес-Паласио",
+    Chapala: "Чапала-Дуранго",
+    Sayulita: "Саюлита",
+    Guanajuato: "Гуанахуато",
+    Morelia: "Морелия",
+    Patzcuaro: "Пацкуаро",
+    Uruapan: "Уруапан",
+    Capultitlan: "Капультитлан, Толука",
+    Cuautla: "Куаутла",
+    Michoacan: "Мичоакан (Маратио/Ситакуаро)",
+    SanBlas: "San Blas",
+    Mazatlan: "Масатлан",
+    Monterrey: "Монтеррей",
+    Saltillo: "Сальтильо",
+    Toluca: "Толука / Метепек",
+    Retorno: " (Обратный путь)"
+  }
+};
+
+const itineraryLegs = [
+  { from: "CDMX", to: "Teotihuacan", km: 50, hrs: 1, mins: 10 },
+  { from: "Teotihuacan", to: "Cholula", km: 135, hrs: 1, mins: 45 },
+  { from: "Cholula", to: "Huautla", km: 230, hrs: 5, mins: 15 },
+  { from: "Huautla", to: "Oaxaca", km: 220, hrs: 5, mins: 0 },
+  { from: "Oaxaca", to: "Mazunte", km: 260, hrs: 3, mins: 30 },
+  { from: "Mazunte", to: "Juchitan", km: 290, hrs: 4, mins: 45 },
+  { from: "Juchitan", to: "SanCristobal", km: 260, hrs: 4, mins: 0 },
+  { from: "SanCristobal", to: "Palenque", km: 220, hrs: 5, mins: 30 },
+  { from: "Palenque", to: "Merida", km: 530, hrs: 6, mins: 30 },
+  { from: "Merida", to: "Campeche", km: 170, hrs: 2, mins: 15 },
+  { from: "Campeche", to: "Xalapa", km: 910, hrs: 11, mins: 30 },
+  { from: "Xalapa", to: "ElTajin", km: 210, hrs: 3, mins: 0 },
+  { from: "ElTajin", to: "Xilitla", km: 340, hrs: 6, mins: 0 },
+  { from: "Xilitla", to: "SLP", km: 330, hrs: 5, mins: 15 },
+  { from: "SLP", to: "RealCatorce", km: 260, hrs: 3, mins: 15 },
+  { from: "RealCatorce", to: "Zacatecas", km: 210, hrs: 3, mins: 0 },
+  { from: "Zacatecas", to: "GomezPalacio", km: 370, hrs: 4, mins: 15 },
+  { from: "GomezPalacio", to: "Chapala", km: 250, hrs: 3, mins: 0 },
+  { from: "Chapala", to: "Sayulita", km: 510, hrs: 6, mins: 30 },
+  { from: "Sayulita", to: "Guanajuato", km: 520, hrs: 6, mins: 15 },
+  { from: "Guanajuato", to: "Morelia", km: 180, hrs: 2, mins: 30 },
+  { from: "Morelia", to: "Patzcuaro", km: 60, hrs: 1, mins: 0 },
+  { from: "Patzcuaro", to: "Uruapan", km: 60, hrs: 1, mins: 10 },
+  { from: "Uruapan", to: "Capultitlan", km: 280, hrs: 3, mins: 45 },
+  { from: "Capultitlan", to: "Cuautla", km: 140, hrs: 2, mins: 15 },
+  { from: "Cuautla", to: "Michoacan", km: 220, hrs: 3, mins: 30 },
+  { from: "Michoacan", to: "CDMX", km: 160, hrs: 2, mins: 15 }
+];
+
+function localizeCity(cityCode, retorno = false) {
+  const langCityMap = cityTranslations[currentLang] || cityTranslations.es;
+  const name = langCityMap[cityCode] || cityCode;
+  return retorno ? `${name}${langCityMap.Retorno || ''}` : name;
+}
+
+function formatDuration(hrs, mins) {
+  const hourText = hrs > 0 ? `${hrs}${t.hourLabel}` : "";
+  const minText = mins > 0 ? ` ${mins}${t.minuteLabel}` : "";
+  return `${hourText}${minText}`.trim();
+}
+
+function getItineraryImage(from, to) {
+  const central = ["CDMX", "Teotihuacan", "Cholula", "Toluca", "Capultitlan", "Cuautla", "Michoacan"];
+  const highlands = ["Huautla", "Oaxaca", "SLP", "RealCatorce", "Zacatecas"];
+  const surf = ["Mazunte", "Sayulita"];
+  const jungle = ["Juchitan", "SanCristobal", "Palenque", "Xilitla"];
+  const cenote = ["Merida", "Campeche", "Guanajuato", "Morelia", "Patzcuaro", "Uruapan"];
+  const gulf = ["Xalapa", "ElTajin"];
+  
+  const target = to === "CDMX" ? from : to;
+  
+  if (central.includes(target)) return "/central_valley_cinematic.png";
+  if (highlands.includes(target)) return "/oaxaca_sierra_cinematic.png";
+  if (surf.includes(target)) return "/pacific_surf_cinematic.png";
+  if (jungle.includes(target)) return "/jungle_ruins_cinematic.png";
+  if (cenote.includes(target)) return "/cenote_colonial_cinematic.png";
+  if (gulf.includes(target)) return "/gulf_mist_cinematic.png";
+  
+  return "/central_valley_cinematic.png";
+}
+
 const canonicalUrl = currentLang === 'es'
   ? 'https://www.elotromundial.mx/'
   : `https://www.elotromundial.mx/${currentLang}/`;
@@ -70,9 +380,9 @@ const canonicalUrl = currentLang === 'es'
         <Crosshair client:load color="#FFD700" />
 
         <div class="fixed inset-0 pointer-events-none z-30 overflow-hidden" id="floating-assets">
-            <img src="/peyote_topdown_opt.webp" alt="" role="presentation" class="floating-asset absolute top-1/4 -left-6 md:left-[5%] w-20 md:w-56 opacity-60 mix-blend-screen filter drop-shadow-[0_0_15px_rgba(255,0,255,0.5)] aspect-square rounded-full object-cover" data-speed="0.8" data-rotation="180" />
-            <img src="/mushroom_topdown_opt.webp" alt="" role="presentation" class="floating-asset absolute top-[50%] -right-6 md:right-[5%] w-16 md:w-48 opacity-60 mix-blend-screen filter drop-shadow-[0_0_15px_rgba(204,255,0,0.5)] aspect-square rounded-full object-cover" data-speed="1.2" data-rotation="-180" />
-            <img src="/flower_topdown_opt.webp" alt="" role="presentation" class="floating-asset absolute top-[120%] -left-4 md:left-[20%] w-20 md:w-52 opacity-60 mix-blend-screen filter drop-shadow-[0_0_15px_rgba(255,215,0,0.5)] aspect-square rounded-full object-cover" data-speed="1.5" data-rotation="90" />
+            <img src="/peyote_topdown_opt.webp" alt="" role="presentation" class="floating-asset absolute top-1/4 -left-6 md:left-[5%] w-20 md:w-56 opacity-45 mix-blend-screen filter drop-shadow-[0_0_20px_rgba(255,215,0,0.25)] aspect-square rounded-full object-cover" data-speed="0.8" data-rotation="180" />
+            <img src="/mushroom_topdown_opt.webp" alt="" role="presentation" class="floating-asset absolute top-[50%] -right-6 md:right-[5%] w-16 md:w-48 opacity-45 mix-blend-screen filter drop-shadow-[0_0_20px_rgba(251,146,60,0.25)] aspect-square rounded-full object-cover" data-speed="1.2" data-rotation="-180" />
+            <img src="/flower_topdown_opt.webp" alt="" role="presentation" class="floating-asset absolute top-[120%] -left-4 md:left-[20%] w-20 md:w-52 opacity-45 mix-blend-screen filter drop-shadow-[0_0_20px_rgba(168,85,247,0.25)] aspect-square rounded-full object-cover" data-speed="1.5" data-rotation="90" />
         </div>
 
 		<header class="fixed top-0 left-0 right-0 z-50 py-4 bg-black/40 backdrop-blur-md border-b border-white/10 transition-all duration-300">
@@ -208,6 +518,153 @@ const canonicalUrl = currentLang === 'es'
                     </div>
                 </section>
 
+                <section id="itinerary" class="relative scroll-mt-24 reveal py-12 border-t border-white/10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                        {/* Left Panel: Sticky Stats & Intro */}
+                        <div class="lg:col-span-5 lg:sticky lg:top-24 space-y-8">
+                            <div>
+                                <h2 class="font-bebas text-5xl md:text-7xl text-cine-white leading-none mb-4">
+                                    {t.itineraryTitle}
+                                </h2>
+                                <p class="font-marker neon-text-magenta text-2xl md:text-3xl transform -rotate-1 mb-6">
+                                    {t.itinerarySubtitle}
+                                </p>
+                                <p class="font-barlow text-lg md:text-xl text-cine-white/70 leading-relaxed">
+                                    {t.itineraryDesc}
+                                </p>
+                            </div>
+
+                            {/* Premium Glassmorphic Stats Grid */}
+                            <div class="cinematic-card p-6 md:p-8 space-y-6 border border-cine-gold/20 shadow-[0_0_30px_rgba(255,215,0,0.05)] rounded-2xl">
+                                <div class="grid grid-cols-3 gap-4 text-center">
+                                    <div class="space-y-1">
+                                        <div class="font-bebas text-3xl md:text-4xl text-neon-green tracking-wide">7,375</div>
+                                        <div class="font-barlow text-xs md:text-sm text-white/50 uppercase tracking-widest">{t.statDistance} (KM)</div>
+                                    </div>
+                                    <div class="space-y-1 border-x border-white/10">
+                                        <div class="font-bebas text-3xl md:text-4xl text-cine-gold tracking-wide">27</div>
+                                        <div class="font-barlow text-xs md:text-sm text-white/50 uppercase tracking-widest">{t.statStops}</div>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="font-bebas text-3xl md:text-4xl text-neon-magenta tracking-wide">~107{t.hourLabel}</div>
+                                        <div class="font-barlow text-xs md:text-sm text-white/50 uppercase tracking-widest">{t.statHours}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Panel: Interactive Vertical Timeline */}
+                        <div class="lg:col-span-7 cinematic-card p-6 md:p-10 border border-white/10 rounded-2xl shadow-2xl relative">
+                            <div class="relative pl-2">
+                                {/* Vertical Timeline Line */}
+                                <div class="absolute left-6 md:left-8 top-4 bottom-4 w-[2px] timeline-gradient-line opacity-60"></div>
+
+                                {/* First 6 Legs */}
+                                <div class="space-y-2">
+                                    {itineraryLegs.slice(0, 6).map((leg, index) => (
+                                        <div class="itinerary-leg-item relative pl-14 md:pl-20 py-5 group cursor-default transition-all duration-300 hover:bg-white/[0.02] rounded-lg" data-image={getItineraryImage(leg.from, leg.to)}>
+                                            {/* Glowing Timeline Node */}
+                                            <div class="absolute left-[20px] md:left-[28px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-cine-gold bg-black group-hover:bg-cine-gold group-hover:scale-125 transition-all duration-300 group-hover:shadow-[0_0_15px_#FFD700] z-10"></div>
+                                            
+                                            {/* Stage Indicator Badge */}
+                                            <div class="absolute left-10 md:left-14 top-1/2 -translate-y-1/2 font-bebas text-xs text-white/30 group-hover:text-cine-gold transition-colors tracking-widest">
+                                                {String(index + 1).padStart(2, '0')}
+                                            </div>
+
+                                            {/* Route Text */}
+                                            <div class="flex flex-col">
+                                                <div class="flex flex-wrap items-center">
+                                                    <span class="font-bebas text-xl md:text-2xl tracking-widest text-white group-hover:text-cine-gold transition-colors duration-300">
+                                                        {localizeCity(leg.from)}
+                                                    </span>
+                                                    <span class="text-neon-magenta mx-2 text-lg font-bold group-hover:scale-110 transition-transform">→</span>
+                                                    <span class="font-bebas text-xl md:text-2xl tracking-widest text-white group-hover:text-cine-gold transition-colors duration-300">
+                                                        {localizeCity(leg.to, leg.retorno)}
+                                                    </span>
+                                                </div>
+                                                
+                                                {/* Meta Info */}
+                                                <div class="flex items-center gap-3 mt-1.5 text-xs md:text-sm font-barlow tracking-widest text-white/50 uppercase">
+                                                    <span class="flex items-center gap-1 group-hover:text-neon-green transition-colors">
+                                                        <svg class="w-3.5 h-3.5 text-neon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                                        </svg> 
+                                                        {leg.km} KM
+                                                    </span>
+                                                    <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                                    <span class="flex items-center gap-1 group-hover:text-cine-gold transition-colors">
+                                                        <svg class="w-3.5 h-3.5 text-cine-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                        </svg> 
+                                                        {formatDuration(leg.hrs, leg.mins)}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Expandable Wrapper (remaining 21 legs) */}
+                                <div id="itinerary-extra-wrapper">
+                                    <div id="itinerary-extra-content" class="min-h-0 space-y-2">
+                                        {itineraryLegs.slice(6).map((leg, index) => (
+                                            <div class="itinerary-leg-item relative pl-14 md:pl-20 py-5 group cursor-default transition-all duration-300 hover:bg-white/[0.02] rounded-lg" data-image={getItineraryImage(leg.from, leg.to)}>
+                                                {/* Glowing Timeline Node */}
+                                                <div class="absolute left-[20px] md:left-[28px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-cine-gold bg-black group-hover:bg-cine-gold group-hover:scale-125 transition-all duration-300 group-hover:shadow-[0_0_15px_#FFD700] z-10"></div>
+                                                
+                                                {/* Stage Indicator Badge */}
+                                                <div class="absolute left-10 md:left-14 top-1/2 -translate-y-1/2 font-bebas text-xs text-white/30 group-hover:text-cine-gold transition-colors tracking-widest">
+                                                    {String(index + 7).padStart(2, '0')}
+                                                </div>
+
+                                                {/* Route Text */}
+                                                <div class="flex flex-col">
+                                                    <div class="flex flex-wrap items-center">
+                                                        <span class="font-bebas text-xl md:text-2xl tracking-widest text-white group-hover:text-cine-gold transition-colors duration-300">
+                                                            {localizeCity(leg.from)}
+                                                        </span>
+                                                        <span class="text-neon-magenta mx-2 text-lg font-bold group-hover:scale-110 transition-transform">→</span>
+                                                        <span class="font-bebas text-xl md:text-2xl tracking-widest text-white group-hover:text-cine-gold transition-colors duration-300">
+                                                            {localizeCity(leg.to, leg.retorno)}
+                                                        </span>
+                                                    </div>
+                                                    
+                                                    {/* Meta Info */}
+                                                    <div class="flex items-center gap-3 mt-1.5 text-xs md:text-sm font-barlow tracking-widest text-white/50 uppercase">
+                                                        <span class="flex items-center gap-1 group-hover:text-neon-green transition-colors">
+                                                            <svg class="w-3.5 h-3.5 text-neon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                                            </svg> 
+                                                            {leg.km} KM
+                                                        </span>
+                                                        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                                        <span class="flex items-center gap-1 group-hover:text-cine-gold transition-colors">
+                                                            <svg class="w-3.5 h-3.5 text-cine-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                            </svg> 
+                                                            {formatDuration(leg.hrs, leg.mins)}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Dynamic Toggle Button & Fading Overlay */}
+                            <div id="itinerary-bottom-bar" class="relative mt-8 text-center pt-8 border-t border-white/5">
+                                {/* Gradient fade overlay for closed state */}
+                                <div id="itinerary-fade-overlay" class="absolute bottom-full left-0 right-0 h-24 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none transition-opacity duration-500 z-20"></div>
+
+                                <button id="itinerary-toggle-btn" class="btn-ghost-epic text-xl tracking-widest relative z-30 cursor-pointer shadow-[0_0_15px_rgba(255,215,0,0.15)] select-none">
+                                    <span class="btn-toggle-label">{t.btnShowFullRoute}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <section id="join" class="space-y-16">
                     <div class="text-center max-w-3xl mx-auto reveal">
                         <h2 class="font-bebas text-6xl md:text-8xl text-cine-white mb-6">{t.section2Title} <span class="text-cine-red">{t.section2TitleRed}</span></h2>
@@ -287,6 +744,11 @@ const canonicalUrl = currentLang === 'es'
 			</div>
 		</main>
 
+        {/* Shared Floating Image Hover Preview */}
+        <div id="itinerary-preview-wrapper" class="itinerary-preview-wrapper hidden lg:block">
+            <img id="itinerary-preview-img" src="" alt="Vista previa del trayecto" />
+        </div>
+
 		<footer class="bg-black py-16 border-t border-white/10 relative z-10">
 			<div class="container mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href={currentLang === 'es' ? '/' : `/${currentLang}/`} class="hover:scale-105 transition-transform duration-300" aria-label="El Otro Mundial Home">
@@ -298,12 +760,14 @@ const canonicalUrl = currentLang === 'es'
 			</div>
 		</footer>
 
-		<script is:inline define:vars={{ contactWebhookUrl, forumWebhookUrl, supportWebhookUrl, btnTrailerAudio: t.btnTrailerAudio, btnBackWebsite: t.btnBackWebsite }}>
+		<script is:inline define:vars={{ contactWebhookUrl, forumWebhookUrl, supportWebhookUrl, btnTrailerAudio: t.btnTrailerAudio, btnBackWebsite: t.btnBackWebsite, btnShowFullRoute: t.btnShowFullRoute, btnShowLess: t.btnShowLess }}>
 			window.contactWebhookUrl = contactWebhookUrl;
 			window.forumWebhookUrl = forumWebhookUrl;
 			window.supportWebhookUrl = supportWebhookUrl;
             window.btnTrailerAudio = btnTrailerAudio;
             window.btnBackWebsite = btnBackWebsite;
+            window.btnShowFullRoute = btnShowFullRoute;
+            window.btnShowLess = btnShowLess;
 		</script>
 		<script>
 			import Lenis from "lenis";
@@ -458,6 +922,143 @@ const canonicalUrl = currentLang === 'es'
 					}
 				});
 			});
+
+            // Timeline Expander Toggler
+            const itineraryToggleBtn = document.getElementById("itinerary-toggle-btn");
+            const itineraryWrapper = document.getElementById("itinerary-extra-wrapper");
+            const itineraryFadeOverlay = document.getElementById("itinerary-fade-overlay");
+            let isItineraryExpanded = false;
+
+            if (itineraryToggleBtn && itineraryWrapper && itineraryFadeOverlay) {
+                itineraryToggleBtn.addEventListener("click", () => {
+                    isItineraryExpanded = !isItineraryExpanded;
+                    if (isItineraryExpanded) {
+                        itineraryWrapper.classList.add("expanded");
+                        itineraryFadeOverlay.classList.add("opacity-0");
+                        itineraryToggleBtn.querySelector(".btn-toggle-label").textContent = window.btnShowLess;
+                    } else {
+                        itineraryWrapper.classList.remove("expanded");
+                        itineraryFadeOverlay.classList.remove("opacity-0");
+                        itineraryToggleBtn.querySelector(".btn-toggle-label").textContent = window.btnShowFullRoute;
+
+                        // Scroll back to the itinerary section top when collapsing to prevent losing position
+                        const itinerarySection = document.getElementById("itinerary");
+                        if (itinerarySection) {
+                            if (lenis && !reducedMotion) {
+                                lenis.scrollTo(itinerarySection, { offset: -50, duration: 1.2 });
+                            } else {
+                                itinerarySection.scrollIntoView({ behavior: "smooth", block: "start" });
+                            }
+                        }
+                    }
+
+                    // Crucial: refresh ScrollTrigger so GSAP registers new document height
+                    setTimeout(() => {
+                        ScrollTrigger.refresh();
+                    }, 600); // match transition duration
+                });
+            }
+
+            // Shared Floating Image Hover Reveal Effect using GSAP quickTo
+            const hoverWrapper = document.getElementById("itinerary-preview-wrapper");
+            const hoverImg = document.getElementById("itinerary-preview-img");
+            const itineraryLegItems = document.querySelectorAll(".itinerary-leg-item");
+
+            if (hoverWrapper && hoverImg && itineraryLegItems.length > 0 && !reducedMotion) {
+                // We use xPercent: 0 and yPercent: 0 to easily bound the top-left positioning 
+                // of the card relative to viewport boundaries without centering-math bias.
+                gsap.set(hoverWrapper, { xPercent: 0, yPercent: 0, scale: 0.8, autoAlpha: 0, rotation: 0 });
+
+                const showPreview = gsap.to(hoverWrapper, {
+                    autoAlpha: 1,
+                    scale: 1,
+                    duration: 0.35,
+                    ease: "power2.out",
+                    paused: true
+                });
+
+                const xTo = gsap.quickTo(hoverWrapper, "x", { duration: 0.3, ease: "power3" });
+                const yTo = gsap.quickTo(hoverWrapper, "y", { duration: 0.3, ease: "power3" });
+                const rotateTo = gsap.quickTo(hoverWrapper, "rotation", { duration: 0.4, ease: "power3" });
+
+                let isHovering = false;
+                let lastMouseX = 0;
+
+                // Computes the perfect coordinates to keep the 320x200 hover card fully visible
+                // within the screen and positioned completely clear of the text being read.
+                const calculateCardPosition = (clientX, clientY) => {
+                    const cardWidth = 320;
+                    const cardHeight = 200;
+                    const padding = 20;
+                    const screenWidth = window.innerWidth;
+                    const screenHeight = window.innerHeight;
+
+                    // Default: offset card 40px to the right of the cursor (clean and off the text)
+                    let x = clientX + 40;
+                    // Default: offset card 20px above the cursor
+                    let y = clientY - cardHeight - 20;
+
+                    // If it would overflow the right edge, flip it to the left side
+                    if (x + cardWidth > screenWidth - padding) {
+                        x = clientX - cardWidth - 40;
+                    }
+                    // Prevent overflow on the left edge
+                    if (x < padding) {
+                        x = padding;
+                    }
+                    // If it would overflow the top edge, push it below the cursor
+                    if (y < padding) {
+                        y = clientY + 40;
+                    }
+                    // Prevent overflow on the bottom edge
+                    if (y + cardHeight > screenHeight - padding) {
+                        y = screenHeight - padding - cardHeight;
+                    }
+
+                    return { x, y };
+                };
+
+                window.addEventListener("mousemove", (e) => {
+                    if (!isHovering) return;
+                    
+                    const pos = calculateCardPosition(e.clientX, e.clientY);
+                    xTo(pos.x);
+                    yTo(pos.y);
+
+                    // Dynamic tilt calculation
+                    const deltaX = e.clientX - lastMouseX;
+                    lastMouseX = e.clientX;
+                    const rotation = Math.max(-10, Math.min(10, deltaX * 0.3));
+                    rotateTo(rotation);
+                });
+
+                itineraryLegItems.forEach((item) => {
+                    item.addEventListener("mouseenter", (e) => {
+                        const imgUrl = item.getAttribute("data-image");
+                        if (imgUrl) {
+                            hoverImg.src = imgUrl;
+                        }
+                        isHovering = true;
+
+                        const pos = calculateCardPosition(e.clientX, e.clientY);
+                        // Instantly place wrapper at precise coordinates before fading in
+                        gsap.set(hoverWrapper, {
+                            x: pos.x,
+                            y: pos.y,
+                            rotation: 0
+                        });
+                        lastMouseX = e.clientX;
+
+                        showPreview.play();
+                    });
+
+                    item.addEventListener("mouseleave", () => {
+                        isHovering = false;
+                        showPreview.reverse();
+                        rotateTo(0);
+                    });
+                });
+            }
 		</script>
         
         <script is:inline src="https://www.youtube.com/iframe_api"></script>
@@ -503,5 +1104,45 @@ const canonicalUrl = currentLang === 'es'
                 }
             });
         </script>
+        <style>
+            #itinerary-extra-wrapper {
+                display: grid;
+                grid-template-rows: 0fr;
+                transition: grid-template-rows 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease-in-out;
+                opacity: 0;
+            }
+            #itinerary-extra-wrapper.expanded {
+                grid-template-rows: 1fr;
+                opacity: 1;
+            }
+            .timeline-gradient-line {
+                background: linear-gradient(to bottom, var(--color-cine-gold), var(--color-neon-magenta), var(--color-cine-red));
+            }
+            .itinerary-preview-wrapper {
+                position: fixed;
+                width: 320px;
+                height: 200px;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                z-index: 100;
+                opacity: 0;
+                visibility: hidden;
+                border-radius: 12px;
+                overflow: hidden;
+                border: 2px solid rgba(255, 215, 0, 0.4);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.2);
+                transform-origin: center center;
+            }
+            .itinerary-preview-wrapper img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: contrast(1.1) brightness(0.9);
+            }
+            .itinerary-leg-item {
+                will-change: background-color;
+            }
+        </style>
 	</body>
 </html>
