@@ -13,9 +13,9 @@ const forumWebhookUrl = "";
 const supportWebhookUrl = "";
 
 const routeCities = [
-	{ city: "Tijuana", date: "Día 04 / Day 04", placeEn: "Border - Northern dirt pitch" },
-	{ city: "San Luis Potosí", date: "Día 15 / Day 15", placeEn: "Highland - Saucito neighborhood" },
-	{ city: "Oaxaca", date: "Día 26 / Day 26", placeEn: "Deep south - Community mountains" }
+	{ city: "Tijuana", date: "Día 04 / Day 04", placeEn: "Border - Northern dirt pitch", image: "/tijuana_pitch_1779431692954.png" },
+	{ city: "San Luis Potosí", date: "Día 15 / Day 15", placeEn: "Highland - Saucito neighborhood", image: "/slp_saucito_1779431706642.png" },
+	{ city: "Oaxaca", date: "Día 26 / Day 26", placeEn: "Deep south - Community mountains", image: "/oaxaca_mountains_1779431720711.png" }
 ];
 ---
 <html lang="es" class="scroll-smooth bg-cine-dark">
@@ -71,7 +71,7 @@ const routeCities = [
             </nav>
 		</header>
 
-		<main class="relative z-10">
+		<main class="relative">
 			<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden border-b border-white/20 pb-24">
 				
                 <div class="absolute inset-0 w-full h-full pointer-events-none z-0 bg-black">
@@ -80,9 +80,9 @@ const routeCities = [
                     <div class="absolute inset-0 bg-gradient-to-t from-cine-dark via-transparent to-cine-dark/80 cinematic-vignette"></div>
 				</div>
 				
-                <button id="toggle-experience-btn" class="absolute bottom-12 right-12 z-50 btn-ghost-epic text-sm px-6 py-2 flex items-center gap-2 bg-black/50 backdrop-blur-md">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                    <span class="btn-text">Watch Trailer with Audio</span>
+                <button id="toggle-experience-btn" class="absolute bottom-4 right-4 md:bottom-12 md:right-12 z-[60] border-2 border-cine-gold text-cine-gold hover:bg-cine-gold hover:text-black hover:shadow-[0_0_20px_rgba(255,215,0,0.6)] transition-all flex items-center justify-center gap-2 bg-black/80 backdrop-blur-md rounded-full md:rounded-none w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-2">
+                    <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                    <span class="btn-text hidden md:block font-bebas text-xl tracking-widest uppercase mt-1">Watch Trailer with Audio</span>
                 </button>
 
 				<article id="hero-content" class="relative z-10 flex flex-col items-center text-center w-full px-4 pt-10 transition-opacity duration-1000 ease-in-out">
@@ -105,16 +105,16 @@ const routeCities = [
 					<div class="hero-actions flex flex-col items-center gap-2 mt-4">
                         <p class="font-bebas text-xl md:text-2xl tracking-widest text-white">WORLD Cup 2026 CULTURAL CARAVAN</p>
                         <p class="font-bebas text-3xl md:text-5xl text-cine-gold drop-shadow-md">FROM ONLY $3,500 USD</p>
-                        <div class="flex flex-wrap justify-center gap-4 mt-3">
-                            <a class="btn-epic text-sm md:text-base py-2 px-6" href="#support">FUND THE JOURNEY</a>
-                            <a class="btn-ghost-epic text-sm md:text-base py-2 px-6" href="#caravan">DISCOVER THE ROUTE</a>
+                        <div class="flex flex-col sm:flex-row w-full max-w-[280px] sm:max-w-none justify-center gap-4 mt-3">
+                            <a class="btn-epic !py-3 !px-4 !text-xl md:!text-2xl w-full sm:w-auto" href="#support">FUND THE JOURNEY</a>
+                            <a class="btn-ghost-epic !py-3 !px-4 !text-xl md:!text-2xl w-full sm:w-auto" href="#caravan">DISCOVER THE ROUTE</a>
                         </div>
                         
                         <div class="mt-4 flex flex-col items-center w-full">
                             <Countdown targetDate="2026-06-30T00:00:00Z" client:load />
-                            <a href="#kickstarter" class="group relative inline-flex items-center justify-center font-bebas text-3xl md:text-4xl tracking-widest px-6 py-3 transition-all duration-300 hover:scale-105 mt-2">
+                            <a href="#kickstarter" class="group relative inline-flex items-center justify-center font-bebas text-2xl md:text-4xl tracking-widest px-4 md:px-6 py-3 transition-all duration-300 hover:scale-105 mt-2 w-full max-w-[280px] md:max-w-none">
                                 <span class="absolute inset-0 bg-transparent border-2 border-[#FF00FF] rounded-none mix-blend-screen opacity-80 group-hover:opacity-100 group-hover:shadow-[0_0_20px_rgba(255,0,255,0.6)]"></span>
-                                <span class="relative z-10 flex gap-2">
+                                <span class="relative z-10 flex flex-wrap justify-center gap-x-2 gap-y-0 items-center text-center">
                                     <span class="text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]">RESERVE</span>
                                     <span class="text-[#FF00FF] drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]">ON KICKSTARTER</span>
                                 </span>
@@ -123,18 +123,13 @@ const routeCities = [
 					</div>
 				</article>
 
-                <div class="absolute bottom-12 left-12 z-40 hidden lg:block opacity-60 mix-blend-screen pointer-events-auto">
+                <div class="absolute bottom-12 left-12 z-40 hidden lg:block pointer-events-auto">
                     <CircularText client:load text="EL*OTRO*MUNDIAL*CARAVANA*" onHover="goBonkers" spinDuration={20} />
                 </div>
 			</section>
 
             <div class="w-full py-8 overflow-hidden border-y border-white/10 z-20 relative pointer-events-none mix-blend-difference">
-                <ScrollVelocity 
-                    client:load 
-                    texts={['FOOTBALL • CULTURE • HIGHWAY • COMMUNITY •']} 
-                    velocity={50} 
-                    className="font-bebas text-5xl md:text-7xl text-white tracking-widest px-4" 
-                />
+                <ScrollVelocity texts={['FOOTBALL • CULTURE • HIGHWAY • COMMUNITY •']} velocity={100} className="font-bebas text-6xl md:text-9xl text-white tracking-widest" client:load />
             </div>
 
 			<div class="container mx-auto px-4 lg:px-12 py-20 md:py-32 space-y-32">
@@ -173,11 +168,17 @@ const routeCities = [
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {routeCities.map((route, i) => (
-                            <article class="cinematic-card p-8 flex flex-col gap-4 reveal floating-card">
-                                <h3 class="font-bebas text-4xl text-cine-gold">{route.city}</h3>
-                                <div class="font-bebas text-xl tracking-widest text-cine-white/60">{route.date}</div>
-                                <p class="font-barlow text-lg text-cine-white/80 uppercase">{route.placeEn}</p>
-                                <button class="btn-ghost-epic text-xl mt-auto w-full forum-cta" data-city={route.city} type="button">ATTEND FORUM</button>
+                            <article class="cinematic-card z-20 flex flex-col reveal floating-card overflow-hidden relative group min-h-[350px]">
+                                <div class="absolute inset-0 z-0 opacity-40 group-hover:opacity-70 transition-opacity duration-500">
+                                    <img src={route.image} alt={route.city} class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 scale-100 group-hover:scale-110" />
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+                                <div class="relative z-20 flex flex-col h-full gap-4 p-8">
+                                    <h3 class="font-bebas text-4xl text-cine-gold drop-shadow-md">{route.city}</h3>
+                                    <div class="font-bebas text-xl tracking-widest text-cine-white/80">{route.date}</div>
+                                    <p class="font-barlow text-lg text-cine-white/90 uppercase">{route.placeEn}</p>
+                                    <button class="btn-ghost-epic text-xl mt-auto w-full forum-cta bg-black/50 backdrop-blur-sm" data-city={route.city} type="button">ATTEND FORUM</button>
+                                </div>
                             </article>
                         ))}
                     </div>
