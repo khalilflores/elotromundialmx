@@ -26,24 +26,24 @@ export default function Countdown({ targetDate }) {
   }, [targetDate]);
 
   return (
-    <div className="flex flex-col items-center justify-center mt-6 mb-8 p-6 border border-[#FF00FF]/30 bg-black/40 backdrop-blur-md rounded-lg">
-      <div className="font-barlow text-lg tracking-[0.2em] text-[#FF00FF] uppercase mb-4 text-center">
+    <div className="flex flex-col items-center justify-center mt-2 mb-4 p-4 border border-[#FF00FF]/30 bg-black/40 backdrop-blur-md rounded-lg">
+      <div className="font-barlow text-sm tracking-[0.2em] text-[#FF00FF] uppercase mb-2 text-center">
         Days left to back the project
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         <Counter
           value={timeLeft}
           places={[10, 1]}
-          fontSize={72}
+          fontSize={48}
           padding={0}
-          gap={4}
+          gap={2}
           textColor="#FFD700"
           fontWeight={900}
           gradientFrom="rgba(0,0,0,0.8)"
           gradientTo="rgba(0,0,0,0)"
-          gradientHeight={12}
+          gradientHeight={8}
         />
-        <span className="font-bebas text-5xl text-white/50 tracking-widest mt-2">DAYS</span>
+        <span className="font-bebas text-3xl md:text-4xl text-white/50 tracking-widest mt-1">DAYS</span>
       </div>
     </div>
   );
