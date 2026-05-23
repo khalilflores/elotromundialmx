@@ -70,7 +70,10 @@ export const translations = {
     statStops: "Etapas",
     statHours: "Tiempo Total",
     btnShowFullRoute: "DESCUBRE LA RUTA COMPLETA",
-    btnShowLess: "VER MENOS"
+    btnShowLess: "VER MENOS",
+    introWarning: "Esta experiencia contiene video con sonido de fondo.",
+    introEnter: "ENTRAR A LA EXPERIENCIA",
+    btnMuteVideo: "Silenciar Video"
   },
   en: {
     seoTitle: "El Otro Mundial | The Real Mexico Begins Beyond the Stadiums",
@@ -143,7 +146,10 @@ export const translations = {
     statStops: "Legs",
     statHours: "Total Hours",
     btnShowFullRoute: "DISCOVER THE FULL ROUTE",
-    btnShowLess: "SHOW LESS"
+    btnShowLess: "SHOW LESS",
+    introWarning: "This experience contains background video with sound.",
+    introEnter: "ENTER EXPERIENCE",
+    btnMuteVideo: "Mute Video"
   },
   fr: {
     seoTitle: "El Otro Mundial | Le vrai Mexique commence au-delà des stades",
@@ -216,7 +222,10 @@ export const translations = {
     statStops: "Étapes",
     statHours: "Temps Total",
     btnShowFullRoute: "DÉCOUVRIR L'ITINÉRAIRE COMPLET",
-    btnShowLess: "VOIR MOINS"
+    btnShowLess: "VOIR MOINS",
+    introWarning: "Cette expérience contient une vidéo d'arrière-plan avec du son.",
+    introEnter: "ENTRER DANS L'EXPÉRIENCE",
+    btnMuteVideo: "Couper le son"
   },
   it: {
     seoTitle: "El Otro Mundial | Il vero Messico inizia oltre gli stadi",
@@ -289,7 +298,10 @@ export const translations = {
     statStops: "Tappe",
     statHours: "Tempo Totale",
     btnShowFullRoute: "SCOPRI IL PERCORSO COMPLETO",
-    btnShowLess: "MOSTRA MENO"
+    btnShowLess: "MOSTRA MENO",
+    introWarning: "Questa esperienza contiene video in background con audio.",
+    introEnter: "ENTRA NELL'ESPERIENZA",
+    btnMuteVideo: "Silenzia Video"
   },
   de: {
     seoTitle: "El Otro Mundial | Das wahre Mexiko beginnt jenseits der Stadien",
@@ -362,7 +374,10 @@ export const translations = {
     statStops: "Etappen",
     statHours: "Gesamtdauer",
     btnShowFullRoute: "DIE KOMPLETTE ROUTE ENTDECKEN",
-    btnShowLess: "WENIGER ANZEIGEN"
+    btnShowLess: "WENIGER ANZEIGEN",
+    introWarning: "Dieses Erlebnis enthält ein Hintergrundvideo mit Ton.",
+    introEnter: "ERLEBNIS STARTEN",
+    btnMuteVideo: "Video stummschalten"
   },
   ko: {
     seoTitle: "엘 오트로 문디알 | 경기장 너머에서 진짜 멕시코가 시작됩니다",
@@ -435,7 +450,10 @@ export const translations = {
     statStops: "총 구간",
     statHours: "총 이동 시간",
     btnShowFullRoute: "전체 경로 확인하기",
-    btnShowLess: "접기"
+    btnShowLess: "접기",
+    introWarning: "본 체험은 사운드가 포함된 백그라운드 비디오를 포함하고 있습니다.",
+    introEnter: "체험 시작하기",
+    btnMuteVideo: "동영상 음소거"
   },
   ru: {
     seoTitle: "El Otro Mundial | Настоящая Мексика начинается за пределами стадионов",
@@ -508,6 +526,9 @@ export const translations = {
     statStops: "Этапов",
     statHours: "Общее время",
     btnShowFullRoute: "ОТКРЫТЬ ПОЛНЫЙ МАРШРУТ",
-    btnShowLess: "СВЕРНУТЬ"
+    btnShowLess: "СВЕРНУТЬ",
+    introWarning: "Этот интерфейс содержит фоновое видео со звуком.",
+    introEnter: "ВОЙТИ В ИНТЕРФЕЙС",
+    btnMuteVideo: "Выключить звук"
   }
 };
