@@ -338,14 +338,14 @@ function getItineraryImage(from, to) {
   
   const target = to === "CDMX" ? from : to;
   
-  if (central.includes(target)) return "/central_valley_cinematic.png";
-  if (highlands.includes(target)) return "/oaxaca_sierra_cinematic.png";
-  if (surf.includes(target)) return "/pacific_surf_cinematic.png";
-  if (jungle.includes(target)) return "/jungle_ruins_cinematic.png";
-  if (cenote.includes(target)) return "/cenote_colonial_cinematic.png";
-  if (gulf.includes(target)) return "/gulf_mist_cinematic.png";
+  if (central.includes(target)) return "/central_valley_cinematic.webp";
+  if (highlands.includes(target)) return "/oaxaca_sierra_cinematic.webp";
+  if (surf.includes(target)) return "/pacific_surf_cinematic.webp";
+  if (jungle.includes(target)) return "/jungle_ruins_cinematic.webp";
+  if (cenote.includes(target)) return "/cenote_colonial_cinematic.webp";
+  if (gulf.includes(target)) return "/gulf_mist_cinematic.webp";
   
-  return "/central_valley_cinematic.png";
+  return "/central_valley_cinematic.webp";
 }
 
 const canonicalUrl = currentLang === 'es'
@@ -385,7 +385,7 @@ const canonicalUrl = currentLang === 'es'
                 <!-- Circular Logo with high-end premium pulsing glow -->
                 <div class="logo-pulse mb-8 relative">
                     <div class="absolute inset-0 rounded-full bg-cine-gold/20 filter blur-xl animate-pulse"></div>
-                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-32 w-32 md:h-44 md:w-44 opacity-95 relative z-10 drop-shadow-[0_0_30px_rgba(255,215,0,0.4)]" width="176" height="176" />
+                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-32 w-32 md:h-44 md:w-44 opacity-95 relative z-10 drop-shadow-[0_0_30px_rgba(255,215,0,0.4)]" width="176" height="176" loading="eager" decoding="async" />
                 </div>
 
                 <!-- Localized Warning Text -->
@@ -431,7 +431,7 @@ const canonicalUrl = currentLang === 'es'
 		<header class="fixed top-0 left-0 right-0 z-50 py-4 bg-black/40 backdrop-blur-md border-b border-white/10 transition-all duration-300">
 			<div class="container mx-auto px-4 lg:px-12 flex justify-between items-center gap-4 relative z-50">
 				<a href={currentLang === 'es' ? '/' : `/${currentLang}/`} class="brand block hover:scale-105 transition-transform duration-300" aria-label="El Otro Mundial Home">
-                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-12 w-auto opacity-90 drop-shadow-md" width="48" height="48" />
+                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-12 w-auto opacity-90 drop-shadow-md" width="48" height="48" loading="eager" decoding="async" />
                 </a>
 				<nav class="hidden md:flex items-center gap-8 text-xl font-bebas tracking-widest uppercase">
 					<a href="#caravan" class="hover:text-cine-gold transition-colors text-shadow-sm">{t.navCaravan}</a>
@@ -719,7 +719,7 @@ const canonicalUrl = currentLang === 'es'
                         {routeCities.map((route, i) => (
                             <article class="cinematic-card z-20 flex flex-col reveal floating-card overflow-hidden relative group min-h-[350px]">
                                 <div class="absolute inset-0 z-0 opacity-40 group-hover:opacity-70 transition-opacity duration-500">
-                                    <img src={route.image} alt={route.city} class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 scale-100 group-hover:scale-110" />
+                                    <img src={route.image} alt={route.city} class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 scale-100 group-hover:scale-110" loading="lazy" decoding="async" />
                                 </div>
                                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
                                 <div class="relative z-20 flex flex-col h-full gap-4 p-8">
@@ -789,13 +789,13 @@ const canonicalUrl = currentLang === 'es'
 
         {/* Shared Floating Image Hover Preview */}
         <div id="itinerary-preview-wrapper" class="itinerary-preview-wrapper hidden lg:block">
-            <img id="itinerary-preview-img" src="" alt="Vista previa del trayecto" />
+            <img id="itinerary-preview-img" src="" alt="Vista previa del trayecto" loading="lazy" decoding="async" />
         </div>
 
 		<footer class="bg-black py-16 border-t border-white/10 relative z-10">
 			<div class="container mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href={currentLang === 'es' ? '/' : `/${currentLang}/`} class="hover:scale-105 transition-transform duration-300" aria-label="El Otro Mundial Home">
-                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-16 w-auto opacity-80" width="64" height="64" />
+                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-16 w-auto opacity-80" width="64" height="64" loading="lazy" decoding="async" />
                 </a>
                 <div class="font-barlow uppercase tracking-[0.3em] text-sm text-cine-white/40 text-center md:text-right">
                     {t.footerText}<br/>{t.footerCountry}
