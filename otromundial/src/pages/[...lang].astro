@@ -378,6 +378,11 @@ const canonicalUrl = currentLang === 'es'
 		
         <!-- Cinematic Intro Screen Overlay -->
         <div id="intro-screen" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black backdrop-blur-xl transition-opacity duration-1000 ease-out select-none">
+            <script is:inline>
+                if (sessionStorage.getItem("entered_experience") === "true") {
+                    document.getElementById("intro-screen").style.display = "none";
+                }
+            </script>
             <div class="absolute inset-0 bg-radial-gradient from-transparent to-black/90 pointer-events-none"></div>
             
             <div id="intro-content" class="relative z-10 flex flex-col items-center max-w-md px-6 text-center">
@@ -872,7 +877,9 @@ const canonicalUrl = currentLang === 'es'
             const introScreen = document.getElementById("intro-screen");
             const startBtn = document.getElementById("start-experience-btn");
 
-            if (introScreen && startBtn) {
+            if (sessionStorage.getItem("entered_experience") === "true") {
+                tl.play();
+            } else if (introScreen && startBtn) {
                 startBtn.addEventListener("click", () => {
                     // Smoothly fade out the welcome screen overlay
                     gsap.to(introScreen, {
@@ -885,6 +892,9 @@ const canonicalUrl = currentLang === 'es'
                             tl.play();
                         }
                     });
+
+                    // Persist that user entered the experience
+                    sessionStorage.setItem("entered_experience", "true");
 
                     // Safely unmute, set volume to 100, and play the YouTube video!
                     if (window.ytPlayer) {
@@ -1147,6 +1157,13 @@ const canonicalUrl = currentLang === 'es'
                     events: {
                         'onReady': function(event) {
                             console.log("YouTube API Ready");
+                            if (sessionStorage.getItem("entered_experience") === "true") {
+                                if (event.target && typeof event.target.unMute === 'function') {
+                                    event.target.unMute();
+                                    event.target.setVolume(100);
+                                    event.target.playVideo();
+                                }
+                            }
                         }
                     }
                 });
