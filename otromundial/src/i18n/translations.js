@@ -1,6 +1,6 @@
 export const translations = {
   es: {
-    seoTitle: "El Otro Mundial | El verdadero México comienza más allá de los estadios",
+    seoTitle: "El Otro Mundial | El verdadero México más allá de los estadios",
     seoDesc: "55 días por México. Fútbol, Cultura, Carretera, Comunidad. La Caravana Cultural del Mundial 2026.",
     navCaravan: "La Caravana",
     navJoin: "Únete",
@@ -381,7 +381,7 @@ export const translations = {
   },
   ko: {
     seoTitle: "엘 오트로 문디알 | 경기장 너머에서 진짜 멕시코가 시작됩니다",
-    seoDesc: "멕시코 횡단 55일. 축구, 문화, 도로, 공동체. 2026 월드컵 문화 카라반.",
+    seoDesc: "멕시코를 횡단하는 55일간의 놀라운 여정. 축구, 문화, 도로, 그리고 지역 공동체를 모두 아우르는 2026 월드컵 문화 카라반 다큐멘터리 프로젝트.",
     navCaravan: "카라반 소개",
     navJoin: "참여하기",
     navSupport: "후원하기",
@@ -456,7 +456,7 @@ export const translations = {
     btnMuteVideo: "동영상 음소거"
   },
   ru: {
-    seoTitle: "El Otro Mundial | Настоящая Мексика начинается за пределами стадионов",
+    seoTitle: "El Otro Mundial | Настоящая Мексика за пределами стадионов",
     seoDesc: "55 дней по всей Мексике. Футбол, культура, дороги, общины. Культурный караван Чемпионата мира 2026.",
     navCaravan: "Караван",
     navJoin: "Присоединиться",
