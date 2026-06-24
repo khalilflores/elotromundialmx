@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bebas+Neue&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bebas+Neue&family=Permanent+Marker&family=Oswald:wght@400;700&family=Caveat:wght@700&family=Do+Hyeon&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -58,3 +58,25 @@
     @apply bg-black/60 border border-white/20 text-cine-white font-barlow text-lg p-4 w-full focus:outline-none focus:border-cine-gold focus:ring-1 focus:ring-cine-gold transition-colors placeholder-white/40;
   }
 }
+
+/* Localized typography overrides for Russian (ru) and Korean (ko) */
+html[lang="ru"] {
+  --font-bebas: 'Oswald', 'Bebas Neue', sans-serif;
+  --font-marker: 'Caveat', 'Permanent Marker', cursive;
+  font-size: 88%; /* Scales down all rem-based typography to fit longer Cyrillic text */
+}
+
+html[lang="ko"] {
+  --font-bebas: 'Do Hyeon', 'Bebas Neue', sans-serif;
+  --font-marker: 'Nanum Pen Script', 'Permanent Marker', cursive;
+  --font-barlow: 'Noto Sans KR', sans-serif;
+  font-size: 90%; /* Scales down Korean text size for a balanced look */
+}
+
+/* Localized letter spacing overrides for Korean (ko) */
+html[lang="ko"] .font-bebas,
+html[lang="ko"] .tracking-widest,
+html[lang="ko"] .tracking-wider {
+  letter-spacing: normal !important;
+}
+
