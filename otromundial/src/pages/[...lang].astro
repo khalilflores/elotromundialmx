@@ -394,7 +394,8 @@ function getItineraryImage(from, to) {
   const jungle = ["Juchitan", "SanCristobal", "Palenque", "Xilitla"];
   const cenote = ["Merida", "Campeche", "Guanajuato", "Morelia", "Patzcuaro", "Uruapan"];
   const gulf = ["Xalapa", "ElTajin", "Catemaco"];
-  const desert = ["Saltillo", "GomezPalacio", "Durango"];
+  const desert = ["Saltillo", "GomezPalacio"];
+  const western = ["Durango"];
   const catorce = ["RealCatorce"];
   
   const target = to === "CDMX" ? from : to;
@@ -406,6 +407,7 @@ function getItineraryImage(from, to) {
   if (cenote.includes(target)) return "/cenote_colonial_cinematic.webp";
   if (gulf.includes(target)) return "/gulf_mist_cinematic.webp";
   if (desert.includes(target)) return "/cuatro_cienegas_cinematic.webp";
+  if (western.includes(target)) return "/durango_western_cinematic.webp";
   if (catorce.includes(target)) return "/cerro_del_quemado_cinematic.webp";
   
   return "/central_valley_cinematic.webp";
