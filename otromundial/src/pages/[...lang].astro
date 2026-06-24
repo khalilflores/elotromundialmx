@@ -852,6 +852,24 @@ const canonicalUrl = currentLang === 'es'
                     <p class="font-barlow text-2xl text-cine-white/80 uppercase tracking-widest mb-10">{t.section3Desc}</p>
                     <p class="font-bebas text-5xl text-cine-white mb-10">{t.section3Price} <span class="text-cine-gold">$3,500 USD</span></p>
                     
+                    <div class="mb-10 p-6 bg-cine-dark/60 border border-cine-gold/20 rounded-xl text-left max-w-3xl mx-auto space-y-4">
+                        <h4 class="font-bebas text-2xl text-cine-gold tracking-wide flex items-center gap-2">
+                            <svg class="w-5 h-5 text-cine-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            {t.escrowGuaranteeTitle}
+                        </h4>
+                        <p class="font-barlow text-sm text-white/80 leading-relaxed">
+                            {t.escrowGuaranteeDesc1}
+                        </p>
+                        <p class="font-barlow text-xs text-white/60 leading-relaxed border-t border-white/10 pt-3">
+                            {t.escrowGuaranteeDesc2}
+                        </p>
+                        <div class="text-center pt-2">
+                            <a href={currentLang === 'es' ? '/escrow' : `/${currentLang}/escrow`} class="text-xs font-bebas text-neon-green hover:underline tracking-wider uppercase">
+                                {t.btnReadMoreEscrow} &rarr;
+                            </a>
+                        </div>
+                    </div>
+
                     <form id="support-web-form" class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left" method="post" action={supportWebhookUrl || "/"}>
                         <div class="space-y-2">
                             <label class="font-bebas text-xl tracking-wide">{t.formContact}</label>
@@ -882,11 +900,18 @@ const canonicalUrl = currentLang === 'es'
             <img id="itinerary-preview-img" src="" alt="Vista previa del trayecto" loading="lazy" decoding="async" />
         </div>
 
-		<footer class="bg-black py-16 border-t border-white/10 relative z-10">
+		<footer class="bg-black py-16 border-t border-white/10 relative z-10 font-barlow">
 			<div class="container mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href={currentLang === 'es' ? '/' : `/${currentLang}/`} class="hover:scale-105 transition-transform duration-300" aria-label="El Otro Mundial Home">
                     <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-16 w-auto opacity-80" width="64" height="64" loading="lazy" decoding="async" />
                 </a>
+                
+                <div class="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-wider text-white/50">
+                    <a href={currentLang === 'es' ? '/escrow' : `/${currentLang}/escrow`} class="hover:text-cine-gold transition-colors duration-200">{t.navEscrowInfo}</a>
+                    <a href={currentLang === 'es' ? '/terms' : `/${currentLang}/terms`} class="hover:text-cine-gold transition-colors duration-200">{t.navTerms}</a>
+                    <a href={currentLang === 'es' ? '/privacy' : `/${currentLang}/privacy`} class="hover:text-cine-gold transition-colors duration-200">{t.navPrivacy}</a>
+                </div>
+
                 <div class="font-barlow uppercase tracking-[0.3em] text-sm text-cine-white/40 text-center md:text-right">
                     {t.footerText}<br/>{t.footerCountry}
                 </div>

@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import { translations } from '../i18n/translations.js';
+
+const currentLang = 'es';
+const t = translations[currentLang];
+const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
+---
+<html lang={currentLang} class="scroll-smooth bg-cine-dark">
+	<head>
+		<meta charset="utf-8" />
+		<link class="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{t.navPrivacy} | El Otro Mundial</title>
+	</head>
+	<body class="antialiased min-h-screen flex flex-col text-cine-white cinematic-vignette relative overflow-x-hidden">
+		
+		<header class="fixed top-0 left-0 right-0 z-50 py-4 bg-black/40 backdrop-blur-md border-b border-white/10">
+			<div class="container mx-auto px-4 lg:px-12 flex justify-between items-center gap-4">
+				<a href="/" class="brand block hover:scale-105 transition-transform duration-300" aria-label="El Otro Mundial Home">
+                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-12 w-auto opacity-90 drop-shadow-md" width="48" height="48" loading="eager" />
+                </a>
+				<nav class="flex items-center gap-8 text-xl font-bebas tracking-widest uppercase">
+					<a href="/" class="hover:text-cine-gold transition-colors">INICIO</a>
+                    
+                    {/* Glassmorphic Language Selector */}
+                    <div class="relative group ml-4">
+                        <button class="flex items-center gap-2 border border-white/20 hover:border-cine-gold bg-black/40 backdrop-blur-md px-3 py-1.5 font-bebas text-lg tracking-wider text-white hover:text-cine-gold transition-all duration-300 rounded cursor-pointer uppercase">
+                            <span>{currentLang}</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-28 bg-black/95 backdrop-blur-xl border border-white/10 rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-1 shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+                            {locales.map(loc => (
+                                <a href={loc === 'es' ? '/privacy' : `/${loc}/privacy`} class={`block px-4 py-2 font-bebas text-lg tracking-widest text-left transition-colors ${loc === currentLang ? 'text-cine-gold bg-white/5' : 'text-white/80 hover:text-cine-gold hover:bg-white/5'}`}>
+                                    {loc.toUpperCase()}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+				</nav>
+			</div>
+		</header>
+
+		<main class="relative pt-32 pb-24 flex-grow">
+			<div class="container mx-auto px-6 max-w-4xl space-y-12">
+				<div class="text-center space-y-4">
+					<h1 class="font-bebas text-5xl md:text-7xl text-cine-gold tracking-wide uppercase">{t.navPrivacy}</h1>
+					<div class="h-1 w-24 bg-cine-gold mx-auto"></div>
+				</div>
+
+				<div class="cinematic-card p-8 md:p-12 space-y-8 font-barlow text-white/90 leading-relaxed border border-white/10 rounded-2xl bg-black/30 backdrop-blur-md">
+                    <div class="space-y-6">
+                        <section class="space-y-3">
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">1. Información que Recopilamos</h2>
+                            <p>Recopilamos únicamente los datos necesarios para gestionar tu suscripción al diario y coordinar tu reserva de viaje. Esto incluye: nombre, número de WhatsApp/Signal, correo electrónico y la opción de apoyo de tu interés.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">2. Uso de la Información</h2>
+                            <p>Utilizamos tus datos para enviararte las actualizaciones en tiempo real de la caravana, confirmar asistencias a foros locales y enviarte la información necesaria para los pagos por Escrow.com.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">3. Seguridad y Proveedores Externos</h2>
+                            <p>No vendemos, alquilamos ni compartimos tus datos de contacto con anunciantes. Para procesar tu pago de forma 100% segura, tu correo y detalles de transacción son compartidos con Escrow.com bajo sus estrictos estándares de seguridad financiera internacional.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">4. Tus Derechos de Acceso y Baja</h2>
+                            <p>Puedes darte de baja del diario de viaje en cualquier momento enviándonos un correo o respondiendo "Baja" en WhatsApp/Signal. Eliminaremos tus datos de contacto de inmediato.</p>
+                        </section>
+                    </div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="bg-black py-16 border-t border-white/10 relative z-10 font-barlow">
+			<div class="container mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+                <a href="/" class="hover:scale-105 transition-transform duration-300">
+                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-16 w-auto opacity-80" width="64" height="64" />
+                </a>
+                <div class="font-barlow uppercase tracking-[0.3em] text-sm text-cine-white/40 text-center md:text-right">
+                    {t.footerText}<br/>{t.footerCountry}
+                </div>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,93 @@
+---
+import '../styles/global.css';
+import { translations } from '../i18n/translations.js';
+
+const currentLang = 'es';
+const t = translations[currentLang];
+const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
+---
+<html lang={currentLang} class="scroll-smooth bg-cine-dark">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{t.navTerms} | El Otro Mundial</title>
+	</head>
+	<body class="antialiased min-h-screen flex flex-col text-cine-white cinematic-vignette relative overflow-x-hidden">
+		
+		<header class="fixed top-0 left-0 right-0 z-50 py-4 bg-black/40 backdrop-blur-md border-b border-white/10">
+			<div class="container mx-auto px-4 lg:px-12 flex justify-between items-center gap-4">
+				<a href="/" class="brand block hover:scale-105 transition-transform duration-300" aria-label="El Otro Mundial Home">
+                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-12 w-auto opacity-90 drop-shadow-md" width="48" height="48" loading="eager" />
+                </a>
+				<nav class="flex items-center gap-8 text-xl font-bebas tracking-widest uppercase">
+					<a href="/" class="hover:text-cine-gold transition-colors">INICIO</a>
+                    
+                    {/* Glassmorphic Language Selector */}
+                    <div class="relative group ml-4">
+                        <button class="flex items-center gap-2 border border-white/20 hover:border-cine-gold bg-black/40 backdrop-blur-md px-3 py-1.5 font-bebas text-lg tracking-wider text-white hover:text-cine-gold transition-all duration-300 rounded cursor-pointer uppercase">
+                            <span>{currentLang}</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-28 bg-black/95 backdrop-blur-xl border border-white/10 rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-1 shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+                            {locales.map(loc => (
+                                <a href={loc === 'es' ? '/terms' : `/${loc}/terms`} class={`block px-4 py-2 font-bebas text-lg tracking-widest text-left transition-colors ${loc === currentLang ? 'text-cine-gold bg-white/5' : 'text-white/80 hover:text-cine-gold hover:bg-white/5'}`}>
+                                    {loc.toUpperCase()}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+				</nav>
+			</div>
+		</header>
+
+		<main class="relative pt-32 pb-24 flex-grow">
+			<div class="container mx-auto px-6 max-w-4xl space-y-12">
+				<div class="text-center space-y-4">
+					<h1 class="font-bebas text-5xl md:text-7xl text-cine-gold tracking-wide uppercase">{t.navTerms}</h1>
+					<div class="h-1 w-24 bg-cine-gold mx-auto"></div>
+				</div>
+
+				<div class="cinematic-card p-8 md:p-12 space-y-8 font-barlow text-white/90 leading-relaxed border border-white/10 rounded-2xl bg-black/30 backdrop-blur-md">
+                    <div class="space-y-6">
+                        <section class="space-y-3">
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">1. Introducción y Reservaciones</h2>
+                            <p>Al reservar tu lugar en cualquiera de los tramos de la caravana de El Otro Mundial, aceptas cumplir con los presentes Términos y Condiciones. El acceso al viaje está sujeto a la disponibilidad de lugares y a la confirmación del pago a través del sistema seguro de fideicomiso.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">2. Sistema de Garantía Fideicomiso (Escrow)</h2>
+                            <p>Para proteger tu participación y asegurar la seriedad del proyecto, tu dinero se deposita en una cuenta de fideicomiso administrada por Escrow.com. Los fondos se liberarán en etapas verificables:</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>Hito 1 (Compra de vehículos):</strong> Liberación del primer porcentaje al confirmar la adquisición de las camionetas oficiales de transporte.</li>
+                                <li><strong>Hito 2 (Puesta a punto / Fine-Tuning):</strong> Liberación del segundo porcentaje al completarse la preparación mecánica y técnica de los vehículos.</li>
+                                <li><strong>Hito 3 (El 70% Final):</strong> Se libera únicamente cuando conozcas en persona al equipo de carretera, realices la inspección física de los vehículos y confirmes que todo está listo para la salida.</li>
+                            </ul>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">3. Cancelación y Reembolsos</h2>
+                            <p>Si decides cancelar tu participación antes de que se cumplan las etapas de liberación de fondos, los reembolsos se procesarán de acuerdo con las políticas establecidas en Escrow.com, menos las comisiones operativas de la plataforma que correspondan.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">4. Responsabilidad y Código de Conducta</h2>
+                            <p>La caravana es un recorrido independiente y comunitario. Los participantes deben seguir las normas de seguridad vial del equipo organizador y mostrar respeto mutuo hacia los demás viajeros y hacia las comunidades que visitamos a lo largo de la ruta por México.</p>
+                        </section>
+                    </div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="bg-black py-16 border-t border-white/10 relative z-10 font-barlow">
+			<div class="container mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+                <a href="/" class="hover:scale-105 transition-transform duration-300">
+                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-16 w-auto opacity-80" width="64" height="64" />
+                </a>
+                <div class="font-barlow uppercase tracking-[0.3em] text-sm text-cine-white/40 text-center md:text-right">
+                    {t.footerText}<br/>{t.footerCountry}
+                </div>
+			</div>
+		</footer>
+	</body>
+</html>

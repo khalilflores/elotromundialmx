@@ -101,7 +101,14 @@ export const translations = {
     btnShowLess: "VER MENOS",
     introWarning: "Esta experiencia contiene video con sonido de fondo.",
     introEnter: "ENTRAR A LA EXPERIENCIA",
-    btnMuteVideo: "Silenciar Video"
+    btnMuteVideo: "Silenciar Video",
+    navEscrowInfo: "Garantía Escrow",
+    navTerms: "Términos y Condiciones",
+    navPrivacy: "Política de Privacidad",
+    escrowGuaranteeTitle: "Tu participación está garantizada mediante escrow.",
+    escrowGuaranteeDesc1: "Los fondos no se entregan de una sola vez, sino que se liberan conforme se cumplen etapas verificables del proyecto: primero la compra de las camionetas, después su puesta a punto (fine tuning) y preparación, y el 70% final únicamente cuando conozcas personalmente al equipo, inspecciones los vehículos y confirmes que todo está listo para partir.",
+    escrowGuaranteeDesc2: "Utilizamos Escrow.com para asegurar que tu aporte esté protegido en un fideicomiso regulado hasta que se cumplan las condiciones del viaje.",
+    btnReadMoreEscrow: "Saber más sobre las garantías"
   },
   en: {
     seoTitle: "El Otro Mundial | The Real Mexico Begins Beyond the Stadiums",
@@ -205,7 +212,14 @@ export const translations = {
     btnShowLess: "SHOW LESS",
     introWarning: "This experience contains background video with sound.",
     introEnter: "ENTER EXPERIENCE",
-    btnMuteVideo: "Mute Video"
+    btnMuteVideo: "Mute Video",
+    navEscrowInfo: "Escrow Guarantee",
+    navTerms: "Terms & Conditions",
+    navPrivacy: "Privacy Policy",
+    escrowGuaranteeTitle: "Your participation is guaranteed through escrow.",
+    escrowGuaranteeDesc1: "Funds are not released all at once, but in verifiable stages of the project: first the purchase of the vehicles, then their fine-tuning and preparation, and the final 70% only when you personally meet the team, inspect the vehicles, and confirm everything is ready to go.",
+    escrowGuaranteeDesc2: "We use Escrow.com to ensure your contribution is protected in a regulated trust until the trip conditions are met.",
+    btnReadMoreEscrow: "Learn more about the guarantees"
   },
   fr: {
     seoTitle: "El Otro Mundial | Le vrai Mexique commence au-delà des stades",
@@ -309,7 +323,14 @@ export const translations = {
     btnShowLess: "VOIR MOINS",
     introWarning: "Cette expérience contient une vidéo d'arrière-plan avec du son.",
     introEnter: "ENTRER DANS L'EXPÉRIENCE",
-    btnMuteVideo: "Couper le son"
+    btnMuteVideo: "Couper le son",
+    navEscrowInfo: "Garantie Escrow",
+    navTerms: "Conditions Générales",
+    navPrivacy: "Politique de Confidentialité",
+    escrowGuaranteeTitle: "Votre participation est garantie par escrow.",
+    escrowGuaranteeDesc1: "Les fonds ne sont pas versés en une seule fois, mais libérés selon des étapes vérifiables du projet : d'abord l'achat des véhicules, puis leur mise au point et préparation, et les 70% finaux uniquement lorsque vous rencontrerez personnellement l'équipe, inspecterez les véhicules et confirmerez que tout est prêt à partir.",
+    escrowGuaranteeDesc2: "Nous utilisons Escrow.com pour garantir que votre contribution est protégée dans un compte séquestre réglementé jusqu'à ce que les conditions du voyage soient remplies.",
+    btnReadMoreEscrow: "En savoir plus sur les garanties"
   },
   it: {
     seoTitle: "El Otro Mundial | Il vero Messico inizia oltre gli stadi",
@@ -413,7 +434,14 @@ export const translations = {
     btnShowLess: "MOSTRA MENO",
     introWarning: "Questa esperienza contiene video in background con audio.",
     introEnter: "ENTRA NELL'ESPERIENZA",
-    btnMuteVideo: "Silenzia Video"
+    btnMuteVideo: "Silenzia Video",
+    navEscrowInfo: "Garanzia Escrow",
+    navTerms: "Termini e Condizioni",
+    navPrivacy: "Informativa sulla Privacy",
+    escrowGuaranteeTitle: "La tua partecipazione è garantita tramite escrow.",
+    escrowGuaranteeDesc1: "I fondi non vengono erogati tutti in una volta, ma sbloccati in base a fasi verificabili del progetto: prima l'acquisto dei veicoli, poi la messa a punto e la preparazione, e il 70% finale solo quando incontrerai personalmente il team, ispezionerai i veicoli e confermerai che tutto è pronto per partire.",
+    escrowGuaranteeDesc2: "Utilizziamo Escrow.com per garantire che il tuo contributo sia protetto in un deposito a garanzia regolamentato fino al soddisfacimento delle condizioni del viaggio.",
+    btnReadMoreEscrow: "Scopri di più sulle garanzie"
   },
   de: {
     seoTitle: "El Otro Mundial | Das wahre Mexiko beginnt jenseits der Stadien",
@@ -517,7 +545,14 @@ export const translations = {
     btnShowLess: "WENIGER ANZEIGEN",
     introWarning: "Dieses Erlebnis enthält ein Hintergrundvideo mit Ton.",
     introEnter: "ERLEBNIS STARTEN",
-    btnMuteVideo: "Video stummschalten"
+    btnMuteVideo: "Video stummschalten",
+    navEscrowInfo: "Escrow-Garantie",
+    navTerms: "Allgemeine Geschäftsbedingungen",
+    navPrivacy: "Datenschutzerklärung",
+    escrowGuaranteeTitle: "Ihre Teilnahme ist durch ein Treuhandkonto (Escrow) abgesichert.",
+    escrowGuaranteeDesc1: "Die Mittel werden nicht auf einmal ausgezahlt, sondern schrittweise nach überprüfbaren Projektphasen freigegeben: zuerst der Kauf der Fahrzeuge, dann deren Feinabstimmung (Fine Tuning) und Vorbereitung, und die restlichen 70% erst, wenn Sie das Team persönlich treffen, die Fahrzeuge inspizieren und bestätigen, dass alles startbereit ist.",
+    escrowGuaranteeDesc2: "Wir nutzen Escrow.com, um sicherzustellen, dass Ihr Beitrag in einem regulierten Treuhandkonto geschützt ist, bis die Reisebedingungen erfüllt sind.",
+    btnReadMoreEscrow: "Erfahren Sie mehr über die Garantien"
   },
   ko: {
     seoTitle: "엘 오트로 문디알 | 경기장 너머에서 진짜 멕시코가 시작됩니다",
@@ -621,7 +656,14 @@ export const translations = {
     btnShowLess: "접기",
     introWarning: "본 체험은 사운드가 포함된 백그라운드 비디오를 포함하고 있습니다.",
     introEnter: "체험 시작하기",
-    btnMuteVideo: "동영상 음소거"
+    btnMuteVideo: "동영상 음소거",
+    navEscrowInfo: "에스크로 보증",
+    navTerms: "이용 약관",
+    navPrivacy: "개인정보 처리방침",
+    escrowGuaranteeTitle: "참가자의 후원금은 에스크로(Escrow)를 통해 안전하게 보증됩니다.",
+    escrowGuaranteeDesc1: "후원금은 한 번에 지급되지 않고, 검증 가능한 프로젝트 단계별로 분할 집행됩니다: 먼저 차량 구입, 이어서 차량 튜닝 및 준비 작업 완료 후, 최종 70%는 귀하가 직접 제작진을 만나 차량을 점검하고 모든 준비가 완료되었음을 직접 확인한 후에만 지급됩니다.",
+    escrowGuaranteeDesc2: "우리는 규제된 에스크로 서비스인 Escrow.com을 사용하여 여행 조건이 충족될 때까지 귀하의 후원금을 안전하게 보호합니다.",
+    btnReadMoreEscrow: "보증 및 조건 자세히 보기"
   },
   ru: {
     seoTitle: "El Otro Mundial | Настоящая Мексика за пределами стадионов",
@@ -725,6 +767,13 @@ export const translations = {
     btnShowLess: "СВЕРНУТЬ",
     introWarning: "Этот интерфейс содержит фоновое видео со звуком.",
     introEnter: "ВОЙТИ В ИНТЕРФЕЙС",
-    btnMuteVideo: "Выключить звук"
+    btnMuteVideo: "Выключить звук",
+    navEscrowInfo: "Гарантия Escrow",
+    navTerms: "Условия использования",
+    navPrivacy: "Политика конфиденциальности",
+    escrowGuaranteeTitle: "Ваше участие гарантировано через систему эскроу (Escrow).",
+    escrowGuaranteeDesc1: "Экспедиция финансируется поэтапно: сначала покупка машин, затем подготовка и доработка, и финальные 70% выплачиваются только после личного знакомства с командой, осмотра техники и подтверждения готовности к старту.",
+    escrowGuaranteeDesc2: "Мы используем Escrow.com, чтобы ваши средства оставались под защитой на регулируемом эскроу-счете до выполнения всех условий поездки.",
+    btnReadMoreEscrow: "Узнать больше о гарантиях"
   }
 };
