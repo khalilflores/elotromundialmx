@@ -35,6 +35,36 @@ const routeCities = [
 	{ city: "Oaxaca", date: t.routeOaxacaDate, placeEn: t.routeOaxacaPlace, image: "/oaxaca_mountains_opt.webp" }
 ];
 
+const pricingTiers = [
+  {
+    id: "buy_trip_10d",
+    title: t.tier1Title,
+    duration: t.tier1Duration,
+    price: "$2,200 USD",
+    presale: "$2,000 USD",
+    image: "/tijuana_pitch_opt.webp",
+    features: [t.feature1_1, t.feature1_2, t.feature1_3, t.feature1_4]
+  },
+  {
+    id: "buy_trip_15d",
+    title: t.tier2Title,
+    duration: t.tier2Duration,
+    price: "$2,800 USD",
+    presale: "$2,600 USD",
+    image: "/slp_saucito_opt.webp",
+    features: [t.feature2_1, t.feature2_2, t.feature2_3, t.feature2_4, t.feature2_5]
+  },
+  {
+    id: "buy_trip_30d",
+    title: t.tier3Title,
+    duration: t.tier3Duration,
+    price: "$3,500 USD",
+    presale: "$3,300 USD",
+    image: "/oaxaca_mountains_opt.webp",
+    features: [t.feature3_1, t.feature3_2, t.feature3_3, t.feature3_4, t.feature3_5]
+  }
+];
+
 const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
 
 const cityTranslations = {
@@ -71,6 +101,10 @@ const cityTranslations = {
     Monterrey: "Monterrey",
     Saltillo: "Saltillo",
     Toluca: "Toluca / Metepec",
+    Tuxtla: "Tuxtla Gutiérrez",
+    Villahermosa: "Villahermosa",
+    Catemaco: "Catemaco",
+    Durango: "Durango",
     Retorno: " (Retorno)"
   },
   en: {
@@ -106,6 +140,10 @@ const cityTranslations = {
     Monterrey: "Monterrey",
     Saltillo: "Saltillo",
     Toluca: "Toluca / Metepec",
+    Tuxtla: "Tuxtla Gutierrez",
+    Villahermosa: "Villahermosa",
+    Catemaco: "Catemaco",
+    Durango: "Durango",
     Retorno: " (Return)"
   },
   fr: {
@@ -141,6 +179,10 @@ const cityTranslations = {
     Monterrey: "Monterrey",
     Saltillo: "Saltillo",
     Toluca: "Toluca / Metepec",
+    Tuxtla: "Tuxtla Gutierrez",
+    Villahermosa: "Villahermosa",
+    Catemaco: "Catemaco",
+    Durango: "Durango",
     Retorno: " (Retour)"
   },
   it: {
@@ -176,6 +218,10 @@ const cityTranslations = {
     Monterrey: "Monterrey",
     Saltillo: "Saltillo",
     Toluca: "Toluca / Metepec",
+    Tuxtla: "Tuxtla Gutierrez",
+    Villahermosa: "Villahermosa",
+    Catemaco: "Catemaco",
+    Durango: "Durango",
     Retorno: " (Ritorno)"
   },
   de: {
@@ -211,6 +257,10 @@ const cityTranslations = {
     Monterrey: "Monterrey",
     Saltillo: "Saltillo",
     Toluca: "Toluca / Metepec",
+    Tuxtla: "Tuxtla Gutiérrez",
+    Villahermosa: "Villahermosa",
+    Catemaco: "Catemaco",
+    Durango: "Durango",
     Retorno: " (Rückkehr)"
   },
   ko: {
@@ -246,6 +296,10 @@ const cityTranslations = {
     Monterrey: "몬테레이",
     Saltillo: "살티요",
     Toluca: "톨루카 / 메테펙",
+    Tuxtla: "툭스틀라구티에레스",
+    Villahermosa: "비야에르모사",
+    Catemaco: "카테마코",
+    Durango: "두랑고",
     Retorno: " (회귀)"
   },
   ru: {
@@ -281,6 +335,10 @@ const cityTranslations = {
     Monterrey: "Монтеррей",
     Saltillo: "Сальтильо",
     Toluca: "Толука / Метепек",
+    Tuxtla: "Тустла-Гутьеррес",
+    Villahermosa: "Вильяэрмоса",
+    Catemaco: "Катемако",
+    Durango: "Дуранго",
     Retorno: " (Обратный путь)"
   }
 };
@@ -292,27 +350,29 @@ const itineraryLegs = [
   { from: "Huautla", to: "Oaxaca", km: 220, hrs: 5, mins: 0 },
   { from: "Oaxaca", to: "Mazunte", km: 260, hrs: 3, mins: 30 },
   { from: "Mazunte", to: "Juchitan", km: 290, hrs: 4, mins: 45 },
-  { from: "Juchitan", to: "SanCristobal", km: 260, hrs: 4, mins: 0 },
+  { from: "Juchitan", to: "Tuxtla", km: 230, hrs: 3, mins: 30 },
+  { from: "Tuxtla", to: "SanCristobal", km: 60, hrs: 1, mins: 15 },
   { from: "SanCristobal", to: "Palenque", km: 220, hrs: 5, mins: 30 },
   { from: "Palenque", to: "Merida", km: 530, hrs: 6, mins: 30 },
   { from: "Merida", to: "Campeche", km: 170, hrs: 2, mins: 15 },
-  { from: "Campeche", to: "Xalapa", km: 910, hrs: 11, mins: 30 },
+  { from: "Campeche", to: "Villahermosa", km: 380, hrs: 5, mins: 0 },
+  { from: "Villahermosa", to: "Catemaco", km: 260, hrs: 3, mins: 45 },
+  { from: "Catemaco", to: "Xalapa", km: 330, hrs: 4, mins: 30 },
   { from: "Xalapa", to: "ElTajin", km: 210, hrs: 3, mins: 0 },
   { from: "ElTajin", to: "Xilitla", km: 340, hrs: 6, mins: 0 },
   { from: "Xilitla", to: "SLP", km: 330, hrs: 5, mins: 15 },
   { from: "SLP", to: "RealCatorce", km: 260, hrs: 3, mins: 15 },
-  { from: "RealCatorce", to: "Zacatecas", km: 210, hrs: 3, mins: 0 },
-  { from: "Zacatecas", to: "GomezPalacio", km: 370, hrs: 4, mins: 15 },
-  { from: "GomezPalacio", to: "Chapala", km: 250, hrs: 3, mins: 0 },
-  { from: "Chapala", to: "Sayulita", km: 510, hrs: 6, mins: 30 },
+  { from: "RealCatorce", to: "Saltillo", km: 250, hrs: 3, mins: 0 },
+  { from: "Saltillo", to: "GomezPalacio", km: 260, hrs: 3, mins: 15 },
+  { from: "GomezPalacio", to: "Durango", km: 240, hrs: 3, mins: 0 },
+  { from: "Durango", to: "Sayulita", km: 460, hrs: 6, mins: 0 },
   { from: "Sayulita", to: "Guanajuato", km: 520, hrs: 6, mins: 15 },
   { from: "Guanajuato", to: "Morelia", km: 180, hrs: 2, mins: 30 },
   { from: "Morelia", to: "Patzcuaro", km: 60, hrs: 1, mins: 0 },
   { from: "Patzcuaro", to: "Uruapan", km: 60, hrs: 1, mins: 10 },
-  { from: "Uruapan", to: "Capultitlan", km: 280, hrs: 3, mins: 45 },
-  { from: "Capultitlan", to: "Cuautla", km: 140, hrs: 2, mins: 15 },
-  { from: "Cuautla", to: "Michoacan", km: 220, hrs: 3, mins: 30 },
-  { from: "Michoacan", to: "CDMX", km: 160, hrs: 2, mins: 15 }
+  { from: "Uruapan", to: "Toluca", km: 250, hrs: 3, mins: 15 },
+  { from: "Toluca", to: "Cuautla", km: 160, hrs: 2, mins: 45 },
+  { from: "Cuautla", to: "CDMX", km: 160, hrs: 2, mins: 15 }
 ];
 
 function localizeCity(cityCode, retorno = false) {
@@ -333,7 +393,7 @@ function getItineraryImage(from, to) {
   const surf = ["Mazunte", "Sayulita"];
   const jungle = ["Juchitan", "SanCristobal", "Palenque", "Xilitla"];
   const cenote = ["Merida", "Campeche", "Guanajuato", "Morelia", "Patzcuaro", "Uruapan"];
-  const gulf = ["Xalapa", "ElTajin"];
+  const gulf = ["Xalapa", "ElTajin", "Catemaco"];
   
   const target = to === "CDMX" ? from : to;
   
@@ -585,15 +645,15 @@ const canonicalUrl = currentLang === 'es'
                             <div class="cinematic-card p-6 md:p-8 space-y-6 border border-cine-gold/20 shadow-[0_0_30px_rgba(255,215,0,0.05)] rounded-2xl">
                                 <div class="grid grid-cols-3 gap-4 text-center">
                                     <div class="space-y-1">
-                                        <div class="font-bebas text-3xl md:text-4xl text-neon-green tracking-wide">7,375</div>
+                                        <div class="font-bebas text-3xl md:text-4xl text-neon-green tracking-wide">7,665</div>
                                         <div class="font-barlow text-xs md:text-sm text-white/50 uppercase tracking-widest">{t.statDistance} (KM)</div>
                                     </div>
                                     <div class="space-y-1 border-x border-white/10">
-                                        <div class="font-bebas text-3xl md:text-4xl text-cine-gold tracking-wide">27</div>
+                                        <div class="font-bebas text-3xl md:text-4xl text-cine-gold tracking-wide">30</div>
                                         <div class="font-barlow text-xs md:text-sm text-white/50 uppercase tracking-widest">{t.statStops}</div>
                                     </div>
                                     <div class="space-y-1">
-                                        <div class="font-bebas text-3xl md:text-4xl text-neon-magenta tracking-wide">~107{t.hourLabel}</div>
+                                        <div class="font-bebas text-3xl md:text-4xl text-neon-magenta tracking-wide">~114{t.hourLabel}</div>
                                         <div class="font-barlow text-xs md:text-sm text-white/50 uppercase tracking-widest">{t.statHours}</div>
                                     </div>
                                 </div>
@@ -720,17 +780,37 @@ const canonicalUrl = currentLang === 'es'
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {routeCities.map((route, i) => (
-                            <article class="cinematic-card z-20 flex flex-col reveal floating-card overflow-hidden relative group min-h-[350px]">
-                                <div class="absolute inset-0 z-0 opacity-40 group-hover:opacity-70 transition-opacity duration-500">
-                                    <img src={route.image} alt={route.city} class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 scale-100 group-hover:scale-110" loading="lazy" decoding="async" />
+                        {pricingTiers.map((tier, i) => (
+                            <article class="cinematic-card z-20 flex flex-col reveal floating-card overflow-hidden relative group min-h-[420px] border border-white/10 hover:border-cine-gold/40 transition-all duration-300">
+                                <div class="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                                    <img src={tier.image} alt={tier.title} class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 scale-100 group-hover:scale-110" loading="lazy" decoding="async" />
                                 </div>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black/30 z-10"></div>
                                 <div class="relative z-20 flex flex-col h-full gap-4 p-8">
-                                    <h3 class="font-bebas text-4xl text-cine-gold drop-shadow-md">{route.city}</h3>
-                                    <div class="font-bebas text-xl tracking-widest text-cine-white/80">{route.date}</div>
-                                    <p class="font-barlow text-lg text-cine-white/90 uppercase">{route.placeEn}</p>
-                                    <button class="btn-ghost-epic text-xl mt-auto w-full forum-cta bg-black/50 backdrop-blur-sm" data-city={route.city} type="button">{t.btnAttendForum}</button>
+                                    <div class="flex justify-between items-start">
+                                        <span class="bg-[#FF00FF]/20 text-[#FF00FF] border border-[#FF00FF]/40 text-xs px-2.5 py-1 font-bebas tracking-widest uppercase rounded">{t.badgePresale}</span>
+                                        <span class="font-bebas text-lg text-white/60 tracking-wider uppercase">{tier.duration}</span>
+                                    </div>
+                                    <h3 class="font-bebas text-3xl md:text-4xl text-cine-gold leading-none tracking-wide mt-2">{tier.title}</h3>
+                                    <p class="font-barlow text-sm text-white/70 leading-relaxed min-h-[40px]">{tier.desc}</p>
+                                    
+                                    <div class="my-2 border-y border-white/10 py-3 flex items-baseline gap-2">
+                                        <span class="text-white/40 line-through text-lg font-bebas">{tier.price}</span>
+                                        <span class="text-3xl font-bebas text-neon-green tracking-wide drop-shadow-[0_0_10px_rgba(204,255,0,0.2)]">{tier.presale}</span>
+                                    </div>
+
+                                    <ul class="space-y-1.5 text-left text-xs text-white/80 font-barlow tracking-wider uppercase mb-6 flex-grow">
+                                        {tier.features.map(feature => (
+                                            <li class="flex items-center gap-2">
+                                                <svg class="w-3.5 h-3.5 text-neon-green shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <button class="btn-epic !text-xl !py-3 w-full select-tier-btn mt-auto" data-tier={tier.id} type="button">
+                                        {t.btnSelectTier}
+                                    </button>
                                 </div>
                             </article>
                         ))}
@@ -777,7 +857,9 @@ const canonicalUrl = currentLang === 'es'
                             <label class="font-bebas text-xl tracking-wide">{t.formSupportType}</label>
                             <select name="interest" required class="input-epic appearance-none bg-cine-dark">
                                 <option value="">{t.formChooseOption}</option>
-                                <option value="buy_trip">{t.optionBuyTrip}</option>
+                                <option value="buy_trip_10d">{t.optionBuyTrip10d}</option>
+                                <option value="buy_trip_15d">{t.optionBuyTrip15d}</option>
+                                <option value="buy_trip_30d">{t.optionBuyTrip30d}</option>
                                 <option value="photobook">{t.optionPhotobook}</option>
                                 <option value="sponsor">{t.optionSponsor}</option>
                             </select>
@@ -1011,7 +1093,24 @@ const canonicalUrl = currentLang === 'es'
 					}
 				});
 			});
-
+			const tierButtons = document.querySelectorAll(".select-tier-btn");
+			const supportInterestSelect = document.querySelector('select[name="interest"]');
+			tierButtons.forEach((button) => {
+				button.addEventListener("click", () => {
+					const tierId = button.getAttribute("data-tier") || "";
+					if (supportInterestSelect) {
+						supportInterestSelect.value = tierId;
+					}
+					const target = document.querySelector("#support");
+					if (target) {
+						if (lenis && !reducedMotion) {
+							lenis.scrollTo(target, { offset: -50, duration: 1.2 });
+						} else {
+							target.scrollIntoView({ behavior: "smooth", block: "center" });
+						}
+					}
+				});
+			});
             // Timeline Expander Toggler
             const itineraryToggleBtn = document.getElementById("itinerary-toggle-btn");
             const itineraryWrapper = document.getElementById("itinerary-extra-wrapper");
