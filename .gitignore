@@ -8,3 +8,7 @@ otromundial/.agents/
 /logo_circ.png
 /logo_el_otro_mundialmx.png
 /logo_fav.png
+
+# Other non-web-app directories
+mapa/
+wp-elotromundial/

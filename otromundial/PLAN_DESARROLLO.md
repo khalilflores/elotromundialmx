@@ -91,7 +91,7 @@
 1. **Comunidad (Datos)**: captar contactos para distribución diaria de bitácora
 2. **Asistencia Física**: registrar personas para foros comunitarios por ciudad
 3. **Patrocinios (B2B)**: usar el sitio como pitch deck vivo para marcas afines
-4. **Monetización (B2C)**: crowdfunding/preventa de fotolibro o merch
+4. **Monetización (B2C)**: apoyo en Escrow.com / preventa de fotolibro o merch
 
 ### Estrategia de CTAs por superficie
 
@@ -109,7 +109,7 @@
 1. Captura de contactos
 2. Segmentación por ciudad/interés
 3. Convocatoria a foros locales
-4. Monetización posterior (crowdfunding/preventa)
+4. Monetización posterior (apoyo en Escrow.com / preventa)
 
 ### KPIs de lanzamiento (Día 1)
 

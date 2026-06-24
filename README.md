@@ -25,6 +25,12 @@ Sugerencia temporal de formato:
 
 `https://kick.com/[tu-canal-o-campaña]`
 
+## Plataforma de apoyo (Escrow)
+
+Para recibir apoyos seguros de la comunidad y patrocinadores, el proyecto utiliza la plataforma segura:
+
+`https://www.escrow.com`
+
 ## Para visitantes del repo
 
 Si llegaste aquí como viajero potencial, colaborador o aliado:
