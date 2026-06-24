@@ -1,17 +1,29 @@
 ---
-import '../styles/global.css';
-import { translations } from '../i18n/translations.js';
+import '../../styles/global.css';
+import { translations } from '../../i18n/translations.js';
 
-const currentLang = 'es';
-const t = translations[currentLang];
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'ko' } },
+    { params: { lang: 'ru' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentLang = lang as string;
+const t = translations[currentLang] ?? translations['en'];
 const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
 ---
 <html lang={currentLang} class="scroll-smooth bg-cine-dark">
 	<head>
 		<meta charset="utf-8" />
-		<link class="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{t.navEscrowInfo} | El Otro Mundial</title>
+		<title>{t.navEscrowInfo} — El Otro Mundial · México 2026</title>
 	</head>
 	<body class="antialiased min-h-screen flex flex-col text-cine-white cinematic-vignette relative overflow-x-hidden">
 		
@@ -22,8 +34,6 @@ const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
                 </a>
 				<nav class="flex items-center gap-8 text-xl font-bebas tracking-widest uppercase">
 					<a href="/" class="hover:text-cine-gold transition-colors">INICIO</a>
-                    
-                    {/* Glassmorphic Language Selector */}
                     <div class="relative group ml-4">
                         <button class="flex items-center gap-2 border border-white/20 hover:border-cine-gold bg-black/40 backdrop-blur-md px-3 py-1.5 font-bebas text-lg tracking-wider text-white hover:text-cine-gold transition-all duration-300 rounded cursor-pointer uppercase">
                             <span>{currentLang}</span>
@@ -51,33 +61,33 @@ const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
 				<div class="cinematic-card p-8 md:p-12 space-y-8 font-barlow text-white/90 leading-relaxed border border-white/10 rounded-2xl bg-black/30 backdrop-blur-md">
                     <div class="space-y-6">
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">¿Qué es la Garantía mediante Escrow?</h2>
-                            <p>Un servicio de fideicomiso o <strong>escrow</strong> es un acuerdo financiero donde un tercero de confianza retiene y regula el pago de los fondos requeridos para dos partes involucradas en una transacción.</p>
-                            <p>Para la caravana cultural de <strong>El Otro Mundial</strong>, esto significa que tu dinero de preventa no se entrega directamente a los organizadores al realizar tu reserva, sino que queda protegido y en custodia segura hasta que se cumplan hitos específicos del viaje.</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">What is an Escrow Guarantee?</h2>
+                            <p>An <strong>escrow</strong> service is a financial arrangement where a trusted third party holds and regulates the payment of funds required by two parties involved in a transaction.</p>
+                            <p>For the <strong>El Otro Mundial</strong> cultural caravan, this means your pre-sale money is not delivered directly to the organizers when you book. Instead, it remains protected in secure custody until specific trip milestones are met.</p>
                         </section>
 
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">Hitos de Liberación de Fondos</h2>
-                            <p>Los fondos se liberan de forma gradual bajo auditorías y verificaciones físicas para mitigar riesgos, garantizando que el dinero se use exactamente para lo acordado:</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">Fund Release Milestones</h2>
+                            <p>Funds are released gradually through audits and physical verifications to mitigate risks, ensuring the money is used exactly as agreed:</p>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
                                 <div class="p-5 border border-white/10 bg-white/5 rounded-xl space-y-2">
-                                    <h3 class="font-bebas text-xl text-cine-gold">Hito 1: Camionetas</h3>
-                                    <p class="text-sm text-white/80">Se libera la primera parte de los fondos al confirmar la adquisición física de los vehículos oficiales de transporte.</p>
+                                    <h3 class="font-bebas text-xl text-cine-gold">Milestone 1: Vehicles</h3>
+                                    <p class="text-sm text-white/80">The first portion of funds is released upon confirming the physical acquisition of the official transport vehicles.</p>
                                 </div>
                                 <div class="p-5 border border-white/10 bg-white/5 rounded-xl space-y-2">
-                                    <h3 class="font-bebas text-xl text-cine-gold">Hito 2: Tuning</h3>
-                                    <p class="text-sm text-white/80">Se libera la segunda parte una vez que los vehículos completen la puesta a punto mecánica y preparación para la carretera.</p>
+                                    <h3 class="font-bebas text-xl text-cine-gold">Milestone 2: Fine-Tuning</h3>
+                                    <p class="text-sm text-white/80">The second portion is released once the vehicles complete full mechanical preparation and road readiness.</p>
                                 </div>
                                 <div class="p-5 border border-cine-gold/30 bg-cine-gold/5 rounded-xl space-y-2">
-                                    <h3 class="font-bebas text-xl text-neon-green">Hito 3: El 70% Final</h3>
-                                    <p class="text-sm text-white/80"><strong>Únicamente se libera</strong> cuando conozcas personalmente al equipo de carretera, inspecciones los vehículos físicamente y confirmes de forma satisfactoria que todo está listo para partir.</p>
+                                    <h3 class="font-bebas text-xl text-neon-green">Milestone 3: Final 70%</h3>
+                                    <p class="text-sm text-white/80"><strong>Only released</strong> when you personally meet the road team, physically inspect the vehicles, and confirm to your satisfaction that everything is ready to depart.</p>
                                 </div>
                             </div>
                         </section>
 
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">¿Por qué usamos Escrow.com?</h2>
-                            <p>Escrow.com es la plataforma de fideicomisos en línea regulada más grande del mundo. Está auditada a nivel gubernamental, garantizando que tanto compradores como vendedores cumplan con lo pactado sin riesgos de fraude o cancelación del proyecto.</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">Why We Use Escrow.com</h2>
+                            <p>Escrow.com is the world's largest government-regulated online escrow platform. It is audited at a governmental level, guaranteeing that both buyers and sellers fulfill what was agreed without the risk of fraud or project cancellation.</p>
                         </section>
                     </div>
 				</div>

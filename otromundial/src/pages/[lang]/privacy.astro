@@ -1,17 +1,29 @@
 ---
-import '../styles/global.css';
-import { translations } from '../i18n/translations.js';
+import '../../styles/global.css';
+import { translations } from '../../i18n/translations.js';
 
-const currentLang = 'es';
-const t = translations[currentLang];
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'ko' } },
+    { params: { lang: 'ru' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentLang = lang as string;
+const t = translations[currentLang] ?? translations['en'];
 const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
 ---
 <html lang={currentLang} class="scroll-smooth bg-cine-dark">
 	<head>
 		<meta charset="utf-8" />
-		<link class="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{t.navPrivacy} | El Otro Mundial</title>
+		<title>{t.navPrivacy} — El Otro Mundial · México 2026</title>
 	</head>
 	<body class="antialiased min-h-screen flex flex-col text-cine-white cinematic-vignette relative overflow-x-hidden">
 		
@@ -22,8 +34,6 @@ const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
                 </a>
 				<nav class="flex items-center gap-8 text-xl font-bebas tracking-widest uppercase">
 					<a href="/" class="hover:text-cine-gold transition-colors">INICIO</a>
-                    
-                    {/* Glassmorphic Language Selector */}
                     <div class="relative group ml-4">
                         <button class="flex items-center gap-2 border border-white/20 hover:border-cine-gold bg-black/40 backdrop-blur-md px-3 py-1.5 font-bebas text-lg tracking-wider text-white hover:text-cine-gold transition-all duration-300 rounded cursor-pointer uppercase">
                             <span>{currentLang}</span>
@@ -51,23 +61,23 @@ const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
 				<div class="cinematic-card p-8 md:p-12 space-y-8 font-barlow text-white/90 leading-relaxed border border-white/10 rounded-2xl bg-black/30 backdrop-blur-md">
                     <div class="space-y-6">
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">1. Información que Recopilamos</h2>
-                            <p>Recopilamos únicamente los datos necesarios para gestionar tu suscripción al diario y coordinar tu reserva de viaje. Esto incluye: nombre, número de WhatsApp/Signal, correo electrónico y la opción de apoyo de tu interés.</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">1. Information We Collect</h2>
+                            <p>We collect only the data necessary to manage your travel journal subscription and coordinate your trip reservation. This includes: name, WhatsApp/Signal number, email address, and your chosen support option.</p>
                         </section>
 
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">2. Uso de la Información</h2>
-                            <p>Utilizamos tus datos para enviararte las actualizaciones en tiempo real de la caravana, confirmar asistencias a foros locales y enviarte la información necesaria para los pagos por Escrow.com.</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">2. Use of Information</h2>
+                            <p>We use your data to send you real-time caravan updates, confirm attendance at local forums, and send you the necessary information for payments through Escrow.com.</p>
                         </section>
 
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">3. Seguridad y Proveedores Externos</h2>
-                            <p>No vendemos, alquilamos ni compartimos tus datos de contacto con anunciantes. Para procesar tu pago de forma 100% segura, tu correo y detalles de transacción son compartidos con Escrow.com bajo sus estrictos estándares de seguridad financiera internacional.</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">3. Security & Third-Party Providers</h2>
+                            <p>We do not sell, rent, or share your contact data with advertisers. To process your payment 100% securely, your email and transaction details are shared with Escrow.com under their strict international financial security standards.</p>
                         </section>
 
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">4. Tus Derechos de Acceso y Baja</h2>
-                            <p>Puedes darte de baja del diario de viaje en cualquier momento enviándonos un correo o respondiendo "Baja" en WhatsApp/Signal. Eliminaremos tus datos de contacto de inmediato.</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">4. Your Rights & Opt-Out</h2>
+                            <p>You can unsubscribe from the travel journal at any time by sending us an email or replying "Unsubscribe" on WhatsApp/Signal. We will delete your contact data immediately.</p>
                         </section>
                     </div>
 				</div>

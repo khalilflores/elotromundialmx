@@ -31,7 +31,7 @@ const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
                         </button>
                         <div class="absolute right-0 mt-2 w-28 bg-black/95 backdrop-blur-xl border border-white/10 rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-1 shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
                             {locales.map(loc => (
-                                <a href={loc === 'es' ? '/terms' : `/${loc}/terms`} class={`block px-4 py-2 font-bebas text-lg tracking-widest text-left transition-colors ${loc === currentLang ? 'text-cine-gold bg-white/5' : 'text-white/80 hover:text-cine-gold hover:bg-white/5'}`}>
+                                <a href={loc === 'es' ? '/terms/' : `/${loc}/terms/`} class={`block px-4 py-2 font-bebas text-lg tracking-widest text-left transition-colors ${loc === currentLang ? 'text-cine-gold bg-white/5' : 'text-white/80 hover:text-cine-gold hover:bg-white/5'}`}>
                                     {loc.toUpperCase()}
                                 </a>
                             ))}

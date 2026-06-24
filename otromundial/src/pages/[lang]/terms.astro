@@ -1,17 +1,29 @@
 ---
-import '../styles/global.css';
-import { translations } from '../i18n/translations.js';
+import '../../styles/global.css';
+import { translations } from '../../i18n/translations.js';
 
-const currentLang = 'es';
-const t = translations[currentLang];
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'ko' } },
+    { params: { lang: 'ru' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentLang = lang as string;
+const t = translations[currentLang] ?? translations['en'];
 const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
 ---
 <html lang={currentLang} class="scroll-smooth bg-cine-dark">
 	<head>
 		<meta charset="utf-8" />
-		<link class="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{t.navPrivacy} | El Otro Mundial</title>
+		<title>{t.navTerms} — El Otro Mundial · México 2026</title>
 	</head>
 	<body class="antialiased min-h-screen flex flex-col text-cine-white cinematic-vignette relative overflow-x-hidden">
 		
@@ -22,8 +34,6 @@ const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
                 </a>
 				<nav class="flex items-center gap-8 text-xl font-bebas tracking-widest uppercase">
 					<a href="/" class="hover:text-cine-gold transition-colors">INICIO</a>
-                    
-                    {/* Glassmorphic Language Selector */}
                     <div class="relative group ml-4">
                         <button class="flex items-center gap-2 border border-white/20 hover:border-cine-gold bg-black/40 backdrop-blur-md px-3 py-1.5 font-bebas text-lg tracking-wider text-white hover:text-cine-gold transition-all duration-300 rounded cursor-pointer uppercase">
                             <span>{currentLang}</span>
@@ -31,7 +41,7 @@ const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
                         </button>
                         <div class="absolute right-0 mt-2 w-28 bg-black/95 backdrop-blur-xl border border-white/10 rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-1 shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
                             {locales.map(loc => (
-                                <a href={loc === 'es' ? '/privacy/' : `/${loc}/privacy/`} class={`block px-4 py-2 font-bebas text-lg tracking-widest text-left transition-colors ${loc === currentLang ? 'text-cine-gold bg-white/5' : 'text-white/80 hover:text-cine-gold hover:bg-white/5'}`}>
+                                <a href={loc === 'es' ? '/terms/' : `/${loc}/terms/`} class={`block px-4 py-2 font-bebas text-lg tracking-widest text-left transition-colors ${loc === currentLang ? 'text-cine-gold bg-white/5' : 'text-white/80 hover:text-cine-gold hover:bg-white/5'}`}>
                                     {loc.toUpperCase()}
                                 </a>
                             ))}
@@ -44,30 +54,35 @@ const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
 		<main class="relative pt-32 pb-24 flex-grow">
 			<div class="container mx-auto px-6 max-w-4xl space-y-12">
 				<div class="text-center space-y-4">
-					<h1 class="font-bebas text-5xl md:text-7xl text-cine-gold tracking-wide uppercase">{t.navPrivacy}</h1>
+					<h1 class="font-bebas text-5xl md:text-7xl text-cine-gold tracking-wide uppercase">{t.navTerms}</h1>
 					<div class="h-1 w-24 bg-cine-gold mx-auto"></div>
 				</div>
 
 				<div class="cinematic-card p-8 md:p-12 space-y-8 font-barlow text-white/90 leading-relaxed border border-white/10 rounded-2xl bg-black/30 backdrop-blur-md">
                     <div class="space-y-6">
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">1. Información que Recopilamos</h2>
-                            <p>Recopilamos únicamente los datos necesarios para gestionar tu suscripción al diario y coordinar tu reserva de viaje. Esto incluye: nombre, número de WhatsApp/Signal, correo electrónico y la opción de apoyo de tu interés.</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">1. Introduction & Reservations</h2>
+                            <p>By reserving your spot on any segment of El Otro Mundial caravan, you agree to comply with these Terms and Conditions. Access to the trip is subject to availability and confirmation of payment through the secure escrow system.</p>
                         </section>
 
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">2. Uso de la Información</h2>
-                            <p>Utilizamos tus datos para enviararte las actualizaciones en tiempo real de la caravana, confirmar asistencias a foros locales y enviarte la información necesaria para los pagos por Escrow.com.</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">2. Escrow Guarantee System</h2>
+                            <p>To protect your participation and ensure the seriousness of the project, your money is deposited in an escrow account managed by Escrow.com. Funds are released in verifiable stages:</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>Milestone 1 (Vehicle Purchase):</strong> First release upon confirming the acquisition of the official transport vehicles.</li>
+                                <li><strong>Milestone 2 (Fine-Tuning):</strong> Second release upon completion of mechanical preparation of the vehicles.</li>
+                                <li><strong>Milestone 3 (Final 70%):</strong> Released only when you personally meet the road team, physically inspect the vehicles, and confirm everything is ready to depart.</li>
+                            </ul>
                         </section>
 
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">3. Seguridad y Proveedores Externos</h2>
-                            <p>No vendemos, alquilamos ni compartimos tus datos de contacto con anunciantes. Para procesar tu pago de forma 100% segura, tu correo y detalles de transacción son compartidos con Escrow.com bajo sus estrictos estándares de seguridad financiera internacional.</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">3. Cancellations & Refunds</h2>
+                            <p>If you decide to cancel your participation before the fund release stages are completed, refunds will be processed according to Escrow.com's established policies, minus the applicable platform operating fees.</p>
                         </section>
 
                         <section class="space-y-3">
-                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">4. Tus Derechos de Acceso y Baja</h2>
-                            <p>Puedes darte de baja del diario de viaje en cualquier momento enviándonos un correo o respondiendo "Baja" en WhatsApp/Signal. Eliminaremos tus datos de contacto de inmediato.</p>
+                            <h2 class="font-bebas text-2xl text-cine-gold tracking-wider">4. Responsibility & Code of Conduct</h2>
+                            <p>The caravan is an independent, community-driven journey. Participants must follow the organizing team's road safety rules and show mutual respect toward fellow travelers and the communities we visit along the route through Mexico.</p>
                         </section>
                     </div>
 				</div>
