@@ -821,32 +821,6 @@ const canonicalUrl = currentLang === 'es'
                             </article>
                         ))}
                     </div>
-
-                    <div class="cinematic-card p-8 md:p-12 max-w-4xl mx-auto reveal" id="forum-form-container">
-                        <h3 class="font-bebas text-4xl text-center mb-8">{t.formReserveTitle}</h3>
-                        <form id="forum-form" class="grid grid-cols-1 md:grid-cols-2 gap-8" method="post" action={forumWebhookUrl || "/"}>
-                            <div class="space-y-2">
-                                <label class="font-bebas text-xl tracking-wide">{t.formName}</label>
-                                <input name="name" type="text" required class="input-epic" />
-                            </div>
-                            <div class="space-y-2">
-                                <label class="font-bebas text-xl tracking-wide">{t.formContact}</label>
-                                <input name="contact" type="text" required class="input-epic" />
-                            </div>
-                            <div class="space-y-2 md:col-span-2">
-                                <label class="font-bebas text-xl tracking-wide">{t.formLocation}</label>
-                                <select id="forum-city" name="city" required class="input-epic appearance-none bg-cine-dark">
-                                    <option value="" disabled selected hidden>{t.formSelectCity}</option>
-                                    {routeCities.map((route) => <option value={route.city}>{route.city}</option>)}
-                                </select>
-                            </div>
-                            <input type="hidden" name="source" value="forum-reserve" />
-                            <div class="md:col-span-2 mt-4">
-                                <button class="btn-epic w-full" type="submit">{t.btnConfirmAttendance}</button>
-                            </div>
-                        </form>
-                        <p class="mt-4 font-barlow text-lg text-neon-green text-center" id="forum-status"></p>
-                    </div>
                 </section>
 
                 <section id="support" class="cinematic-card border-cine-gold/30 p-8 md:p-16 text-center max-w-5xl mx-auto reveal">
@@ -920,15 +894,21 @@ const canonicalUrl = currentLang === 'es'
 			</div>
 		</footer>
 
-		<script is:inline define:vars={{ contactWebhookUrl, forumWebhookUrl, supportWebhookUrl, btnTrailerAudio: t.btnTrailerAudio, btnBackWebsite: t.btnBackWebsite, btnMuteVideo: t.btnMuteVideo, btnShowFullRoute: t.btnShowFullRoute, btnShowLess: t.btnShowLess }}>
+		<script is:inline define:vars={{ contactWebhookUrl, supportWebhookUrl, btnTrailerAudio: t.btnTrailerAudio, btnBackWebsite: t.btnBackWebsite, btnMuteVideo: t.btnMuteVideo, btnShowFullRoute: t.btnShowFullRoute, btnShowLess: t.btnShowLess, escrowEmailRequired: t.escrowEmailRequired, escrowCreatingTx: t.escrowCreatingTx, escrowProcessing: t.escrowProcessing, escrowTxCreated: t.escrowTxCreated, escrowErrorTx: t.escrowErrorTx, escrowNetworkError: t.escrowNetworkError, btnFundNow: t.btnFundNow }}>
 			window.contactWebhookUrl = contactWebhookUrl;
-			window.forumWebhookUrl = forumWebhookUrl;
 			window.supportWebhookUrl = supportWebhookUrl;
             window.btnTrailerAudio = btnTrailerAudio;
             window.btnBackWebsite = btnBackWebsite;
             window.btnMuteVideo = btnMuteVideo;
             window.btnShowFullRoute = btnShowFullRoute;
             window.btnShowLess = btnShowLess;
+            window.escrowEmailRequired = escrowEmailRequired;
+            window.escrowCreatingTx = escrowCreatingTx;
+            window.escrowProcessing = escrowProcessing;
+            window.escrowTxCreated = escrowTxCreated;
+            window.escrowErrorTx = escrowErrorTx;
+            window.escrowNetworkError = escrowNetworkError;
+            window.btnFundNow = btnFundNow;
 		</script>
 		<script>
 			import Lenis from "lenis";
@@ -974,17 +954,23 @@ const canonicalUrl = currentLang === 'es'
 				})
 				: null;
 
-			// Epic GSAP Hero Entrance (modified to let ScrollFloat handle the titles and paused by default until enter click)
+			// Epic GSAP Hero Entrance
 			const tl = gsap.timeline({ paused: true });
-			tl.fromTo(".hero-subtitle span, .hero-subtitle p, .hero-subtitle div",
-                { autoAlpha: 0, y: 30 },
-                { autoAlpha: 1, y: 0, duration: 1, stagger: 0.2, ease: "power2.out" }
-            )
-            .fromTo(".hero-actions",
-                { autoAlpha: 0, y: 20 },
-                { autoAlpha: 1, y: 0, duration: 1, ease: "power2.out" },
-                "-=0.5"
-            );
+			const subtitleElements = document.querySelectorAll(".hero-subtitle span, .hero-subtitle p, .hero-subtitle div");
+			const heroActions = document.querySelectorAll(".hero-actions");
+			if (subtitleElements.length > 0) {
+				tl.fromTo(subtitleElements,
+					{ autoAlpha: 0, y: 30 },
+					{ autoAlpha: 1, y: 0, duration: 1, stagger: 0.2, ease: "power2.out" }
+				);
+			}
+			if (heroActions.length > 0) {
+				tl.fromTo(heroActions,
+					{ autoAlpha: 0, y: 20 },
+					{ autoAlpha: 1, y: 0, duration: 1, ease: "power2.out" },
+					"-=0.5"
+				);
+			}
 
             // Intro Welcome Overlay Click Logic
             const introScreen = document.getElementById("intro-screen");
@@ -1028,51 +1014,59 @@ const canonicalUrl = currentLang === 'es'
 			const revealItems = gsap.utils.toArray(".reveal");
 
 			if (!reducedMotion) {
-				gsap.set(revealItems, { autoAlpha: 0, y: 40 });
-				revealItems.forEach((item) => {
-					gsap.to(item, {
-						autoAlpha: 1,
-						y: 0,
-						duration: 1.2,
-						ease: "power3.out",
-						scrollTrigger: {
-							trigger: item,
-							start: "top 85%",
-							toggleActions: "play none none reverse"
-						}
+				if (revealItems.length > 0) {
+					gsap.set(revealItems, { autoAlpha: 0, y: 40 });
+					revealItems.forEach((item) => {
+						gsap.to(item, {
+							autoAlpha: 1,
+							y: 0,
+							duration: 1.2,
+							ease: "power3.out",
+							scrollTrigger: {
+								trigger: item,
+								start: "top 85%",
+								toggleActions: "play none none reverse"
+							}
+						});
 					});
-				});
+				}
 
                 // Floating Assets Parallax
                 const assets = gsap.utils.toArray(".floating-asset");
-                assets.forEach(asset => {
-                    gsap.to(asset, {
-                        y: () => -window.innerHeight * parseFloat(asset.getAttribute("data-speed")),
-                        rotation: () => parseFloat(asset.getAttribute("data-rotation")),
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: document.body,
-                            start: "top top",
-                            end: "bottom top",
-                            scrub: true
-                        }
+                if (assets.length > 0) {
+                    assets.forEach(asset => {
+                        gsap.to(asset, {
+                            y: () => -window.innerHeight * parseFloat(asset.getAttribute("data-speed")),
+                            rotation: () => parseFloat(asset.getAttribute("data-rotation")),
+                            ease: "none",
+                            scrollTrigger: {
+                                trigger: document.body,
+                                start: "top top",
+                                end: "bottom top",
+                                scrub: true
+                            }
+                        });
                     });
-                });
+                }
 
 				const floatingCards = gsap.utils.toArray(".floating-card");
-				floatingCards.forEach((card, i) => {
-					gsap.to(card, {
-						y: -10,
-						rotation: i % 2 === 0 ? "+=1.5" : "-=1.5",
-						yoyo: true,
-						repeat: -1,
-						ease: "sine.inOut",
-						duration: 3 + (i % 3),
-						delay: i * 0.2
+				if (floatingCards.length > 0) {
+					floatingCards.forEach((card, i) => {
+						gsap.to(card, {
+							y: -10,
+							rotation: i % 2 === 0 ? "+=1.5" : "-=1.5",
+							yoyo: true,
+							repeat: -1,
+							ease: "sine.inOut",
+							duration: 3 + (i % 3),
+							delay: i * 0.2
+						});
 					});
-				});
+				}
 			} else {
-				gsap.set(revealItems, { autoAlpha: 1, y: 0 });
+				if (revealItems.length > 0) {
+					gsap.set(revealItems, { autoAlpha: 1, y: 0 });
+				}
 			}
 
 			if (lenis) {
@@ -1117,12 +1111,12 @@ const canonicalUrl = currentLang === 'es'
 					const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 					const contactVal = contact ? contact.value.trim() : '';
 					if (!emailRegex.test(contactVal)) {
-						if (statusNode) { statusNode.textContent = 'Para procesar el pago en Escrow, necesitamos tu correo electrónico válido.'; statusNode.style.color = '#ff4444'; }
+						if (statusNode) { statusNode.textContent = window.escrowEmailRequired; statusNode.style.color = '#ff4444'; }
 						return;
 					}
 
-					if (statusNode) { statusNode.textContent = 'Creando tu transacción segura en Escrow...'; statusNode.style.color = ''; }
-					if (submitBtn)  { submitBtn.disabled = true; submitBtn.textContent = 'Procesando...'; }
+					if (statusNode) { statusNode.textContent = window.escrowCreatingTx; statusNode.style.color = ''; }
+					if (submitBtn)  { submitBtn.disabled = true; submitBtn.textContent = window.escrowProcessing; }
 
 					try {
 						const res = await fetch(window.supportWebhookUrl, {
@@ -1138,40 +1132,22 @@ const canonicalUrl = currentLang === 'es'
 						const data = await res.json();
 
 						if (data.success && data.redirect_url) {
-							if (statusNode) statusNode.textContent = '¡Transacción creada! Redirigiendo a Escrow.com...';
+							if (statusNode) statusNode.textContent = window.escrowTxCreated;
 							setTimeout(() => { window.location.href = data.redirect_url; }, 1200);
 						} else {
-							if (statusNode) { statusNode.textContent = data.message || 'Error al crear la transacción.'; statusNode.style.color = '#ff4444'; }
-							if (submitBtn)  { submitBtn.disabled = false; submitBtn.textContent = 'APOYAR AHORA'; }
+							if (statusNode) { statusNode.textContent = data.message || window.escrowErrorTx; statusNode.style.color = '#ff4444'; }
+							if (submitBtn)  { submitBtn.disabled = false; submitBtn.textContent = window.btnFundNow; }
 						}
 					} catch (err) {
-						if (statusNode) { statusNode.textContent = 'Error de red. Por favor intenta de nuevo.'; statusNode.style.color = '#ff4444'; }
-						if (submitBtn)  { submitBtn.disabled = false; submitBtn.textContent = 'APOYAR AHORA'; }
+						if (statusNode) { statusNode.textContent = window.escrowNetworkError; statusNode.style.color = '#ff4444'; }
+						if (submitBtn)  { submitBtn.disabled = false; submitBtn.textContent = window.btnFundNow; }
 					}
 				});
 			}
 
 			bindWebhookFallback("#lead-form", window.contactWebhookUrl, "#lead-status");
-			bindWebhookFallback("#forum-form", window.forumWebhookUrl, "#forum-status");
 
-			const forumButtons = document.querySelectorAll(".forum-cta");
-			const forumCitySelect = document.querySelector("#forum-city");
-			forumButtons.forEach((button) => {
-				button.addEventListener("click", () => {
-					const city = button.getAttribute("data-city") || "";
-					if (forumCitySelect) {
-						forumCitySelect.value = city;
-					}
-					const target = document.querySelector("#forum-form-container");
-					if (target) {
-						if (lenis && !reducedMotion) {
-							lenis.scrollTo(target, { offset: -50, duration: 1.2 });
-						} else {
-							target.scrollIntoView({ behavior: "smooth", block: "center" });
-						}
-					}
-				});
-			});
+			// (Forum form logic removed)
 			const tierButtons = document.querySelectorAll(".select-tier-btn");
 			const supportInterestSelect = document.querySelector('select[name="interest"]');
 			tierButtons.forEach((button) => {

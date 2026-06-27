@@ -108,7 +108,13 @@ export const translations = {
     escrowGuaranteeTitle: "Tu participación está garantizada mediante escrow.",
     escrowGuaranteeDesc1: "Los fondos no se entregan de una sola vez, sino que se liberan conforme se cumplen etapas verificables del proyecto: primero la compra de las camionetas, después su puesta a punto (fine tuning) y preparación, y el 70% final únicamente cuando conozcas personalmente al equipo, inspecciones los vehículos y confirmes que todo está listo para partir.",
     escrowGuaranteeDesc2: "Utilizamos Escrow.com para asegurar que tu aporte esté protegido en un fideicomiso regulado hasta que se cumplan las condiciones del viaje.",
-    btnReadMoreEscrow: "Saber más sobre las garantías"
+    btnReadMoreEscrow: "Saber más sobre las garantías",
+    escrowEmailRequired: "Para procesar el pago en Escrow, necesitamos tu correo electrónico válido.",
+    escrowCreatingTx: "Creando tu transacción segura en Escrow...",
+    escrowProcessing: "Procesando...",
+    escrowTxCreated: "¡Transacción creada! Redirigiendo a Escrow.com...",
+    escrowErrorTx: "Error al crear la transacción.",
+    escrowNetworkError: "Error de red. Por favor intenta de nuevo."
   },
   en: {
     seoTitle: "El Otro Mundial | The Real Mexico Begins Beyond the Stadiums",
@@ -219,7 +225,13 @@ export const translations = {
     escrowGuaranteeTitle: "Your participation is guaranteed through escrow.",
     escrowGuaranteeDesc1: "Funds are not released all at once, but in verifiable stages of the project: first the purchase of the vehicles, then their fine-tuning and preparation, and the final 70% only when you personally meet the team, inspect the vehicles, and confirm everything is ready to go.",
     escrowGuaranteeDesc2: "We use Escrow.com to ensure your contribution is protected in a regulated trust until the trip conditions are met.",
-    btnReadMoreEscrow: "Learn more about the guarantees"
+    btnReadMoreEscrow: "Learn more about the guarantees",
+    escrowEmailRequired: "To process the Escrow payment, we need your valid email address.",
+    escrowCreatingTx: "Creating your secure transaction on Escrow...",
+    escrowProcessing: "Processing...",
+    escrowTxCreated: "Transaction created! Redirecting to Escrow.com...",
+    escrowErrorTx: "Error creating the transaction.",
+    escrowNetworkError: "Network error. Please try again."
   },
   fr: {
     seoTitle: "El Otro Mundial | Le vrai Mexique commence au-delà des stades",
@@ -330,7 +342,13 @@ export const translations = {
     escrowGuaranteeTitle: "Votre participation est garantie par escrow.",
     escrowGuaranteeDesc1: "Les fonds ne sont pas versés en une seule fois, mais libérés selon des étapes vérifiables du projet : d'abord l'achat des véhicules, puis leur mise au point et préparation, et les 70% finaux uniquement lorsque vous rencontrerez personnellement l'équipe, inspecterez les véhicules et confirmerez que tout est prêt à partir.",
     escrowGuaranteeDesc2: "Nous utilisons Escrow.com pour garantir que votre contribution est protégée dans un compte séquestre réglementé jusqu'à ce que les conditions du voyage soient remplies.",
-    btnReadMoreEscrow: "En savoir plus sur les garanties"
+    btnReadMoreEscrow: "En savoir plus sur les garanties",
+    escrowEmailRequired: "Pour traiter le paiement sur Escrow, nous avons besoin de votre adresse e-mail valide.",
+    escrowCreatingTx: "Création de votre transaction sécurisée sur Escrow...",
+    escrowProcessing: "Traitement en cours...",
+    escrowTxCreated: "Transaction créée ! Redirection vers Escrow.com...",
+    escrowErrorTx: "Erreur lors de la création de la transaction.",
+    escrowNetworkError: "Erreur réseau. Veuillez réessayer."
   },
   it: {
     seoTitle: "El Otro Mundial | Il vero Messico inizia oltre gli stadi",
@@ -441,7 +459,13 @@ export const translations = {
     escrowGuaranteeTitle: "La tua partecipazione è garantita tramite escrow.",
     escrowGuaranteeDesc1: "I fondi non vengono erogati tutti in una volta, ma sbloccati in base a fasi verificabili del progetto: prima l'acquisto dei veicoli, poi la messa a punto e la preparazione, e il 70% finale solo quando incontrerai personalmente il team, ispezionerai i veicoli e confermerai che tutto è pronto per partire.",
     escrowGuaranteeDesc2: "Utilizziamo Escrow.com per garantire che il tuo contributo sia protetto in un deposito a garanzia regolamentato fino al soddisfacimento delle condizioni del viaggio.",
-    btnReadMoreEscrow: "Scopri di più sulle garanzie"
+    btnReadMoreEscrow: "Scopri di più sulle garanzie",
+    escrowEmailRequired: "Per elaborare il pagamento su Escrow, abbiamo bisogno del tuo indirizzo email valido.",
+    escrowCreatingTx: "Creazione della tua transazione sicura su Escrow...",
+    escrowProcessing: "Elaborazione in corso...",
+    escrowTxCreated: "Transazione creata! Reindirizzamento a Escrow.com...",
+    escrowErrorTx: "Errore durante la creazione della transazione.",
+    escrowNetworkError: "Errore di rete. Per favore riprova."
   },
   de: {
     seoTitle: "El Otro Mundial | Das wahre Mexiko beginnt jenseits der Stadien",
@@ -552,7 +576,13 @@ export const translations = {
     escrowGuaranteeTitle: "Ihre Teilnahme ist durch ein Treuhandkonto (Escrow) abgesichert.",
     escrowGuaranteeDesc1: "Die Mittel werden nicht auf einmal ausgezahlt, sondern schrittweise nach überprüfbaren Projektphasen freigegeben: zuerst der Kauf der Fahrzeuge, dann deren Feinabstimmung (Fine Tuning) und Vorbereitung, und die restlichen 70% erst, wenn Sie das Team persönlich treffen, die Fahrzeuge inspizieren und bestätigen, dass alles startbereit ist.",
     escrowGuaranteeDesc2: "Wir nutzen Escrow.com, um sicherzustellen, dass Ihr Beitrag in einem regulierten Treuhandkonto geschützt ist, bis die Reisebedingungen erfüllt sind.",
-    btnReadMoreEscrow: "Erfahren Sie mehr über die Garantien"
+    btnReadMoreEscrow: "Erfahren Sie mehr über die Garantien",
+    escrowEmailRequired: "Um die Escrow-Zahlung zu bearbeiten, benötigen wir Ihre gültige E-Mail-Adresse.",
+    escrowCreatingTx: "Ihre sichere Transaktion auf Escrow wird erstellt...",
+    escrowProcessing: "Wird bearbeitet...",
+    escrowTxCreated: "Transaktion erstellt! Weiterleitung zu Escrow.com...",
+    escrowErrorTx: "Fehler beim Erstellen der Transaktion.",
+    escrowNetworkError: "Netzwerkfehler. Bitte versuchen Sie es erneut."
   },
   ko: {
     seoTitle: "엘 오트로 문디알 | 경기장 너머에서 진짜 멕시코가 시작됩니다",
@@ -663,7 +693,13 @@ export const translations = {
     escrowGuaranteeTitle: "참가자의 후원금은 에스크로(Escrow)를 통해 안전하게 보증됩니다.",
     escrowGuaranteeDesc1: "후원금은 한 번에 지급되지 않고, 검증 가능한 프로젝트 단계별로 분할 집행됩니다: 먼저 차량 구입, 이어서 차량 튜닝 및 준비 작업 완료 후, 최종 70%는 귀하가 직접 제작진을 만나 차량을 점검하고 모든 준비가 완료되었음을 직접 확인한 후에만 지급됩니다.",
     escrowGuaranteeDesc2: "우리는 규제된 에스크로 서비스인 Escrow.com을 사용하여 여행 조건이 충족될 때까지 귀하의 후원금을 안전하게 보호합니다.",
-    btnReadMoreEscrow: "보증 및 조건 자세히 보기"
+    btnReadMoreEscrow: "보증에 대해 자세히 알아보기",
+    escrowEmailRequired: "Escrow 결제를 처리하려면 유효한 이메일 주소가 필요합니다.",
+    escrowCreatingTx: "Escrow에서 안전한 거래를 생성하는 중...",
+    escrowProcessing: "처리 중...",
+    escrowTxCreated: "거래 생성 완료! Escrow.com으로 이동합니다...",
+    escrowErrorTx: "거래 생성 중 오류가 발생했습니다.",
+    escrowNetworkError: "네트워크 오류. 다시 시도해 주세요."
   },
   ru: {
     seoTitle: "El Otro Mundial | Настоящая Мексика за пределами стадионов",
@@ -774,6 +810,12 @@ export const translations = {
     escrowGuaranteeTitle: "Ваше участие гарантировано через систему эскроу (Escrow).",
     escrowGuaranteeDesc1: "Экспедиция финансируется поэтапно: сначала покупка машин, затем подготовка и доработка, и финальные 70% выплачиваются только после личного знакомства с командой, осмотра техники и подтверждения готовности к старту.",
     escrowGuaranteeDesc2: "Мы используем Escrow.com, чтобы ваши средства оставались под защитой на регулируемом эскроу-счете до выполнения всех условий поездки.",
-    btnReadMoreEscrow: "Узнать больше о гарантиях"
+    btnReadMoreEscrow: "Узнать больше о гарантиях",
+    escrowEmailRequired: "Для обработки платежа Escrow нам нужен ваш действительный адрес электронной почты.",
+    escrowCreatingTx: "Создание безопасной транзакции на Escrow...",
+    escrowProcessing: "Обработка...",
+    escrowTxCreated: "Транзакция создана! Перенаправление на Escrow.com...",
+    escrowErrorTx: "Ошибка при создании транзакции.",
+    escrowNetworkError: "Ошибка сети. Пожалуйста, попробуйте еще раз."
   }
 };
