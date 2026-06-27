@@ -27,7 +27,7 @@ const t = translations[currentLang];
 const siteName = "El Otro Mundial";
 const contactWebhookUrl = "";
 const forumWebhookUrl = "";
-const supportWebhookUrl = "";
+const supportWebhookUrl = "https://wp.elotromundial.mx/wp-json/eom/v1/escrow/create";
 
 const routeCities = [
 	{ city: "Tijuana", date: t.routeTijuanaDate, placeEn: t.routeTijuanaPlace, image: "/tijuana_pitch_opt.webp" },
@@ -836,7 +836,7 @@ const canonicalUrl = currentLang === 'es'
                             <div class="space-y-2 md:col-span-2">
                                 <label class="font-bebas text-xl tracking-wide">{t.formLocation}</label>
                                 <select id="forum-city" name="city" required class="input-epic appearance-none bg-cine-dark">
-                                    <option value="">{t.formSelectCity}</option>
+                                    <option value="" disabled selected hidden>{t.formSelectCity}</option>
                                     {routeCities.map((route) => <option value={route.city}>{route.city}</option>)}
                                 </select>
                             </div>
@@ -880,7 +880,7 @@ const canonicalUrl = currentLang === 'es'
                         <div class="space-y-2">
                             <label class="font-bebas text-xl tracking-wide">{t.formSupportType}</label>
                             <select name="interest" required class="input-epic appearance-none bg-cine-dark">
-                                <option value="">{t.formChooseOption}</option>
+                                <option value="" disabled selected hidden>{t.formChooseOption}</option>
                                 <option value="buy_trip_10d">{t.optionBuyTrip10d}</option>
                                 <option value="buy_trip_15d">{t.optionBuyTrip15d}</option>
                                 <option value="buy_trip_30d">{t.optionBuyTrip30d}</option>
@@ -1083,10 +1083,11 @@ const canonicalUrl = currentLang === 'es'
 				gsap.ticker.lagSmoothing(0);
 			}
 
-			const setFormStatus = (id, message) => {
+			const setFormStatus = (id, message, isError = false) => {
 				const node = document.querySelector(id);
 				if (node) {
 					node.textContent = message;
+					node.style.color = isError ? '#ff4444' : '';
 				}
 			};
 
@@ -1097,14 +1098,61 @@ const canonicalUrl = currentLang === 'es'
 				if (!enabled) {
 					form.addEventListener("submit", (event) => {
 						event.preventDefault();
-						setFormStatus(statusId, "System ready. Webhook integration required.");
+						setFormStatus(statusId, "Sistema listo. Se requiere configuración de webhook.");
 					});
 				}
 			};
 
+			// --- Formulario de apoyo con Escrow.com ---
+			const supportForm = document.querySelector("#support-web-form");
+			if (supportForm && window.supportWebhookUrl && window.supportWebhookUrl.startsWith("https://")) {
+				supportForm.addEventListener("submit", async (event) => {
+					event.preventDefault();
+					const statusNode = document.querySelector("#support-status");
+					const submitBtn  = supportForm.querySelector("button[type=submit]");
+					const interest   = supportForm.querySelector('select[name="interest"]');
+					const contact    = supportForm.querySelector('input[name="contact"]');
+
+					// Validar que el correo sea válido (Escrow lo requiere)
+					const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+					const contactVal = contact ? contact.value.trim() : '';
+					if (!emailRegex.test(contactVal)) {
+						if (statusNode) { statusNode.textContent = 'Para procesar el pago en Escrow, necesitamos tu correo electrónico válido.'; statusNode.style.color = '#ff4444'; }
+						return;
+					}
+
+					if (statusNode) { statusNode.textContent = 'Creando tu transacción segura en Escrow...'; statusNode.style.color = ''; }
+					if (submitBtn)  { submitBtn.disabled = true; submitBtn.textContent = 'Procesando...'; }
+
+					try {
+						const res = await fetch(window.supportWebhookUrl, {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify({
+								buyer_email: contactVal,
+								buyer_name:  contactVal,
+								tier_id:     interest ? interest.value : 'buy_trip_30d',
+							}),
+						});
+
+						const data = await res.json();
+
+						if (data.success && data.redirect_url) {
+							if (statusNode) statusNode.textContent = '¡Transacción creada! Redirigiendo a Escrow.com...';
+							setTimeout(() => { window.location.href = data.redirect_url; }, 1200);
+						} else {
+							if (statusNode) { statusNode.textContent = data.message || 'Error al crear la transacción.'; statusNode.style.color = '#ff4444'; }
+							if (submitBtn)  { submitBtn.disabled = false; submitBtn.textContent = 'APOYAR AHORA'; }
+						}
+					} catch (err) {
+						if (statusNode) { statusNode.textContent = 'Error de red. Por favor intenta de nuevo.'; statusNode.style.color = '#ff4444'; }
+						if (submitBtn)  { submitBtn.disabled = false; submitBtn.textContent = 'APOYAR AHORA'; }
+					}
+				});
+			}
+
 			bindWebhookFallback("#lead-form", window.contactWebhookUrl, "#lead-status");
 			bindWebhookFallback("#forum-form", window.forumWebhookUrl, "#forum-status");
-			bindWebhookFallback("#support-web-form", window.supportWebhookUrl, "#support-status");
 
 			const forumButtons = document.querySelectorAll(".forum-cta");
 			const forumCitySelect = document.querySelector("#forum-city");
