@@ -1105,7 +1105,7 @@ const canonicalUrl = currentLang === 'es'
 
 			// --- Formulario de apoyo con Escrow.com ---
 			const supportForm = document.querySelector("#support-web-form");
-			if (supportForm && window.supportWebhookUrl && window.supportWebhookUrl.startsWith("https://")) {
+			if (supportForm && window.supportWebhookUrl && (window.supportWebhookUrl.startsWith("https://") || window.supportWebhookUrl.startsWith("/"))) {
 				supportForm.addEventListener("submit", async (event) => {
 					event.preventDefault();
 					const statusNode = document.querySelector("#support-status");
