@@ -13,6 +13,14 @@
       "source": "/(.*)",
       "headers": [
         {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Language"
+        },
+        {
           "key": "No-Vary-Search",
           "value": "key-order, params=(\"utm_source\" \"utm_medium\" \"utm_campaign\" \"utm_content\" \"utm_term\")"
         },
