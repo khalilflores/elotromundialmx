@@ -141,7 +141,14 @@ export const translations = {
     formSellerCodePlaceholder: "EOM-XXXXX",
     whatsappAriaLabel: "Contactar por WhatsApp",
     whatsappTitle: "Escríbenos por WhatsApp",
-    whatsappTooltip: "¿Tienes dudas? ¡Escríbenos!"
+    whatsappTooltip: "¿Tienes dudas? ¡Escríbenos!",
+    navBlog: "Blog",
+    sectionBlogTitle: "Últimas",
+    sectionBlogTitleRed: "Noticias",
+    sectionBlogSubtitle: "DIARIO DE PRODUCCIÓN",
+    sectionBlogMarker: "¡Mantente al día!",
+    btnReadMore: "Leer artículo completo",
+    btnVisitBlog: "Visitar el Blog"
   },
   en: {
     seoTitle: "El Otro Mundial | The Real Mexico Begins Beyond the Stadiums",
@@ -285,7 +292,14 @@ export const translations = {
     formSellerCodePlaceholder: "EOM-XXXXX",
     whatsappAriaLabel: "Contact via WhatsApp",
     whatsappTitle: "Message us on WhatsApp",
-    whatsappTooltip: "Any questions? Message us!"
+    whatsappTooltip: "Any questions? Message us!",
+    navBlog: "Blog",
+    sectionBlogTitle: "Latest",
+    sectionBlogTitleRed: "News",
+    sectionBlogSubtitle: "PRODUCTION DIARY",
+    sectionBlogMarker: "Stay updated!",
+    btnReadMore: "Read full article",
+    btnVisitBlog: "Visit the Blog"
   },
   fr: {
     seoTitle: "El Otro Mundial | Le vrai Mexique commence au-delà des stades",
@@ -417,7 +431,14 @@ export const translations = {
     formSellerCodePlaceholder: "EOM-XXXXX",
     whatsappAriaLabel: "Contacter par WhatsApp",
     whatsappTitle: "Écrivez-nous sur WhatsApp",
-    whatsappTooltip: "Des questions ? Écrivez-nous !"
+    whatsappTooltip: "Des questions ? Écrivez-nous !",
+    navBlog: "Blog",
+    sectionBlogTitle: "Dernières",
+    sectionBlogTitleRed: "Actualités",
+    sectionBlogSubtitle: "JOURNAL DE PRODUCTION",
+    sectionBlogMarker: "Restez informé !",
+    btnReadMore: "Lire l'article complet",
+    btnVisitBlog: "Visiter le Blog"
   },
   it: {
     seoTitle: "El Otro Mundial | Il vero Messico inizia oltre gli stadi",
@@ -549,7 +570,14 @@ export const translations = {
     formSellerCodePlaceholder: "EOM-XXXXX",
     whatsappAriaLabel: "Contattaci su WhatsApp",
     whatsappTitle: "Scrivici su WhatsApp",
-    whatsappTooltip: "Hai domande? Scrivici!"
+    whatsappTooltip: "Hai domande? Scrivici!",
+    navBlog: "Blog",
+    sectionBlogTitle: "Ultime",
+    sectionBlogTitleRed: "Notizie",
+    sectionBlogSubtitle: "DIARIO DI PRODUZIONE",
+    sectionBlogMarker: "Rimani aggiornato!",
+    btnReadMore: "Leggi l'articolo completo",
+    btnVisitBlog: "Visita il Blog"
   },
   de: {
     seoTitle: "El Otro Mundial | Das wahre Mexiko beginnt jenseits der Stadien",
@@ -681,7 +709,14 @@ export const translations = {
     formSellerCodePlaceholder: "EOM-XXXXX",
     whatsappAriaLabel: "Kontaktiere uns über WhatsApp",
     whatsappTitle: "Schreibe uns auf WhatsApp",
-    whatsappTooltip: "Hast du Fragen? Schreib uns!"
+    whatsappTooltip: "Hast du Fragen? Schreib uns!",
+    navBlog: "Blog",
+    sectionBlogTitle: "Neueste",
+    sectionBlogTitleRed: "Nachrichten",
+    sectionBlogSubtitle: "PRODUKTIONSTAGEBUCH",
+    sectionBlogMarker: "Bleib auf dem Laufenden!",
+    btnReadMore: "Ganzen Artikel lesen",
+    btnVisitBlog: "Besuchen Sie den Blog"
   },
   ko: {
     seoTitle: "엘 오트로 문디알 | 경기장 너머에서 진짜 멕시코가 시작됩니다",
@@ -813,7 +848,14 @@ export const translations = {
     formSellerCodePlaceholder: "EOM-XXXXX",
     whatsappAriaLabel: "WhatsApp으로 연락하기",
     whatsappTitle: "WhatsApp으로 메시지 보내기",
-    whatsappTooltip: "궁금한 점이 있으신가요? 메시지를 보내주세요!"
+    whatsappTooltip: "궁금한 점이 있으신가요? 메시지를 보내주세요!",
+    navBlog: "블로그",
+    sectionBlogTitle: "최신",
+    sectionBlogTitleRed: "뉴스",
+    sectionBlogSubtitle: "제작 일지",
+    sectionBlogMarker: "최신 정보를 받아보세요!",
+    btnReadMore: "전체 기사 읽기",
+    btnVisitBlog: "블로그 방문하기"
   },
   ru: {
     seoTitle: "El Otro Mundial | Настоящая Мексика за пределами стадионов",
@@ -945,6 +987,13 @@ export const translations = {
     formSellerCodePlaceholder: "EOM-XXXXX",
     whatsappAriaLabel: "Связаться через WhatsApp",
     whatsappTitle: "Напишите нам в WhatsApp",
-    whatsappTooltip: "Есть вопросы? Напишите нам!"
+    whatsappTooltip: "Есть вопросы? Напишите нам!",
+    navBlog: "Блог",
+    sectionBlogTitle: "Последние",
+    sectionBlogTitleRed: "Новости",
+    sectionBlogSubtitle: "ДНЕВНИК ПРОИЗВОДСТВА",
+    sectionBlogMarker: "Будьте в курсе!",
+    btnReadMore: "Читать полностью",
+    btnVisitBlog: "Посетить блог"
   }
 };

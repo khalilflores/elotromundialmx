@@ -1,0 +1,203 @@
+---
+import '../styles/global.css';
+import { translations } from '../i18n/translations.js';
+import Seo from '@jdevalk/astro-seo-graph/Seo.astro';
+
+const currentLang = 'es';
+const t = translations[currentLang];
+const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
+
+let wpPosts = [];
+try {
+  const wpUrl = 'https://wp.elotromundial.mx';
+  const langQuery = 'es';
+  // Fetch initial 6 posts for the blog page
+  const res = await fetch(`${wpUrl}/wp-json/wp/v2/posts?_embed&per_page=6&lang=${langQuery}`);
+  if (res.ok) {
+    wpPosts = await res.json();
+  }
+} catch (e) {
+  console.error("Error fetching WP posts:", e);
+}
+---
+<html lang={currentLang} class="scroll-smooth bg-cine-dark">
+	<head>
+		<meta charset="utf-8" />
+		<link class="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<Seo
+			title={`Blog | El Otro Mundial`}
+			description={t.seoDesc}
+			openGraph={{
+				basic: {
+					title: `Blog | El Otro Mundial`,
+					type: "website",
+					image: "https://www.elotromundial.mx/poster-evento-og.jpg",
+				}
+			}}
+		/>
+	</head>
+	<body class="antialiased min-h-screen flex flex-col text-cine-white cinematic-vignette relative overflow-x-hidden">
+		
+		<header class="fixed top-0 left-0 right-0 z-50 py-4 bg-black/40 backdrop-blur-md border-b border-white/10">
+			<div class="container mx-auto px-4 lg:px-12 flex justify-between items-center gap-4">
+				<a href="/" class="brand block hover:scale-105 transition-transform duration-300" aria-label="El Otro Mundial Home">
+                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-12 w-auto opacity-90 drop-shadow-md" width="48" height="48" loading="eager" />
+                </a>
+				<nav class="flex items-center gap-8 text-xl font-bebas tracking-widest uppercase">
+					<a href="/" class="hover:text-cine-gold transition-colors">INICIO</a>
+                    
+                    {/* Glassmorphic Language Selector */}
+                    <div class="relative group ml-4">
+                        <button class="flex items-center gap-2 border border-white/20 hover:border-cine-gold bg-black/40 backdrop-blur-md px-3 py-1.5 font-bebas text-lg tracking-wider text-white hover:text-cine-gold transition-all duration-300 rounded cursor-pointer uppercase">
+                            <span>{currentLang}</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-28 bg-black/95 backdrop-blur-xl border border-white/10 rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-1 shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+                            {locales.map(loc => (
+                                <a href={loc === 'es' ? '/blog/' : `/${loc}/blog/`} class={`block px-4 py-2 font-bebas text-lg tracking-widest text-left transition-colors ${loc === currentLang ? 'text-cine-gold bg-white/5' : 'text-white/80 hover:text-cine-gold hover:bg-white/5'}`}>
+                                    {loc.toUpperCase()}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+				</nav>
+			</div>
+		</header>
+
+		<main class="relative pt-32 pb-24 flex-grow container mx-auto px-6 max-w-6xl space-y-16">
+            <div class="text-center space-y-4">
+                <h1 class="font-bebas text-5xl md:text-7xl text-cine-gold tracking-wide uppercase">{t.navBlog}</h1>
+                <p class="font-barlow text-xl md:text-2xl text-white/70 uppercase tracking-widest">{t.sectionBlogSubtitle}</p>
+                <div class="h-1 w-24 bg-cine-gold mx-auto mt-6"></div>
+            </div>
+
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {wpPosts && wpPosts.length > 0 ? (
+                    wpPosts.map(post => {
+                        const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || "/slp_saucito_opt.webp";
+                        const excerpt = post.excerpt?.rendered?.replace(/<[^>]*>?/gm, '') || "";
+                        return (
+                            <article class="cinematic-card flex flex-col overflow-hidden relative group min-h-[420px] border border-white/10 hover:border-cine-gold/40 transition-all duration-300">
+                                <div class="absolute inset-0 z-0 opacity-30 group-hover:opacity-50 transition-opacity duration-500">
+                                    <img src={imageUrl} alt={post.title?.rendered} class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 scale-100 group-hover:scale-110" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/30 z-10"></div>
+                                <div class="relative z-20 flex flex-col h-full gap-4 p-8">
+                                    <div class="flex justify-between items-start">
+                                        <span class="font-bebas text-lg text-cine-gold tracking-wider uppercase">
+                                            {new Date(post.date).toLocaleDateString(currentLang, { year: 'numeric', month: 'long', day: 'numeric' })}
+                                        </span>
+                                    </div>
+                                    <h2 class="font-bebas text-3xl md:text-4xl text-white leading-none tracking-wide mt-2" set:html={post.title?.rendered}></h2>
+                                    <p class="font-barlow text-sm text-white/70 leading-relaxed min-h-[60px] line-clamp-3" set:html={excerpt}></p>
+                                    
+                                    <a href={post.link} target="_blank" rel="noopener noreferrer" class="btn-ghost-epic text-xl tracking-widest relative z-30 cursor-pointer shadow-[0_0_15px_rgba(255,215,0,0.15)] select-none text-center mt-auto">
+                                        <span class="btn-toggle-label">{t.btnReadMore}</span>
+                                    </a>
+                                </div>
+                            </article>
+                        );
+                    })
+                ) : (
+                    <div class="col-span-1 md:col-span-3 text-center py-20 border border-white/10 rounded-2xl bg-black/40">
+                        <p class="font-barlow text-xl text-white/50 uppercase tracking-widest">Aún no hay publicaciones</p>
+                    </div>
+                )}
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="infinite-scroll-trigger" class="w-full py-12 flex justify-center items-center opacity-0 transition-opacity duration-300">
+                <svg class="animate-spin h-10 w-10 text-cine-gold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </div>
+		</main>
+
+		<footer class="relative z-10 bg-black/60 backdrop-blur-lg border-t border-white/10 py-8">
+			<div class="container mx-auto px-6 text-center space-y-2">
+				<p class="font-barlow text-sm text-white/40">© 2026 El Otro Mundial. Todos los derechos reservados.</p>
+			</div>
+		</footer>
+
+        <script is:inline define:vars={{ currentLang, btnReadMore: t.btnReadMore }}>
+            document.addEventListener('DOMContentLoaded', () => {
+                const trigger = document.getElementById('infinite-scroll-trigger');
+                const grid = document.getElementById('blog-grid');
+                if (!trigger || !grid) return;
+
+                let currentPage = 1;
+                let isFetching = false;
+                let hasMore = true;
+
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting && !isFetching && hasMore) {
+                        loadMorePosts();
+                    }
+                }, { rootMargin: '200px' });
+
+                observer.observe(trigger);
+
+                async function loadMorePosts() {
+                    isFetching = true;
+                    trigger.style.opacity = '1';
+                    currentPage++;
+
+                    try {
+                        const res = await fetch(`https://wp.elotromundial.mx/wp-json/wp/v2/posts?_embed&per_page=6&page=${currentPage}&lang=${currentLang}`);
+                        if (!res.ok) {
+                            if (res.status === 400) hasMore = false;
+                            throw new Error('No more posts');
+                        }
+                        
+                        const posts = await res.json();
+                        if (posts.length === 0) {
+                            hasMore = false;
+                        } else {
+                            posts.forEach(post => {
+                                const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || "/slp_saucito_opt.webp";
+                                const excerpt = post.excerpt?.rendered?.replace(/<[^>]*>?/gm, '') || "";
+                                const dateObj = new Date(post.date);
+                                const formattedDate = dateObj.toLocaleDateString(currentLang, { year: 'numeric', month: 'long', day: 'numeric' });
+                                
+                                const article = document.createElement('article');
+                                article.className = "cinematic-card flex flex-col overflow-hidden relative group min-h-[420px] border border-white/10 hover:border-cine-gold/40 transition-all duration-300";
+                                article.innerHTML = `
+                                    <div class="absolute inset-0 z-0 opacity-30 group-hover:opacity-50 transition-opacity duration-500">
+                                        <img src="${imageUrl}" alt="${post.title?.rendered}" class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 scale-100 group-hover:scale-110" loading="lazy" decoding="async" />
+                                    </div>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/30 z-10"></div>
+                                    <div class="relative z-20 flex flex-col h-full gap-4 p-8">
+                                        <div class="flex justify-between items-start">
+                                            <span class="font-bebas text-lg text-cine-gold tracking-wider uppercase">
+                                                ${formattedDate}
+                                            </span>
+                                        </div>
+                                        <h2 class="font-bebas text-3xl md:text-4xl text-white leading-none tracking-wide mt-2">${post.title?.rendered}</h2>
+                                        <p class="font-barlow text-sm text-white/70 leading-relaxed min-h-[60px] line-clamp-3">${excerpt}</p>
+                                        
+                                        <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="btn-ghost-epic text-xl tracking-widest relative z-30 cursor-pointer shadow-[0_0_15px_rgba(255,215,0,0.15)] select-none text-center mt-auto">
+                                            <span class="btn-toggle-label">${btnReadMore}</span>
+                                        </a>
+                                    </div>
+                                `;
+                                grid.appendChild(article);
+                            });
+                        }
+                    } catch (e) {
+                        hasMore = false;
+                    }
+
+                    if (!hasMore) {
+                        trigger.style.display = 'none';
+                        observer.disconnect();
+                    } else {
+                        trigger.style.opacity = '0';
+                    }
+                    isFetching = false;
+                }
+            });
+        </script>
+	</body>
+</html>
