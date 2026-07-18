@@ -1,0 +1,312 @@
+---
+import '../styles/global.css';
+
+const currentLang = 'es';
+const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
+---
+<html lang={currentLang} class="scroll-smooth bg-cine-dark">
+	<head>
+		<meta charset="utf-8" />
+		<link class="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Únete como Colaborador | El Otro Mundial</title>
+		<meta name="description" content="Regístrate como colaborador de El Otro Mundial. Obtén tu código EOM único al instante y gana comisiones compartiendo la caravana cultural." />
+	</head>
+	<body class="antialiased min-h-screen flex flex-col text-cine-white cinematic-vignette relative overflow-x-hidden">
+		
+		<!-- HEADER -->
+		<header class="fixed top-0 left-0 right-0 z-50 py-4 bg-black/40 backdrop-blur-md border-b border-white/10">
+			<div class="container mx-auto px-4 lg:px-12 flex justify-between items-center gap-4">
+				<a href="/" class="brand block hover:scale-105 transition-transform duration-300" aria-label="El Otro Mundial Home">
+                    <img src="/logo_circ_opt.webp" alt="El Otro Mundial" class="h-12 w-auto opacity-90 drop-shadow-md" width="48" height="48" loading="eager" />
+                </a>
+				<nav class="flex items-center gap-8 text-xl font-bebas tracking-widest uppercase">
+					<a href="/" class="hover:text-cine-gold transition-colors">INICIO</a>
+				</nav>
+			</div>
+		</header>
+
+		<!-- MAIN CONTENT -->
+		<main class="relative pt-32 pb-24 flex-grow">
+			<div class="container mx-auto px-6 max-w-2xl">
+
+				<!-- HERO -->
+				<div class="text-center space-y-5 mb-14">
+					<h1 class="font-bebas text-5xl md:text-7xl text-cine-gold tracking-wide uppercase leading-tight">
+						Sé Colaborador
+					</h1>
+					<div class="h-1 w-24 bg-cine-gold mx-auto"></div>
+					<p class="font-barlow text-lg md:text-xl text-white/75 max-w-lg mx-auto leading-relaxed">
+						Comparte tu código único con viajeros y gana comisiones por cada ticket vendido. Sin inversión, sin complicaciones.
+					</p>
+				</div>
+
+				<!-- BENEFITS STRIP -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+					<div class="cinematic-card rounded-xl p-5 text-center space-y-2">
+						<div class="text-3xl">🎟️</div>
+						<h3 class="font-bebas text-xl text-cine-gold tracking-wider">CÓDIGO ÚNICO</h3>
+						<p class="font-barlow text-sm text-white/60">Tu código EOM-XXXXX personal al instante</p>
+					</div>
+					<div class="cinematic-card rounded-xl p-5 text-center space-y-2">
+						<div class="text-3xl">💰</div>
+						<h3 class="font-bebas text-xl text-cine-gold tracking-wider">COMISIONES</h3>
+						<p class="font-barlow text-sm text-white/60">Gana por cada viajero referido</p>
+					</div>
+					<div class="cinematic-card rounded-xl p-5 text-center space-y-2">
+						<div class="text-3xl">🌎</div>
+						<h3 class="font-bebas text-xl text-cine-gold tracking-wider">COMUNIDAD</h3>
+						<p class="font-barlow text-sm text-white/60">Forma parte de la caravana cultural</p>
+					</div>
+				</div>
+
+				<!-- REGISTRATION FORM -->
+				<div id="registro-form-wrapper" class="cinematic-card rounded-2xl p-8 md:p-10 border border-white/10 bg-black/30 backdrop-blur-md">
+					<h2 class="font-bebas text-3xl text-cine-gold tracking-wider mb-8 text-center uppercase">
+						Regístrate Ahora
+					</h2>
+					
+					<form id="colaborador-form" class="space-y-5">
+						<div>
+							<label for="nombre" class="font-bebas text-lg tracking-wider text-white/80 mb-1 block">Nombre Completo *</label>
+							<input type="text" id="nombre" name="nombre" required placeholder="Ej: María López García" class="input-epic rounded-lg" />
+						</div>
+
+						<div>
+							<label for="email" class="font-bebas text-lg tracking-wider text-white/80 mb-1 block">Correo Electrónico *</label>
+							<input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com" class="input-epic rounded-lg" />
+						</div>
+
+						<div>
+							<label for="telefono" class="font-bebas text-lg tracking-wider text-white/80 mb-1 block">WhatsApp / Teléfono</label>
+							<input type="tel" id="telefono" name="telefono" placeholder="+52 55 1234 5678" class="input-epic rounded-lg" />
+						</div>
+
+						<div>
+							<label for="ciudad" class="font-bebas text-lg tracking-wider text-white/80 mb-1 block">Ciudad</label>
+							<input type="text" id="ciudad" name="ciudad" placeholder="Ej: Guadalajara" class="input-epic rounded-lg" />
+						</div>
+
+						<div>
+							<label for="tipo" class="font-bebas text-lg tracking-wider text-white/80 mb-1 block">¿Cómo te describes?</label>
+							<select id="tipo" name="tipo" class="input-epic rounded-lg cursor-pointer">
+								<option value="Amigo del Proyecto">Amigo del Proyecto</option>
+								<option value="Influencer/Creator">Influencer / Content Creator</option>
+								<option value="Staff Voluntario">Staff Voluntario</option>
+								<option value="Colectivo/Grupo">Colectivo / Grupo</option>
+								<option value="Empresa Aliada">Empresa Aliada</option>
+							</select>
+						</div>
+
+						<!-- ERROR MESSAGE -->
+						<div id="form-error" class="hidden bg-red-900/40 border border-red-500/50 rounded-lg p-4 text-center font-barlow text-red-300"></div>
+
+						<button type="submit" id="submit-btn" class="btn-epic w-full rounded-lg text-center justify-center gap-3">
+							<span id="btn-text">OBTENER MI CÓDIGO EOM</span>
+							<span id="btn-loader" class="hidden">
+								<svg class="animate-spin h-6 w-6 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+								REGISTRANDO...
+							</span>
+						</button>
+					</form>
+				</div>
+
+				<!-- SUCCESS VIEW (hidden by default) -->
+				<div id="success-view" class="hidden">
+					<div class="cinematic-card rounded-2xl p-8 md:p-12 border border-cine-gold/30 bg-black/30 backdrop-blur-md text-center space-y-8">
+						
+						<!-- Animated checkmark -->
+						<div class="mx-auto w-20 h-20 rounded-full border-4 border-cine-gold flex items-center justify-center animate-bounce">
+							<svg class="w-10 h-10 text-cine-gold" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+						</div>
+
+						<div class="space-y-2">
+							<h2 class="font-bebas text-4xl md:text-5xl text-cine-gold tracking-wider uppercase">
+								¡Bienvenid@, <span id="success-name"></span>!
+							</h2>
+							<p class="font-barlow text-lg text-white/70">Ya eres parte de la caravana. Aquí está tu código único:</p>
+						</div>
+
+						<!-- The Code -->
+						<div class="relative group">
+							<div class="bg-black/80 border-2 border-cine-gold rounded-xl py-6 px-8 inline-block mx-auto">
+								<span id="success-code" class="font-bebas text-5xl md:text-6xl text-cine-gold tracking-[0.3em] select-all"></span>
+							</div>
+							<button id="copy-code-btn" class="mt-4 block mx-auto font-bebas text-lg tracking-wider text-white/60 hover:text-cine-gold transition-colors cursor-pointer" type="button">
+								📋 COPIAR CÓDIGO
+							</button>
+						</div>
+
+						<!-- Referral Link -->
+						<div class="space-y-3 text-left cinematic-card rounded-xl p-6 border border-white/10">
+							<h3 class="font-bebas text-xl text-cine-gold tracking-wider">TU LINK DE REFERIDO</h3>
+							<div class="flex items-center gap-2">
+								<input type="text" id="referral-link" readonly class="input-epic rounded-lg text-sm flex-1 cursor-text" />
+								<button id="copy-link-btn" type="button" class="btn-ghost-epic rounded-lg !py-3 !px-4 !text-lg shrink-0 cursor-pointer">
+									COPIAR
+								</button>
+							</div>
+							<p class="font-barlow text-sm text-white/50">
+								Comparte este link. Cuando alguien compre con tu código, se registrará automáticamente tu referido.
+							</p>
+						</div>
+
+						<!-- Next Steps -->
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+							<div class="cinematic-card rounded-xl p-5 space-y-2 border border-white/5">
+								<span class="text-2xl">📤</span>
+								<h4 class="font-bebas text-lg text-cine-gold tracking-wider">COMPARTE</h4>
+								<p class="font-barlow text-sm text-white/60">Envía tu código o link a posibles viajeros por WhatsApp, redes o donde quieras.</p>
+							</div>
+							<div class="cinematic-card rounded-xl p-5 space-y-2 border border-white/5">
+								<span class="text-2xl">📊</span>
+								<h4 class="font-bebas text-lg text-cine-gold tracking-wider">RASTREA</h4>
+								<p class="font-barlow text-sm text-white/60">Cada venta con tu código queda registrada. Recibirás seguimiento de tus referidos.</p>
+							</div>
+						</div>
+
+						<a href="/" class="btn-ghost-epic rounded-lg inline-flex">
+							← VOLVER AL INICIO
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</main>
+
+		<!-- FOOTER -->
+		<footer class="relative z-10 bg-black/60 backdrop-blur-lg border-t border-white/10 py-8">
+			<div class="container mx-auto px-6 text-center">
+				<p class="font-barlow text-sm text-white/40">© 2026 El Otro Mundial. Todos los derechos reservados.</p>
+			</div>
+		</footer>
+
+		<!-- CLIENT-SIDE JS -->
+		<script is:inline>
+			const form = document.getElementById('colaborador-form');
+			const formWrapper = document.getElementById('registro-form-wrapper');
+			const successView = document.getElementById('success-view');
+			const errorBox = document.getElementById('form-error');
+			const btnText = document.getElementById('btn-text');
+			const btnLoader = document.getElementById('btn-loader');
+			const submitBtn = document.getElementById('submit-btn');
+
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				
+				// Reset error
+				errorBox.classList.add('hidden');
+				errorBox.textContent = '';
+
+				// Loading state
+				btnText.classList.add('hidden');
+				btnLoader.classList.remove('hidden');
+				submitBtn.disabled = true;
+				submitBtn.classList.add('opacity-60');
+
+				const payload = {
+					nombre: document.getElementById('nombre').value.trim(),
+					email: document.getElementById('email').value.trim(),
+					telefono: document.getElementById('telefono').value.trim(),
+					ciudad: document.getElementById('ciudad').value.trim(),
+					tipo: document.getElementById('tipo').value,
+				};
+
+				try {
+					const res = await fetch('/api/colaborador-register', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify(payload),
+					});
+
+					const data = await res.json();
+
+					if (data.success) {
+						// Show success
+						showSuccess(data.nombre || payload.nombre, data.codigo);
+					} else if (data.duplicate && data.codigo) {
+						// Duplicate but we have the code — show it
+						showSuccess(payload.nombre, data.codigo, true);
+					} else {
+						showError(data.message || 'Error inesperado. Intenta de nuevo.');
+					}
+				} catch (err) {
+					showError('No se pudo conectar con el servidor. Verifica tu conexión.');
+				}
+			});
+
+			function showSuccess(nombre, codigo, isDuplicate = false) {
+				document.getElementById('success-name').textContent = nombre.split(' ')[0];
+				document.getElementById('success-code').textContent = codigo;
+				
+				const baseUrl = window.location.origin;
+				document.getElementById('referral-link').value = `${baseUrl}?ref=${codigo}`;
+				
+				// Swap views with animation
+				formWrapper.style.transition = 'opacity 0.3s, transform 0.3s';
+				formWrapper.style.opacity = '0';
+				formWrapper.style.transform = 'translateY(-20px)';
+				
+				setTimeout(() => {
+					formWrapper.classList.add('hidden');
+					successView.classList.remove('hidden');
+					successView.style.opacity = '0';
+					successView.style.transform = 'translateY(20px)';
+					successView.style.transition = 'opacity 0.5s, transform 0.5s';
+					
+					// Also hide the benefits strip
+					const benefits = document.querySelector('.grid.grid-cols-1.sm\\:grid-cols-3');
+					if (benefits) benefits.classList.add('hidden');
+					
+					requestAnimationFrame(() => {
+						successView.style.opacity = '1';
+						successView.style.transform = 'translateY(0)';
+					});
+				}, 300);
+
+				if (isDuplicate) {
+					// Adjust messaging for duplicate
+					document.querySelector('#success-view h2').innerHTML =
+						`¡Hola de nuevo, <span id="success-name">${nombre.split(' ')[0]}</span>!`;
+					document.querySelector('#success-view p').textContent =
+						'Tu correo ya estaba registrado. Aquí está tu código existente:';
+				}
+
+				// Scroll to top
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			}
+
+			function showError(message) {
+				errorBox.textContent = message;
+				errorBox.classList.remove('hidden');
+				
+				// Reset button
+				btnText.classList.remove('hidden');
+				btnLoader.classList.add('hidden');
+				submitBtn.disabled = false;
+				submitBtn.classList.remove('opacity-60');
+			}
+
+			// Copy code button
+			document.getElementById('copy-code-btn').addEventListener('click', () => {
+				const code = document.getElementById('success-code').textContent;
+				navigator.clipboard.writeText(code).then(() => {
+					const btn = document.getElementById('copy-code-btn');
+					btn.textContent = '✅ ¡COPIADO!';
+					setTimeout(() => { btn.textContent = '📋 COPIAR CÓDIGO'; }, 2000);
+				});
+			});
+
+			// Copy referral link button
+			document.getElementById('copy-link-btn').addEventListener('click', () => {
+				const link = document.getElementById('referral-link').value;
+				navigator.clipboard.writeText(link).then(() => {
+					const btn = document.getElementById('copy-link-btn');
+					btn.textContent = '✅';
+					setTimeout(() => { btn.textContent = 'COPIAR'; }, 2000);
+				});
+			});
+		</script>
+
+	</body>
+</html>

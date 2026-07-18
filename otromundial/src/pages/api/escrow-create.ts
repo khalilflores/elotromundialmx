@@ -16,6 +16,7 @@ export const POST: APIRoute = async ({ request }) => {
         const buyer_email = body.buyer_email;
         const buyer_name = body.buyer_name || 'Viajero';
         const tier_id = body.tier_id;
+        const seller_code = body.seller_code;
 
         if (!buyer_email) {
             return new Response(JSON.stringify({ success: false, message: 'Se requiere un correo electrónico válido.' }), { status: 400 });
@@ -128,6 +129,33 @@ export const POST: APIRoute = async ({ request }) => {
         // We need to extract the next_step URL for the buyer
         const buyerParty = data.parties.find((p: any) => p.role === 'buyer');
         const landingPage = buyerParty ? buyerParty.next_step : data.landing_page;
+
+        // Registrar la venta en WordPress si se proporcionó un código de colaborador
+        if (seller_code) {
+            const wpUrl = process.env.WORDPRESS_API_URL || 'https://wp.elotromundial.mx';
+            try {
+                const wpResponse = await fetch(`${wpUrl}/wp-json/eom/v1/venta-ticket`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        codigo: seller_code,
+                        nombre_comprador: buyer_name,
+                        email_comprador: buyer_email,
+                        monto: tier.amount,
+                        folio_confirmacion: String(data.id)
+                    })
+                });
+                
+                if (!wpResponse.ok) {
+                    const wpErr = await wpResponse.text();
+                    console.error(`[WP API Error] No se pudo registrar la venta. Código: ${wpResponse.status}. Detalle:`, wpErr);
+                } else {
+                    console.log(`[WP API Success] Venta registrada correctamente para colaborador: ${seller_code}`);
+                }
+            } catch (wpErr) {
+                console.error("[WP Network Error] Fallo al conectar con la API de WordPress:", wpErr);
+            }
+        }
 
         return new Response(JSON.stringify({
             success: true,

@@ -123,7 +123,9 @@ export const translations = {
     escrowStep3Desc: "Liberación final solo cuando apruebes la salida.",
     phase1: "FASE 1 (10 DÍAS)",
     phase2: "FASE 2 (15 DÍAS)",
-    phase3: "FASE 3 (30 DÍAS)"
+    phase3: "FASE 3 (30 DÍAS)",
+    formSellerCode: "Código de Colaborador (Opcional)",
+    formSellerCodePlaceholder: "EOM-XXXXX"
   },
   en: {
     seoTitle: "El Otro Mundial | The Real Mexico Begins Beyond the Stadiums",
@@ -249,7 +251,9 @@ export const translations = {
     escrowStep3Desc: "Final release only when you approve the departure.",
     phase1: "PHASE 1 (10 DAYS)",
     phase2: "PHASE 2 (15 DAYS)",
-    phase3: "PHASE 3 (30 DAYS)"
+    phase3: "PHASE 3 (30 DAYS)",
+    formSellerCode: "Collaborator Code (Optional)",
+    formSellerCodePlaceholder: "EOM-XXXXX"
   },
   fr: {
     seoTitle: "El Otro Mundial | Le vrai Mexique commence au-delà des stades",
@@ -375,7 +379,9 @@ export const translations = {
     escrowStep3Desc: "Déblocage final uniquement lors de votre approbation.",
     phase1: "PHASE 1 (10 JOURS)",
     phase2: "PHASE 2 (15 JOURS)",
-    phase3: "PHASE 3 (30 JOURS)"
+    phase3: "PHASE 3 (30 JOURS)",
+    formSellerCode: "Code Collaborateur (Optionnel)",
+    formSellerCodePlaceholder: "EOM-XXXXX"
   },
   it: {
     seoTitle: "El Otro Mundial | Il vero Messico inizia oltre gli stadi",
@@ -501,7 +507,9 @@ export const translations = {
     escrowStep3Desc: "Rilascio finale solo alla tua approvazione.",
     phase1: "FASE 1 (10 GIORNI)",
     phase2: "FASE 2 (15 GIORNI)",
-    phase3: "FASE 3 (30 GIORNI)"
+    phase3: "FASE 3 (30 GIORNI)",
+    formSellerCode: "Codice Collaboratore (Opzionale)",
+    formSellerCodePlaceholder: "EOM-XXXXX"
   },
   de: {
     seoTitle: "El Otro Mundial | Das wahre Mexiko beginnt jenseits der Stadien",
@@ -627,7 +635,9 @@ export const translations = {
     escrowStep3Desc: "Endgültige Freigabe nur bei Ihrer Zustimmung.",
     phase1: "PHASE 1 (10 TAGE)",
     phase2: "PHASE 2 (15 TAGE)",
-    phase3: "PHASE 3 (30 TAGE)"
+    phase3: "PHASE 3 (30 TAGE)",
+    formSellerCode: "Partner-Code (Optional)",
+    formSellerCodePlaceholder: "EOM-XXXXX"
   },
   ko: {
     seoTitle: "엘 오트로 문디알 | 경기장 너머에서 진짜 멕시코가 시작됩니다",
@@ -753,7 +763,9 @@ export const translations = {
     escrowStep3Desc: "출발을 승인할 때만 최종 지급됩니다.",
     phase1: "1단계 (10일)",
     phase2: "2단계 (15일)",
-    phase3: "3단계 (30일)"
+    phase3: "3단계 (30일)",
+    formSellerCode: "추천인 코드 (선택사항)",
+    formSellerCodePlaceholder: "EOM-XXXXX"
   },
   ru: {
     seoTitle: "El Otro Mundial | Настоящая Мексика за пределами стадионов",
@@ -879,6 +891,8 @@ export const translations = {
     escrowStep3Desc: "Окончательный перевод только после вашего одобрения.",
     phase1: "ФАЗА 1 (10 ДНЕЙ)",
     phase2: "ФАЗА 2 (15 ДНЕЙ)",
-    phase3: "ФАЗА 3 (30 ДНЕЙ)"
+    phase3: "ФАЗА 3 (30 ДНЕЙ)",
+    formSellerCode: "Код партнера (необязательно)",
+    formSellerCodePlaceholder: "EOM-XXXXX"
   }
 };
