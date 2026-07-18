@@ -5,6 +5,7 @@ export const translations = {
     navCaravan: "La Caravana",
     navJoin: "Únete",
     navSupport: "Apoya",
+    navCollaborators: "Colaboradores",
     heroTitle1: "EL VERDADERO MÉXICO",
     heroTitle2: "COMIENZA MÁS ALLÁ",
     heroTitle3: "DE LOS ESTADIOS",
@@ -57,6 +58,9 @@ export const translations = {
     optionBuyTrip10d: "Unirse 10 Días (Preventa $2,000 USD / Reg. $2,200)",
     optionBuyTrip15d: "Unirse 15 Días (Preventa $2,600 USD / Reg. $2,800)",
     optionBuyTrip30d: "Unirse 30 Días (Preventa $3,300 USD / Reg. $3,500)",
+    optionBuyTrip10dMexa: "Unirse 10 Días Mexa (Austero bajo carpa) $25,500 MXN",
+    optionBuyTrip15dMexa: "Unirse 15 Días Mexa (Austero bajo carpa) $33,000 MXN",
+    optionBuyTrip30dMexa: "Unirse 30 Días Mexa (Austero bajo carpa) $49,000 MXN",
     optionPhotobook: "Pre-ordenar Libro de Fotos",
     optionSponsor: "Patrocinio de Marca",
     badgePresale: "PREVENTA",
@@ -84,6 +88,15 @@ export const translations = {
     feature3_3: "Libro de fotos impreso firmado",
     feature3_4: "Aparición en créditos del documental",
     feature3_5: "Pase VIP para proyecciones",
+    tier1MexaTitle: "El Arranque (Mexa)",
+    tier1MexaDuration: "10 DÍAS",
+    tier1MexaDesc: "Primera parte de la caravana modo austero bajo carpa admirando las estrellas.",
+    tier2MexaTitle: "El Corazón de la Ruta (Mexa)",
+    tier2MexaDuration: "15 DÍAS",
+    tier2MexaDesc: "Tramo intermedio modo austero bajo carpa admirando las estrellas.",
+    tier3MexaTitle: "La Crónica Total (Mexa)",
+    tier3MexaDuration: "30 DÍAS",
+    tier3MexaDesc: "La experiencia definitiva modo austero bajo carpa admirando las estrellas.",
     btnFundNow: "FINANCIAR AHORA",
     footerText: "El Otro Mundial · Web-Doc Independiente",
     footerCountry: "México 2026",
@@ -125,7 +138,10 @@ export const translations = {
     phase2: "FASE 2 (15 DÍAS)",
     phase3: "FASE 3 (30 DÍAS)",
     formSellerCode: "Código de Colaborador (Opcional)",
-    formSellerCodePlaceholder: "EOM-XXXXX"
+    formSellerCodePlaceholder: "EOM-XXXXX",
+    whatsappAriaLabel: "Contactar por WhatsApp",
+    whatsappTitle: "Escríbenos por WhatsApp",
+    whatsappTooltip: "¿Tienes dudas? ¡Escríbenos!"
   },
   en: {
     seoTitle: "El Otro Mundial | The Real Mexico Begins Beyond the Stadiums",
@@ -133,6 +149,7 @@ export const translations = {
     navCaravan: "The Caravan",
     navJoin: "Join",
     navSupport: "Support",
+    navCollaborators: "Collaborators",
     heroTitle1: "THE REAL MEXICO",
     heroTitle2: "BEGINS BEYOND",
     heroTitle3: "THE STADIUMS",
@@ -185,6 +202,9 @@ export const translations = {
     optionBuyTrip10d: "Join 10 Days (Presale $2,000 USD / Reg. $2,200)",
     optionBuyTrip15d: "Join 15 Days (Presale $2,600 USD / Reg. $2,800)",
     optionBuyTrip30d: "Join 30 Days (Presale $3,300 USD / Reg. $3,500)",
+    optionBuyTrip10dMexa: "Join 10 Days Mexa (Austere Camping) $25,500 MXN",
+    optionBuyTrip15dMexa: "Join 15 Days Mexa (Austere Camping) $33,000 MXN",
+    optionBuyTrip30dMexa: "Join 30 Days Mexa (Austere Camping) $49,000 MXN",
     optionPhotobook: "Pre-order Photobook",
     optionSponsor: "Brand Sponsorship",
     badgePresale: "PRESALE",
@@ -212,6 +232,15 @@ export const translations = {
     feature3_3: "Signed printed photobook",
     feature3_4: "Credit in the documentary film",
     feature3_5: "VIP pass for screenings",
+    tier1MexaTitle: "The Spark (Mexa)",
+    tier1MexaDuration: "10 DAYS",
+    tier1MexaDesc: "First leg of the caravan, austere camping mode watching the stars.",
+    tier2MexaTitle: "The Core Route (Mexa)",
+    tier2MexaDuration: "15 DAYS",
+    tier2MexaDesc: "Middle leg, austere camping mode watching the stars.",
+    tier3MexaTitle: "The Full Dispatch (Mexa)",
+    tier3MexaDuration: "30 DAYS",
+    tier3MexaDesc: "The ultimate experience, austere camping mode watching the stars.",
     btnFundNow: "FUND IT NOW",
     footerText: "El Otro Mundial · Independent Web-Doc",
     footerCountry: "Mexico 2026",
@@ -253,7 +282,10 @@ export const translations = {
     phase2: "PHASE 2 (15 DAYS)",
     phase3: "PHASE 3 (30 DAYS)",
     formSellerCode: "Collaborator Code (Optional)",
-    formSellerCodePlaceholder: "EOM-XXXXX"
+    formSellerCodePlaceholder: "EOM-XXXXX",
+    whatsappAriaLabel: "Contact via WhatsApp",
+    whatsappTitle: "Message us on WhatsApp",
+    whatsappTooltip: "Any questions? Message us!"
   },
   fr: {
     seoTitle: "El Otro Mundial | Le vrai Mexique commence au-delà des stades",
@@ -261,6 +293,7 @@ export const translations = {
     navCaravan: "La Caravane",
     navJoin: "Rejoindre",
     navSupport: "Soutenir",
+    navCollaborators: "Collaborateurs",
     heroTitle1: "LE VRAI MEXIQUE",
     heroTitle2: "COMMENCE AU-DELÀ",
     heroTitle3: "DES STADES",
@@ -381,7 +414,10 @@ export const translations = {
     phase2: "PHASE 2 (15 JOURS)",
     phase3: "PHASE 3 (30 JOURS)",
     formSellerCode: "Code Collaborateur (Optionnel)",
-    formSellerCodePlaceholder: "EOM-XXXXX"
+    formSellerCodePlaceholder: "EOM-XXXXX",
+    whatsappAriaLabel: "Contacter par WhatsApp",
+    whatsappTitle: "Écrivez-nous sur WhatsApp",
+    whatsappTooltip: "Des questions ? Écrivez-nous !"
   },
   it: {
     seoTitle: "El Otro Mundial | Il vero Messico inizia oltre gli stadi",
@@ -389,6 +425,7 @@ export const translations = {
     navCaravan: "La Carovana",
     navJoin: "Unisciti",
     navSupport: "Sostieni",
+    navCollaborators: "Collaboratori",
     heroTitle1: "IL VERO MESSICO",
     heroTitle2: "INIZIA OLTRE",
     heroTitle3: "GLI STADI",
@@ -509,7 +546,10 @@ export const translations = {
     phase2: "FASE 2 (15 GIORNI)",
     phase3: "FASE 3 (30 GIORNI)",
     formSellerCode: "Codice Collaboratore (Opzionale)",
-    formSellerCodePlaceholder: "EOM-XXXXX"
+    formSellerCodePlaceholder: "EOM-XXXXX",
+    whatsappAriaLabel: "Contattaci su WhatsApp",
+    whatsappTitle: "Scrivici su WhatsApp",
+    whatsappTooltip: "Hai domande? Scrivici!"
   },
   de: {
     seoTitle: "El Otro Mundial | Das wahre Mexiko beginnt jenseits der Stadien",
@@ -517,6 +557,7 @@ export const translations = {
     navCaravan: "Die Karawane",
     navJoin: "Mitmachen",
     navSupport: "Unterstützen",
+    navCollaborators: "Partner",
     heroTitle1: "DAS WAHRE MEXIKO",
     heroTitle2: "BEGINNT JENSEITS",
     heroTitle3: "DER STADIEN",
@@ -637,7 +678,10 @@ export const translations = {
     phase2: "PHASE 2 (15 TAGE)",
     phase3: "PHASE 3 (30 TAGE)",
     formSellerCode: "Partner-Code (Optional)",
-    formSellerCodePlaceholder: "EOM-XXXXX"
+    formSellerCodePlaceholder: "EOM-XXXXX",
+    whatsappAriaLabel: "Kontaktiere uns über WhatsApp",
+    whatsappTitle: "Schreibe uns auf WhatsApp",
+    whatsappTooltip: "Hast du Fragen? Schreib uns!"
   },
   ko: {
     seoTitle: "엘 오트로 문디알 | 경기장 너머에서 진짜 멕시코가 시작됩니다",
@@ -645,6 +689,7 @@ export const translations = {
     navCaravan: "카라반 소개",
     navJoin: "참여하기",
     navSupport: "후원하기",
+    navCollaborators: "협력자",
     heroTitle1: "진짜 멕시코는",
     heroTitle2: "경기장 너머에서",
     heroTitle3: "시작됩니다",
@@ -765,7 +810,10 @@ export const translations = {
     phase2: "2단계 (15일)",
     phase3: "3단계 (30일)",
     formSellerCode: "추천인 코드 (선택사항)",
-    formSellerCodePlaceholder: "EOM-XXXXX"
+    formSellerCodePlaceholder: "EOM-XXXXX",
+    whatsappAriaLabel: "WhatsApp으로 연락하기",
+    whatsappTitle: "WhatsApp으로 메시지 보내기",
+    whatsappTooltip: "궁금한 점이 있으신가요? 메시지를 보내주세요!"
   },
   ru: {
     seoTitle: "El Otro Mundial | Настоящая Мексика за пределами стадионов",
@@ -773,6 +821,7 @@ export const translations = {
     navCaravan: "Караван",
     navJoin: "Присоединиться",
     navSupport: "Поддержать",
+    navCollaborators: "Партнеры",
     heroTitle1: "НАСТОЯЩАЯ МЕКСИКА",
     heroTitle2: "НАЧИНАЕТСЯ ЗА",
     heroTitle3: "ПРЕДЕЛАМИ СТАДИОНОВ",
@@ -893,6 +942,9 @@ export const translations = {
     phase2: "ФАЗА 2 (15 ДНЕЙ)",
     phase3: "ФАЗА 3 (30 ДНЕЙ)",
     formSellerCode: "Код партнера (необязательно)",
-    formSellerCodePlaceholder: "EOM-XXXXX"
+    formSellerCodePlaceholder: "EOM-XXXXX",
+    whatsappAriaLabel: "Связаться через WhatsApp",
+    whatsappTitle: "Напишите нам в WhatsApp",
+    whatsappTooltip: "Есть вопросы? Напишите нам!"
   }
 };

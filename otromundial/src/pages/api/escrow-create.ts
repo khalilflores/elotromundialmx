@@ -2,11 +2,14 @@ export const prerender = false;
 import type { APIRoute } from 'astro';
 
 const ESCROW_TIERS = {
-    'buy_trip_10d':  { amount: 2200, title: 'El Otro Mundial — Caravana 10 Días' },
-    'buy_trip_15d':  { amount: 2800, title: 'El Otro Mundial — Caravana 15 Días' },
-    'buy_trip_30d':  { amount: 3500, title: 'El Otro Mundial — Caravana Completa 30 Días' },
-    'photobook':     { amount: 80,   title: 'El Otro Mundial — Fotobook Edición Limitada' },
-    'sponsor':       { amount: 500,  title: 'El Otro Mundial — Patrocinador Comunitario' },
+    'buy_trip_10d':      { amount: 2200, title: 'El Otro Mundial — Caravana 10 Días' },
+    'buy_trip_15d':      { amount: 2800, title: 'El Otro Mundial — Caravana 15 Días' },
+    'buy_trip_30d':      { amount: 3500, title: 'El Otro Mundial — Caravana Completa 30 Días' },
+    'buy_trip_10d_mexa': { amount: 1275, title: 'El Otro Mundial — Caravana 10 Días (Mexa)' },
+    'buy_trip_15d_mexa': { amount: 1650, title: 'El Otro Mundial — Caravana 15 Días (Mexa)' },
+    'buy_trip_30d_mexa': { amount: 2450, title: 'El Otro Mundial — Caravana Completa 30 Días (Mexa)' },
+    'photobook':         { amount: 80,   title: 'El Otro Mundial — Fotobook Edición Limitada' },
+    'sponsor':           { amount: 500,  title: 'El Otro Mundial — Patrocinador Comunitario' },
 };
 
 // Use standard Node.js process.env to read Vercel environment variables securely at runtime
@@ -45,7 +48,10 @@ export const POST: APIRoute = async ({ request }) => {
             let h1, h2, h3;
             if (tier_id === 'buy_trip_10d') { h1 = 660; h2 = 660; h3 = 880; }
             else if (tier_id === 'buy_trip_15d') { h1 = 840; h2 = 840; h3 = 1120; }
-            else { h1 = 1050; h2 = 1050; h3 = 1400; } // 30d
+            else if (tier_id === 'buy_trip_30d') { h1 = 1050; h2 = 1050; h3 = 1400; }
+            else if (tier_id === 'buy_trip_10d_mexa') { h1 = 382.5; h2 = 382.5; h3 = 510; }
+            else if (tier_id === 'buy_trip_15d_mexa') { h1 = 495; h2 = 495; h3 = 660; }
+            else { h1 = 735; h2 = 735; h3 = 980; } // 30d mexa
 
             items = [
                 {

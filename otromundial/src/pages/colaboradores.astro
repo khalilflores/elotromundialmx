@@ -98,6 +98,11 @@ const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
 							</select>
 						</div>
 
+						<div>
+							<label for="captcha" id="captcha-label" class="font-bebas text-lg tracking-wider text-white/80 mb-1 block">Verificación *</label>
+							<input type="number" id="captcha" name="captcha" required placeholder="Resultado" class="input-epic rounded-lg" />
+						</div>
+
 						<!-- ERROR MESSAGE -->
 						<div id="form-error" class="hidden bg-red-900/40 border border-red-500/50 rounded-lg p-4 text-center font-barlow text-red-300"></div>
 
@@ -191,12 +196,31 @@ const locales = ['es', 'en', 'fr', 'it', 'de', 'ko', 'ru'];
 			const btnLoader = document.getElementById('btn-loader');
 			const submitBtn = document.getElementById('submit-btn');
 
+			let expectedCaptcha = 0;
+			function initCaptcha() {
+				const num1 = Math.floor(Math.random() * 10) + 1;
+				const num2 = Math.floor(Math.random() * 10) + 1;
+				expectedCaptcha = num1 + num2;
+				const label = document.getElementById('captcha-label');
+				if (label) label.textContent = `¿Cuánto es ${num1} + ${num2}? *`;
+				const input = document.getElementById('captcha');
+				if (input) input.value = '';
+			}
+			initCaptcha();
+
 			form.addEventListener('submit', async (e) => {
 				e.preventDefault();
 				
 				// Reset error
 				errorBox.classList.add('hidden');
 				errorBox.textContent = '';
+
+				const userCaptcha = parseInt(document.getElementById('captcha').value.trim(), 10);
+				if (userCaptcha !== expectedCaptcha) {
+					showError('Verificación matemática incorrecta. Intenta de nuevo.');
+					initCaptcha();
+					return;
+				}
 
 				// Loading state
 				btnText.classList.add('hidden');
